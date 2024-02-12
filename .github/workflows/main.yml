@@ -21,6 +21,16 @@ jobs:
             --edit-repo-url https://github.com/${{ github.repository }} \
             --edit-repo-branch main
     - if: ${{ github.ref == 'refs/heads/main' }}
+      name: Create compiled branch if not existent
+      run: |
+        if git fetch origin compiled; then
+           echo "Branch exist: compiled"
+         else
+            git branch compiled
+            git branch -v
+            git push origin compiled
+        fi
+    - if: ${{ github.ref == 'refs/heads/main' }}
       name: Publish compiled course
       run: |
         git fetch origin compiled
