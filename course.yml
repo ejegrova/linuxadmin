@@ -37,7 +37,7 @@ vars:
   coach-present: true
 sessions:
 - title: Úvod & Instalace
-  date: 2021-10-04
+  date: 2024-03-13
   slug: vm-setup
   serial: 0
   materials:
@@ -45,7 +45,7 @@ sessions:
   - lesson: linuxadmin/whats-linux
   - lesson: linuxadmin/gnome-basics
 - title: Bash I
-  date: 2021-10-11
+  date: 2024-03-20
   slug: shell-1
   materials:
   - lesson: carpentry-unix/bash-intro
@@ -57,7 +57,7 @@ sessions:
     type: homework
 
 - title: Bash II
-  date: 2021-10-18
+  date: 2024-03-27
   slug: shell-2
   materials:
   - lesson: linuxadmin/output-files
@@ -84,7 +84,7 @@ sessions:
   
 
 - title: Procesy & deskriptory souborů
-  date: 2021-10-25
+  date: 2024-04-03
   slug: shell-3
   materials:
   - lesson: linuxadmin/bash-exit-code
@@ -94,7 +94,7 @@ sessions:
     title: "Bonus: Funkce, které ovládají proces"
 
 - title: Bash III
-  date: 2021-11-01
+  date: 2024-04-10
   slug: descriptors
   materials:
   - lesson: linuxadmin/env-var
@@ -118,7 +118,7 @@ sessions:
     type: homework
 
 - title: Správa uživatelů
-  date: 2021-11-08
+  date: 2024-04-17
   slug: users
   materials:
   - lesson: linuxadmin/users     # XXX final sections not rewritten for 2021
@@ -135,7 +135,7 @@ sessions:
     # XXX: fhs -- add "Sudo si pamatuje" & "Kam s ním?" from https://hackmd.io/dBFhw0V8Rh-qPN0J-LUJrw
 
 - title: Souborové systémy
-  date: 2021-11-15
+  date: 2024-04-24
   slug: fhs
   materials:
   - lesson: linuxadmin/fs
@@ -151,7 +151,7 @@ sessions:
     # XXX: "Nepovinná meditace" - https://hackmd.io/@encukou/ukoly-sit
 
 - title: Instalace balíčků
-  date: 2021-11-22
+  date: 2024-05-15
   slug: review
   materials:
   - title: locate, updatedb, eog, feh – viz video
@@ -169,7 +169,7 @@ sessions:
     type: homework
 
 - title: Služby a webový server
-  date: 2021-11-29
+  date: 2024-05-22
   slug: mount
   materials:
   - title: Síťová komunikace
@@ -179,7 +179,7 @@ sessions:
   - lesson: hw/httpd
 
 - title: SSH a systemd jednotky
-  date: 2021-12-06
+  date: 2024-05-29
   slug: service
   materials:
   - lesson: linuxadmin/ssh
@@ -188,7 +188,7 @@ sessions:
     type: link
 
 - title: Signály a Automatizovaná konfigurace
-  date: 2021-12-13
+  date: 2024-06-05
   slug: net-services
   materials:
   - lesson: linuxadmin/ansible
@@ -198,7 +198,7 @@ sessions:
     type: link
 
 - title: Kontejnery
-  date: 2021-12-20
+  date: 2024-06-12
   slug: containers
   materials:
   - lesson: notes/terminal-color
