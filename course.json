@@ -1507,7 +1507,7 @@
         "place": "Fakulta Informatiky MUNI, Botanická 554/68a, místnost S505",
         "sessions": [
             {
-                "date": "2021-10-04",
+                "date": "2024-03-13",
                 "materials": [
                     {
                         "lesson_slug": "linuxadmin/installation",
@@ -1531,7 +1531,7 @@
                 "title": "Úvod & Instalace"
             },
             {
-                "date": "2021-10-11",
+                "date": "2024-03-20",
                 "materials": [
                     {
                         "lesson_slug": "carpentry-unix/bash-intro",
@@ -1565,7 +1565,7 @@
                 "title": "Bash I"
             },
             {
-                "date": "2021-10-18",
+                "date": "2024-03-27",
                 "materials": [
                     {
                         "lesson_slug": "linuxadmin/output-files",
@@ -1619,7 +1619,7 @@
                 "title": "Bash II"
             },
             {
-                "date": "2021-10-25",
+                "date": "2024-04-03",
                 "materials": [
                     {
                         "lesson_slug": "linuxadmin/bash-exit-code",
@@ -1648,7 +1648,7 @@
                 "title": "Procesy & deskriptory souborů"
             },
             {
-                "date": "2021-11-01",
+                "date": "2024-04-10",
                 "materials": [
                     {
                         "lesson_slug": "linuxadmin/env-var",
@@ -1697,7 +1697,7 @@
                 "title": "Bash III"
             },
             {
-                "date": "2021-11-08",
+                "date": "2024-04-17",
                 "materials": [
                     {
                         "lesson_slug": "linuxadmin/users",
@@ -1721,7 +1721,7 @@
                 "title": "Správa uživatelů"
             },
             {
-                "date": "2021-11-15",
+                "date": "2024-04-24",
                 "materials": [
                     {
                         "lesson_slug": "linuxadmin/fs",
@@ -1750,7 +1750,7 @@
                 "title": "Souborové systémy"
             },
             {
-                "date": "2021-11-22",
+                "date": "2024-05-15",
                 "materials": [
                     {
                         "title": "locate, updatedb, eog, feh – viz video",
@@ -1783,7 +1783,7 @@
                 "title": "Instalace balíčků"
             },
             {
-                "date": "2021-11-29",
+                "date": "2024-05-22",
                 "materials": [
                     {
                         "title": "Síťová komunikace",
@@ -1811,7 +1811,7 @@
                 "title": "Služby a webový server"
             },
             {
-                "date": "2021-12-06",
+                "date": "2024-05-29",
                 "materials": [
                     {
                         "lesson_slug": "linuxadmin/ssh",
@@ -1835,7 +1835,7 @@
                 "title": "SSH a systemd jednotky"
             },
             {
-                "date": "2021-12-13",
+                "date": "2024-06-05",
                 "materials": [
                     {
                         "lesson_slug": "linuxadmin/ansible",
@@ -1859,7 +1859,7 @@
                 "title": "Signály a Automatizovaná konfigurace"
             },
             {
-                "date": "2021-12-20",
+                "date": "2024-06-12",
                 "materials": [
                     {
                         "lesson_slug": "notes/terminal-color",
