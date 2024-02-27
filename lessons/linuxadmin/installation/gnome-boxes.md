@@ -45,7 +45,7 @@ V následujícím okně ignoruj nabídku systémů a zvol *Vybrat soubor*:
   ) }}
 
 Vyber ISO soubor se systémem, který jsi před chvílí stáhl{{a}}.
-V dalším kroku je možnost virtuální poc'itač přizpůsobiut, což není nutné.
+V dalším kroku je možnost virtuální počítač přizpůsobit, což není nutné.
 Zvol *Vytvořit*:
 
   {{ figure(
