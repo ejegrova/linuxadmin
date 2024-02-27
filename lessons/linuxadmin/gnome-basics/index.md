@@ -4,16 +4,17 @@ Grafické prostředí je část systému, která se stará o spouštění grafic
 („okýnkových“) programů, vykreslování okýnek, a podobné úkoly.
 My budeme používat prostředí GNOME.
 
-GNOME poznáš podle horní černé lišty, na které je vlevo tlačítko
-*Činosti* (angl. *Activities*), uprostřed datum a čas a vpravo několik ikonek.
-(Všechno to samozřejmě jde různě přenastavit.)
+GNOME poznáš podle horní černé lišty, na které je vlevo indikátor toho, 
+na které ploše se nacházíte (dříve *Činnosti*), uprostřed datum a čas 
+a vpravo několik ikonek. (Všechno to samozřejmě jde různě přenastavit.)
 
 {{ figure(
     img=static('gnome-shell.png'),
     alt='GNOME Shell',
 ) }}
 
-Kliknutím na *Činnosti* se ukáže přehled:
+Kliknutím na tlačítko vlevo nahoře, příp. stiskem klávesy windows 
+se ukáže přehled:
 
 {{ figure(
     img=static('activities.png'),
@@ -31,7 +32,7 @@ Kliknutím na *Činnosti* se ukáže přehled:
 
 * Uprostřed se ukazují aktuálně otevřená okna, pokud nějaká jsou.
 
-* Vpravo je náhled další *virtuálníy plochy* (angl. *Virtual desktops*),
+* Vpravo je náhled další *virtuální plochy* (angl. *Virtual desktops*),
   odděleného „prostoru“ pro okýnka.
   Mezi jednotlivými plochami můžeš přepínat.
   Jakmile otevřeš okna na více plochách, objeví se i jejich seznam,
@@ -43,10 +44,10 @@ Pro systémovou administraci budeš potřebovat hlavně prohlížeč,
 příkazovou řádku (terminál) a textový editor.
 Zkus si je spustit:
 
-* Klikni na *Činnosti* a vlevo vyber ikonku prohlížeče Firefox
-  (červená lištička).
+* Klikni vlevo na *Indikátor* a vyber ikonku prohlížeče Firefox
+  (spodní lištička).
 
-* Klikni na *Činnosti*. Terminál v nabídce není, začni tedy psát
+* Klikni vlevo na *Indikátor*. Terminál v nabídce není, začni tedy psát
   <kbd>T</kbd><kbd>E</kbd><kbd>R</kbd>, dokud se neobjeví ikonka
   Terminálu.
   Klikni na ni *pravým tlačítkem* a zvol *Přidat mezi oblíbené*.
