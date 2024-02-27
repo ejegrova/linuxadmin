@@ -29,7 +29,7 @@ Pro jednotnost si budeme všechno ukazovat na distribuci Fedora, kterou
 si stáhni z [getfedora.org](https://getfedora.org/cs/workstation/download/) –
 stáhnout soubor ISO.
 
-Je to velký soubor (zhruba 2 GB) se jménem jako `Fedora-Workstation-Live-x86_64-31-1.9.iso`.
+Je to velký soubor (zhruba 2 GB) se jménem jako `Fedora-Workstation-Live-x86_64-39-1.5.iso`.
 
 
 # Příprava hosta
@@ -56,15 +56,14 @@ soubory potřebné k samotné instalaci.
 ) }}
 
 V černém okně vyber šipkami na klávesnici (myš zatím nelze použít)
-**Start Fedora-Workstation-Live 31** a potvrď klávesou Enter. 
+**Start Fedora-Workstation-Live 39** a potvrď klávesou Enter. 
 
 {{ figure(
     img=static('fedora-install-02.png'),
     alt='Instalace #2',
 ) }}
 
-Po chvilce se zobrazí už grafické okno, kde myší klepni na **Install to Hard
-Drive**. Tím se spustí samotná instalace. (Druhá volba *Try Fedora* ti spustí
+Po chvilce se zobrazí už grafické okno, kde myší klepni na **Install Fedora**. Tím se spustí samotná instalace. (Druhá volba *Not now* ti spustí
 operační systém rovnou z DVD k vyzkoušení - tu ale nyní nevyužijeme).
 
 ## Instalační obrazovky
@@ -98,7 +97,7 @@ operační systém rovnou z DVD k vyzkoušení - tu ale nyní nevyužijeme).
 
 
 * **Přehled instalace** - Nyní už instalátor ví vše potřebné. Vpravo dole
- klepni na tlačítko *Spustit instalaci*. Od tohoto okamžiku se začne
+ klepni na tlačítko *Zahájit instalaci*. Od tohoto okamžiku se začne
  zapisovat na vybraný pevný disk.
  
   {{ figure(
@@ -118,11 +117,19 @@ operační systém rovnou z DVD k vyzkoušení - tu ale nyní nevyužijeme).
   ) }}
 
 * **Vypnutí** - K tomu je potřeba kliknout na sadu ikonek úplně vpravo nahoře,
- poté na symbol ⏻ a nakonec na tlačítko *Power off*. Volbu potvrď.
+ poté na symbol ⏻ a nakonec na tlačítko *Restart*. Volbu potvrď.
 
    {{ figure(
-    img=static('poweroff.png'),
-    alt='Vypnutí virtuálního stroje',
+    img=static('restart-01.png'),
+    alt='Restart #1',
+  ) }}
+   {{ figure(
+    img=static('restart-02.png'),
+    alt='Restart #2',
+  ) }}
+   {{ figure(
+    img=static('restart-03.png'),
+    alt='Restart #3',
   ) }}
 
 * **Vysunutí DVD** - Až se vyrtuální počítač vypne, je potřeba vysunout
@@ -144,7 +151,7 @@ operační systém rovnou z DVD k vyzkoušení - tu ale nyní nevyužijeme).
 
   {{ figure(
     img=static('vbox-settings-remove-dvd.png'),
-    alt='Odrstanění DVD',
+    alt='Odstranění DVD',
   ) }}
 
 * **Zapnutí** - Virtuální počítač potom znovu zapni a počkej než naběhne.
@@ -155,16 +162,29 @@ V této části už je operační systém nainstalovaný,
  zbývá akorát provést posledních několik nastavení. To se děje formou průvodce
  kde je tlačítko *Další* vždy vpravo nahoře.
 
+* **Vítejte v prostředí Fedora Linux 39!** - klikni na "Začít nastavovat".
+
+  {{ figure(
+    img=static('fedora-install-09.png'),
+    alt='Instalace #09',
+  ) }}
+
 * **Soukromí**
   * Geolokační služby - můžeš klidně vypnout
   * Automatické hlášení problémů - radši taky vypni; ať nikdo neví jakou
     neplechu na virtuálním počítači napácháš
 
   {{ figure(
+    img=static('fedora-install-10.png'),
+    alt='Instalace #10',
+  ) }}
+
+* **Repozitáře třetích stran** - repozitáře není nutné povolovat, nebudeme je využívat.
+
+  {{ figure(
     img=static('fedora-install-11.png'),
     alt='Instalace #11',
   ) }}
-
   
 * **Účty online** - tento krok můžeš klidně přeskočit (a třeba provést později)
 
@@ -204,8 +224,8 @@ V této části už je operační systém nainstalovaný,
 
   Heslo si dobře zapamatuj (nebo, navzdory radám k bezpečným heslům, zapiš).
 
- * **Připraveno k používání** - Výborně, všechno je již nastaveno a můžeš se
-  pustit do objevování. Klepni na *Začít používat systém Fedora*.
+ * **Nastavení dokončeno** - Výborně, všechno je již nastaveno a můžeš se
+  pustit do objevování. Klepni na *Začít používat systém Fedora Linux*.
 
   {{ figure(
     img=static('fedora-install-15.png'),
