@@ -934,9 +934,6 @@
                     "fedora-install-07.png": {
                         "path": "installation/fedora-install-07.png"
                     },
-                    "fedora-install-08.png": {
-                        "path": "installation/fedora-install-08.png"
-                    },
                     "fedora-install-09.png": {
                         "path": "installation/fedora-install-09.png"
                     },
@@ -958,8 +955,14 @@
                     "fedora-install-15.png": {
                         "path": "installation/fedora-install-15.png"
                     },
-                    "poweroff.png": {
-                        "path": "installation/poweroff.png"
+                    "restart-01.png": {
+                        "path": "installation/restart-01.png"
+                    },
+                    "restart-02.png": {
+                        "path": "installation/restart-02.png"
+                    },
+                    "restart-03.png": {
+                        "path": "installation/restart-03.png"
                     },
                     "vbcopyb.jpg": {
                         "path": "installation/vbcopyb.jpg"
