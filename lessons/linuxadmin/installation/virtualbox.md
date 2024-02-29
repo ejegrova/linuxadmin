@@ -23,33 +23,14 @@ Klikni na tlačitko „Nový“ a pokračuj podle obrázkového návodu:
     alt='Instalace VirtualBoxu – #2',
   ) }}
 
-3. Pevný disk vytvoř nyní:
+3. Pevný disk vytvoř nyní, typ souboru a úložiště nech ve výchozích hodnotách, velikost souboru zvol 10GB; umístění nech výchozí:
 
   {{ figure(
     img=static('vbox-03.png'),
     alt='Instalace VirtualBoxu – #3',
   ) }}
 
-4. Typ souboru a úložiště nech ve výchozích hodnotách:
-
-  {{ figure(
-    img=static('vbox-04.png'),
-    alt='Instalace VirtualBoxu – #4',
-  ) }}
-
-  {{ figure(
-    img=static('vbox-05.png'),
-    alt='Instalace VirtualBoxu – #5',
-  ) }}
-
-5. Velikost souboru zvol 10GB; umístění nech výchozí:
-
-  {{ figure(
-    img=static('vbox-07.png'),
-    alt='Instalace VirtualBoxu – #7',
-  ) }}
-
-6. Po klepnutí na „Vytvořit“ se nový virtuální počítač objeví v seznamu vlevo:
+4. Po klepnutí na „Vytvořit“ se nový virtuální počítač objeví v seznamu vlevo:
 
   {{ figure(
     img=static('vbox-08.png'),
@@ -57,7 +38,7 @@ Klikni na tlačitko „Nový“ a pokračuj podle obrázkového návodu:
   ) }}
 
 
-7. Tím je virtuální počítač vytvořen.
+5. Tím je virtuální počítač vytvořen.
    Spusť ho zelenou šipečkou „spustit“.
    VirtualBox se zeptá na *obraz disku* ze kterého bude instalovat.
    Vyber *obraz disku*, který sis stáhl{{a}} dříve.
