@@ -14,7 +14,7 @@ Hned na začátku tě čeká malá terminologická nepříjemnost:
 Virtuálnímu systému se česky říká **host** (anglicky **guest**).
 Slovo **host** má tedy v češtině úplně opačný význam než v angličtině.
 
-
+{{ anchor('stazeni-obrazu') }}
 ## Stažení obrazu 
 
 Na opravdový počítač se dá Linux nainstalovat z DVD nebo USB disku („flashky“).
@@ -33,7 +33,7 @@ Je to velký soubor (zhruba 2 GB) se jménem jako `Fedora-Workstation-Live-x86_6
 
 ### Poznámka pro uživatele macOS
 
-Pokud máš macOS a nevíš jestli máš procesor Intel, přečti si nejdříve [Jak poznat který procesor máš]({{ subpage_url('apple-silicon.md#jak-poznat-který-procesor-máš') }}) a poté se vrať zpět sem.
+Pokud máš macOS a nevíš jestli máš procesor Intel, přečti si nejdříve [Jak poznat který procesor máš]({{ subpage_url('apple-silicon#jak-poznat-ktery-procesor-mas') }}) a poté se vrať zpět sem.
 Jestli máš procesor od Apple řady M, pak si budeš muset stáhnout obraz pro systémy ARM aarch64.
 
 Tedy něco jako `Fedora-Workstation-Live-aarch64-39-1.5-respin.iso`.

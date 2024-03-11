@@ -8,6 +8,7 @@ Jestli už víš, že Tvé zařízení používá procesor Intel, můžeš přes
 
 Pokud jsi stále na pochybách, raději zkontroluj jaké zařízení vlastně máš.
 
+{{ anchor jak-poznat-ktery-procesor-mas }}
 ### Jak poznat který procesor máš
 Cvakni na logo jablka.
 {{ figure(
@@ -79,8 +80,8 @@ Tím by měla být instalace dokončena.
     img=static('apple-silicon/utm-setup-vm.png'),
     alt='Nastavení virtuálního stroje v UTM',
 ) }}
-Obraz by už měl být stažen z [dřívější kapitoly]({{ subpage_url('index.md#stažení-obrazu-') }}). 
-Pokud si nic takového nepamatuješ, znovu si přečti [dřívější kapitolu]({{ subpage_url('index.md#stažení-obrazu-') }}) a poté se znovu vrať sem.
+Obraz by už měl být stažen z [dřívější kapitoly]({{ subpage_url('index#stazeni-obrazu') }}).
+Pokud si nic takového nepamatuješ, znovu si přečti [dřívější kapitolu]({{ subpage_url('index#stazeni-obrazu') }}) a poté se znovu vrať sem.
 
 Obraz by v názvu měl obsahovat "Fedora" a mít koncovku `.iso`, případně být typu "ISO Disk Image".
 {{ figure(
