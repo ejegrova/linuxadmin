@@ -8,7 +8,7 @@ Jestli už víš, že Tvé zařízení používá procesor Intel, můžeš přes
 
 Pokud jsi stále na pochybách, raději zkontroluj jaké zařízení vlastně máš.
 
-{{ anchor jak-poznat-ktery-procesor-mas }}
+{{ anchor('jak-poznat-ktery-procesor-mas') }}
 ### Jak poznat který procesor máš
 Cvakni na logo jablka.
 {{ figure(
