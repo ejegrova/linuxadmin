@@ -4,7 +4,7 @@ Tento návod budeš potřebovat pokud používáš počítač od Apple s Apple p
 
 Tyto procesory se v Apple počítačích začaly objevovat v roce 2020.
 
-Jestli už víš, že Tvé zařízení používá procesor Intel, můžeš přestat číst tento návod a přejdi [sem]({{ subpage_url('virtualbox.md') }}).
+Jestli už víš, že Tvé zařízení používá procesor Intel, můžeš přestat číst tento návod a přejdi [sem]({{ subpage_url('virtualbox') }}).
 
 Pokud jsi stále na pochybách, raději zkontroluj jaké zařízení vlastně máš.
 
@@ -25,18 +25,18 @@ Tebe zajímá kolonka "Čip".
     img=static('apple-silicon/cpu-info.png'),
     alt='Okno s informacemi o procesoru',
 ) }}
-- Pokud obsahuje nějakou zmínku o "Intelu", pak se tě tento návod netýká a můžeš pokračovat [na tomto odkaze]({{ subpage_url('virtualbox.md') }}).
+- Pokud obsahuje nějakou zmínku o "Intelu", pak se tě tento návod netýká a můžeš pokračovat [na tomto odkaze]({{ subpage_url('virtualbox') }}).
 - Pokud zmiňuje Apple a řadu M jako na obrázku, tak čti dál...
 
 ## Instalace UTM
-Vzhledem k omezením spojených s architekturou Apple Silicon procesorů bude nejlepší použít nástroj zvaný [UTM]({{ subpage_url('https://mac.getutm.app') }}).
+Vzhledem k omezením spojených s architekturou Apple Silicon procesorů bude nejlepší použít nástroj zvaný [UTM](https://mac.getutm.app).
 
 UTM je svobodný software, což mimo jiné znamená, že je zcela zdarma.
 
 Pokud náhodou používáš balíčkovací nástroj brew, UTM nainstaluješ v terminálu pomocí příkazu 
 `brew install --cask utm` a můžeš pokračovat [další kapitolou]({{ subpage_url('#vytvoření-virtuálního-počítače') }}).
 
-Jinak UTM můžeš stáhnout z [oficiálních stránek]({{ subpage_url('https://mac.getutm.app') }}) kliknutím na tlačítko "Download".
+Jinak UTM můžeš stáhnout z [oficiálních stránek](https://mac.getutm.app) kliknutím na tlačítko "Download".
 {{ figure(
     img=static('apple-silicon/download-utm.png'),
     alt='Stažení UTM',
@@ -113,7 +113,7 @@ Nyní by mělo být možné jej spustit kliknutím na ikonku start.
 ) }}
 
 ## Instalace Fedory
-Samotná instalace je popsána v kapitole [instalace systému]({{ subpage_url('index.md#instalace-systému') }} ).
+Samotná instalace je popsána v kapitole [instalace systému]({{ subpage_url('index#install-system') }}).
 
 Po jejím přečtení a provedení všech instrukcí se ještě vrať na poslední krok zpátky sem.
 

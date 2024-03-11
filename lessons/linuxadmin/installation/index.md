@@ -26,7 +26,7 @@ Existuje velké množství tzv. distribucí, tj. variant linuxů. Ty se liší t
 v dostupném software, grafickém prostředí, způsobu instalace softwarových
 balíčků a spoustě dalších detailů.
 Pro jednotnost si budeme všechno ukazovat na distribuci Fedora, kterou
-si stáhni z [getfedora.org]({{ subpage_url('https://getfedora.org/cs/workstation/download/') }}) –
+si stáhni z [getfedora.org](https://getfedora.org/cs/workstation/download) –
 stáhnout soubor ISO.
 
 Je to velký soubor (zhruba 2 GB) se jménem jako `Fedora-Workstation-Live-x86_64-39-1.5.iso`.
@@ -44,7 +44,7 @@ Tedy něco jako `Fedora-Workstation-Live-aarch64-39-1.5-respin.iso`.
 Existuje několik programů, které umí simulovat virtuální počítač.
 Vyber si jeden podle svého hostitelského systému a ho:
 
-* Pokud máš macOS a nevíš jestli máš procesor Intel, přečti si [instalace na Apple Silicon]({{ subpage_url('apple-silicon.md') }})
+* Pokud máš macOS a nevíš jestli máš procesor Intel, přečti si [instalace na Apple Silicon]({{ subpage_url('apple-silicon') }})
 * Pokud máš Windows nebo macOS s procesorem Intel, použij Virtualbox: [instalace Virtualboxu]({{ subpage_url('virtualbox') }}).
 * Pokud máš Linux s GNOME, bude lépe fungovat Gnome Boxes: [instalace Gnome Boxes]({{ subpage_url('gnome-boxes') }}).
 
