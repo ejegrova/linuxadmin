@@ -842,6 +842,25 @@
             },
             "linuxadmin/installation": {
                 "pages": {
+                    "apple-silicon": {
+                        "attribution": [
+                            "napsal Martin Pavlásek"
+                        ],
+                        "content": {
+                            "path": "installation/apple-silicon.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "apple-silicon",
+                        "solutions": [],
+                        "source_file": "lessons/linuxadmin/installation/apple-silicon.md",
+                        "subtitle": "Instalace na Apple Silicon",
+                        "title": "Virtuální počítač – Instalace na Apple Silicon",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    },
                     "gnome-boxes": {
                         "attribution": [
                             "napsal Martin Pavlásek"
@@ -901,6 +920,63 @@
                 },
                 "source_file": "lessons/linuxadmin/installation/info.yml",
                 "static_files": {
+                    "apple-silicon/about-mac.png": {
+                        "path": "installation/apple-silicon/about-mac.png"
+                    },
+                    "apple-silicon/apple-logo.png": {
+                        "path": "installation/apple-silicon/apple-logo.png"
+                    },
+                    "apple-silicon/cpu-info.png": {
+                        "path": "installation/apple-silicon/cpu-info.png"
+                    },
+                    "apple-silicon/download-utm.png": {
+                        "path": "installation/apple-silicon/download-utm.png"
+                    },
+                    "apple-silicon/utm-choose-iso.png": {
+                        "path": "installation/apple-silicon/utm-choose-iso.png"
+                    },
+                    "apple-silicon/utm-choose-linux.png": {
+                        "path": "installation/apple-silicon/utm-choose-linux.png"
+                    },
+                    "apple-silicon/utm-create-vm.png": {
+                        "path": "installation/apple-silicon/utm-create-vm.png"
+                    },
+                    "apple-silicon/utm-dmg.png": {
+                        "path": "installation/apple-silicon/utm-dmg.png"
+                    },
+                    "apple-silicon/utm-download-window.png": {
+                        "path": "installation/apple-silicon/utm-download-window.png"
+                    },
+                    "apple-silicon/utm-finish.png": {
+                        "path": "installation/apple-silicon/utm-finish.png"
+                    },
+                    "apple-silicon/utm-in-dock.png": {
+                        "path": "installation/apple-silicon/utm-in-dock.png"
+                    },
+                    "apple-silicon/utm-install.png": {
+                        "path": "installation/apple-silicon/utm-install.png"
+                    },
+                    "apple-silicon/utm-ram.png": {
+                        "path": "installation/apple-silicon/utm-ram.png"
+                    },
+                    "apple-silicon/utm-setup-vm.png": {
+                        "path": "installation/apple-silicon/utm-setup-vm.png"
+                    },
+                    "apple-silicon/utm-shared-dir.png": {
+                        "path": "installation/apple-silicon/utm-shared-dir.png"
+                    },
+                    "apple-silicon/utm-start-vm.png": {
+                        "path": "installation/apple-silicon/utm-start-vm.png"
+                    },
+                    "apple-silicon/utm-storage.png": {
+                        "path": "installation/apple-silicon/utm-storage.png"
+                    },
+                    "apple-silicon/utm-summary.png": {
+                        "path": "installation/apple-silicon/utm-summary.png"
+                    },
+                    "apple-silicon/utm-virtualize.png": {
+                        "path": "installation/apple-silicon/utm-virtualize.png"
+                    },
                     "boxes-01.png": {
                         "path": "installation/boxes-01.png"
                     },

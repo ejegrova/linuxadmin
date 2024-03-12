@@ -1,0 +1,59 @@
+<h1>Instalace na Apple Silicon</h1>
+<h2>Potřebuješ vůbec tento návod?</h2>
+<p>Tento návod budeš potřebovat pokud používáš počítač od Apple s Apple procesory řady M (také známa jako Apple Silicon).</p>
+<p>Tyto procesory se v Apple počítačích začaly objevovat v roce 2020.</p>
+<p>Jestli už víš, že Tvé zařízení používá procesor Intel, můžeš přestat číst tento návod a přejdi <a href="naucse:page?lesson=linuxadmin/installation&amp;page=virtualbox">sem</a>.</p>
+<p>Pokud jsi stále na pochybách, raději zkontroluj jaké zařízení vlastně máš.</p>
+<p><a id="jak-poznat-ktery-procesor-mas"></a></p>
+<h3>Jak poznat který procesor máš</h3>
+<p>Cvakni na logo jablka.
+<span class="figure"><a href="naucse:static?filename=apple-silicon/apple-logo.png"><img src="naucse:static?filename=apple-silicon/apple-logo.png" alt="Ikonka jablka v horní liště"></a></span>
+Vyber možnost "O tomto Macu"
+<span class="figure"><a href="naucse:static?filename=apple-silicon/about-mac.png"><img src="naucse:static?filename=apple-silicon/about-mac.png" alt="Výběr &#34;O tomto Macu&#34; z lišty"></a></span>
+Vyskočí na Tebe okno s informacemi o Tvém zařízení.
+Tebe zajímá kolonka "Čip". 
+<span class="figure"><a href="naucse:static?filename=apple-silicon/cpu-info.png"><img src="naucse:static?filename=apple-silicon/cpu-info.png" alt="Okno s informacemi o procesoru"></a></span></p>
+<ul>
+<li>Pokud obsahuje nějakou zmínku o "Intelu", pak se tě tento návod netýká a můžeš pokračovat <a href="naucse:page?lesson=linuxadmin/installation&amp;page=virtualbox">na tomto odkaze</a>.</li>
+<li>Pokud zmiňuje Apple a řadu M jako na obrázku, tak čti dál...</li>
+</ul>
+<h2>Instalace UTM</h2>
+<p>Vzhledem k omezením spojených s architekturou Apple Silicon procesorů bude nejlepší použít nástroj zvaný <a href="https://mac.getutm.app">UTM</a>.</p>
+<p>UTM je svobodný software, což mimo jiné znamená, že je zcela zdarma.</p>
+<p>Pokud náhodou používáš balíčkovací nástroj brew, UTM nainstaluješ v terminálu pomocí příkazu 
+<code>brew install --cask utm</code> a můžeš pokračovat <a href="naucse:page?lesson=linuxadmin/installation&amp;page=#vytvoření-virtuálního-počítače">další kapitolou</a>.</p>
+<p>Jinak UTM můžeš stáhnout z <a href="https://mac.getutm.app">oficiálních stránek</a> kliknutím na tlačítko "Download".
+<span class="figure"><a href="naucse:static?filename=apple-silicon/download-utm.png"><img src="naucse:static?filename=apple-silicon/download-utm.png" alt="Stažení UTM"></a></span></p>
+<p>Stažení je nutné povolit cvaknutím na "Povolit".
+<span class="figure"><a href="naucse:static?filename=apple-silicon/utm-download-window.png"><img src="naucse:static?filename=apple-silicon/utm-download-window.png" alt="Povolení stažení UTM"></a></span></p>
+<p>Mělo by začít stahování a po chvíli by se v doku ve spodní části obrazovky měl objevit soubor nazvaný "UTM", případně "UTM.dmg".
+<span class="figure"><a href="naucse:static?filename=apple-silicon/utm-in-dock.png"><img src="naucse:static?filename=apple-silicon/utm-in-dock.png" alt="Stažený utm.dmg soubor v doku"></a></span></p>
+<p>Na ten cvakni a vyskočí na tebe instalační okno.
+<span class="figure"><a href="naucse:static?filename=apple-silicon/utm-install.png"><img src="naucse:static?filename=apple-silicon/utm-install.png" alt="Instalace UTM"></a></span>
+Nyní přetáhni UTM do složky "Applications".
+Tím by měla být instalace dokončena.</p>
+<h2>Vytvoření virtuálního počítače</h2>
+<p><span class="figure"><a href="naucse:static?filename=apple-silicon/utm-create-vm.png"><img src="naucse:static?filename=apple-silicon/utm-create-vm.png" alt="Vytvoření virtuálního stroje v UTM"></a></span>
+<span class="figure"><a href="naucse:static?filename=apple-silicon/utm-virtualize.png"><img src="naucse:static?filename=apple-silicon/utm-virtualize.png" alt="Výběr virtualizace v UTM"></a></span>
+<span class="figure"><a href="naucse:static?filename=apple-silicon/utm-choose-linux.png"><img src="naucse:static?filename=apple-silicon/utm-choose-linux.png" alt="Výběr Linuxu v UTM"></a></span>
+<span class="figure"><a href="naucse:static?filename=apple-silicon/utm-setup-vm.png"><img src="naucse:static?filename=apple-silicon/utm-setup-vm.png" alt="Nastavení virtuálního stroje v UTM"></a></span>
+Obraz by už měl být stažen z <a href="naucse:page?lesson=linuxadmin/installation&amp;page=index#stazeni-obrazu">dřívější kapitoly</a>.
+Pokud si nic takového nepamatuješ, znovu si přečti <a href="naucse:page?lesson=linuxadmin/installation&amp;page=index#stazeni-obrazu">dřívější kapitolu</a> a poté se znovu vrať sem.</p>
+<p>Obraz by v názvu měl obsahovat "Fedora" a mít koncovku <code>.iso</code>, případně být typu "ISO Disk Image".
+<span class="figure"><a href="naucse:static?filename=apple-silicon/utm-choose-iso.png"><img src="naucse:static?filename=apple-silicon/utm-choose-iso.png" alt="Výběr obrazu v UTM"></a></span>
+<span class="figure"><a href="naucse:static?filename=apple-silicon/utm-ram.png"><img src="naucse:static?filename=apple-silicon/utm-ram.png" alt="Výběr velikosti paměti v UTM"></a></span>
+<span class="figure"><a href="naucse:static?filename=apple-silicon/utm-storage.png"><img src="naucse:static?filename=apple-silicon/utm-storage.png" alt="Výběr velikosti úložiště v UTM"></a></span>
+<span class="figure"><a href="naucse:static?filename=apple-silicon/utm-shared-dir.png"><img src="naucse:static?filename=apple-silicon/utm-shared-dir.png" alt="Nastavení sdílené složky v UTM"></a></span>
+<span class="figure"><a href="naucse:static?filename=apple-silicon/utm-summary.png"><img src="naucse:static?filename=apple-silicon/utm-summary.png" alt="Shrnutí parametrů nového virtuálního stroje v UTM"></a></span></p>
+<p>Tím by mělo být vytvoření virtuálního počítače dokončeno!</p>
+<p>Nyní by mělo být možné jej spustit kliknutím na ikonku start.
+<span class="figure"><a href="naucse:static?filename=apple-silicon/utm-start-vm.png"><img src="naucse:static?filename=apple-silicon/utm-start-vm.png" alt="Spuštění virtuálního stroje v UTM"></a></span></p>
+<h2>Instalace Fedory</h2>
+<p>Samotná instalace je popsána v kapitole <a href="naucse:page?lesson=linuxadmin/installation&amp;page=index#install-system">instalace systému</a>.</p>
+<p>Po jejím přečtení a provedení všech instrukcí se ještě vrať na poslední krok zpátky sem.</p>
+<h2>Dokončení instalace</h2>
+<p>Nyní by Fedora měla být úspěšně nainstalována.</p>
+<p>Po vypnutí virtuálního stroje ještě klikni na "External Drive" a vyber možnost "Clear" jako na obrázku.
+<span class="figure"><a href="naucse:static?filename=apple-silicon/utm-finish.png"><img src="naucse:static?filename=apple-silicon/utm-finish.png" alt="Odstraněni externího disku v UTM"></a></span></p>
+<p>Poté by se po kliknutí na ikonku start měla spouštět nainstalovaná Fedora.</p>
+<p>Tohle by už mělo být opravdu všechno a můžeš pokračovat dále.</p>

@@ -9,6 +9,7 @@ vytvoř si virtuální počítač i pokud používáš Linux.</p>
 <strong>Hostitel</strong> (anglicky <strong>host</strong>) je termín označující operační systém/počítač, v rámci kterého budeš provozovat ten virtuální – tedy to, co máš na počítači nainstalováno už teď.
 Virtuálnímu systému se česky říká <strong>host</strong> (anglicky <strong>guest</strong>).
 Slovo <strong>host</strong> má tedy v češtině úplně opačný význam než v angličtině.</p>
+<p><a id="stazeni-obrazu"></a></p>
 <h2>Stažení obrazu</h2>
 <p>Na opravdový počítač se dá Linux nainstalovat z DVD nebo USB disku („flashky“).
 Pro virtuální počítač budeš potřebovat virtuální DVD – soubor, který
@@ -18,14 +19,19 @@ obsahuje stejná data jako disk.
 v dostupném software, grafickém prostředí, způsobu instalace softwarových
 balíčků a spoustě dalších detailů.
 Pro jednotnost si budeme všechno ukazovat na distribuci Fedora, kterou
-si stáhni z <a href="https://getfedora.org/cs/workstation/download/">getfedora.org</a> –
+si stáhni z <a href="https://getfedora.org/cs/workstation/download">getfedora.org</a> –
 stáhnout soubor ISO.</p>
 <p>Je to velký soubor (zhruba 2 GB) se jménem jako <code>Fedora-Workstation-Live-x86_64-39-1.5.iso</code>.</p>
+<h3>Poznámka pro uživatele macOS</h3>
+<p>Pokud máš macOS a nevíš jestli máš procesor Intel, přečti si nejdříve <a href="naucse:page?lesson=linuxadmin/installation&amp;page=apple-silicon#jak-poznat-ktery-procesor-mas">Jak poznat který procesor máš</a> a poté se vrať zpět sem.
+Jestli máš procesor od Apple řady M, pak si budeš muset stáhnout obraz pro systémy ARM aarch64.</p>
+<p>Tedy něco jako <code>Fedora-Workstation-Live-aarch64-39-1.5-respin.iso</code>.</p>
 <h1>Příprava hosta</h1>
 <p>Existuje několik programů, které umí simulovat virtuální počítač.
 Vyber si jeden podle svého hostitelského systému a ho:</p>
 <ul>
-<li>Pokud máš Windows nebo macOS, použij Virtualbox: <a href="naucse:page?lesson=linuxadmin/installation&amp;page=virtualbox">instalace Virtualboxu</a>.</li>
+<li>Pokud máš macOS a nevíš jestli máš procesor Intel, přečti si <a href="naucse:page?lesson=linuxadmin/installation&amp;page=apple-silicon">instalace na Apple Silicon</a></li>
+<li>Pokud máš Windows nebo macOS s procesorem Intel, použij Virtualbox: <a href="naucse:page?lesson=linuxadmin/installation&amp;page=virtualbox">instalace Virtualboxu</a>.</li>
 <li>Pokud máš Linux s GNOME, bude lépe fungovat Gnome Boxes: <a href="naucse:page?lesson=linuxadmin/installation&amp;page=gnome-boxes">instalace Gnome Boxes</a>.</li>
 </ul>
 <p>Nevíš-li, poraď se s někým zkušenějším – nebo zkus jeden z nich.</p>
