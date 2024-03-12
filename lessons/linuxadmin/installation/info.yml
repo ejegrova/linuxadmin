@@ -7,3 +7,5 @@ subpages:
         subtitle: VirtualBox
     gnome-boxes:
         subtitle: Gnome Boxes
+    apple-silicon:
+        subtitle: Instalace na Apple Silicon

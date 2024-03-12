@@ -14,7 +14,7 @@ Hned na začátku tě čeká malá terminologická nepříjemnost:
 Virtuálnímu systému se česky říká **host** (anglicky **guest**).
 Slovo **host** má tedy v češtině úplně opačný význam než v angličtině.
 
-
+{{ anchor('stazeni-obrazu') }}
 ## Stažení obrazu 
 
 Na opravdový počítač se dá Linux nainstalovat z DVD nebo USB disku („flashky“).
@@ -26,10 +26,17 @@ Existuje velké množství tzv. distribucí, tj. variant linuxů. Ty se liší t
 v dostupném software, grafickém prostředí, způsobu instalace softwarových
 balíčků a spoustě dalších detailů.
 Pro jednotnost si budeme všechno ukazovat na distribuci Fedora, kterou
-si stáhni z [getfedora.org](https://getfedora.org/cs/workstation/download/) –
+si stáhni z [getfedora.org](https://getfedora.org/cs/workstation/download) –
 stáhnout soubor ISO.
 
 Je to velký soubor (zhruba 2 GB) se jménem jako `Fedora-Workstation-Live-x86_64-39-1.5.iso`.
+
+### Poznámka pro uživatele macOS
+
+Pokud máš macOS a nevíš jestli máš procesor Intel, přečti si nejdříve [Jak poznat který procesor máš]({{ subpage_url('apple-silicon#jak-poznat-ktery-procesor-mas') }}) a poté se vrať zpět sem.
+Jestli máš procesor od Apple řady M, pak si budeš muset stáhnout obraz pro systémy ARM aarch64.
+
+Tedy něco jako `Fedora-Workstation-Live-aarch64-39-1.5-respin.iso`.
 
 
 # Příprava hosta
@@ -37,7 +44,8 @@ Je to velký soubor (zhruba 2 GB) se jménem jako `Fedora-Workstation-Live-x86_6
 Existuje několik programů, které umí simulovat virtuální počítač.
 Vyber si jeden podle svého hostitelského systému a ho:
 
-* Pokud máš Windows nebo macOS, použij Virtualbox: [instalace Virtualboxu]({{ subpage_url('virtualbox') }}).
+* Pokud máš macOS a nevíš jestli máš procesor Intel, přečti si [instalace na Apple Silicon]({{ subpage_url('apple-silicon') }})
+* Pokud máš Windows nebo macOS s procesorem Intel, použij Virtualbox: [instalace Virtualboxu]({{ subpage_url('virtualbox') }}).
 * Pokud máš Linux s GNOME, bude lépe fungovat Gnome Boxes: [instalace Gnome Boxes]({{ subpage_url('gnome-boxes') }}).
 
 Nevíš-li, poraď se s někým zkušenějším – nebo zkus jeden z nich.
