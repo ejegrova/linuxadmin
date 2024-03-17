@@ -107,7 +107,7 @@ používej radši jednoduché uvozovky.
 ## Echo do souboru
 
 `echo` je další způsob, jak vytvářet soubory.
-Znáš už `touch` a `nano` (případně jakýkoli jiný textový editor);
+Znáš už `touch` a `vim` (případně jakýkoli jiný textový editor);
 teď k nim přidej přesměrování z `echo`:
 
 ```console

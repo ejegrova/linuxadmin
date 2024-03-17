@@ -302,7 +302,7 @@ Tohle se reálně používá.
 V proměnné `EDITOR` spousta programů hledá editor, který spustí když
 chtějí aby uživatel změnil nějaký soubor – například když se Git ptá na
 popis změn.
-Ve Fedoře je nastaven na `/usr/bin/nano`, ale v `~/.bashrc` si můžeš nastavit
+Ve Fedoře je standardně nastaven na `/usr/bin/nano`, ale v `~/.bashrc` si můžeš nastavit
 jiný.
 (Pozor ale na to, že nastavení jako `git config` nebo proměnná `GIT_EDITOR`
 tuhle hodnotu „přebíjí“.)

@@ -110,7 +110,7 @@ blablabla
 > co napíšeš na klávesnici a nechá tě např. opravovat chyby pomocí
 > <kbd>Backspace</kbd>.
 > Příkazu předá až kompletní řádek, když stiskneš <kbd>Enter</kbd>.
-> (Tohle chování se dá vypnout; programy jako `nano` se starají
+> (Tohle chování se dá vypnout; programy jako `vim` se starají
 > o veškerý výstup samy.)
 > Druhé opakování přichází od příkazu `cat`, který vypisuje co od terminálu
 > obdrží, když zmáčkneš <kbd>Enter</kbd>.
@@ -231,7 +231,6 @@ můžeš ji vložit „do“ spuštěného příkazu `wc`.
 
 > [none]
 > Dnešní editory mají funkci počítání slov zabudovanou.
-> Je dokonce i v `nano` (pod <kbd>Alt</kbd>+<kbd>D</kbd>).
 > Ale textová políčka třeba v prohlížeči bývají „hloupější“.
 
 Tentokrát po napsání textu nemačkej <kbd>Ctrl</kbd>+<kbd>C</kbd> – tím bys

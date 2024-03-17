@@ -31,7 +31,7 @@ Pojďme si tento „program“ uložit do souboru.
 Zkus si založit v editoru soubor `klasifikace`:
 
 ```console
-$ nano klasifikace
+$ vim klasifikace
 ```
 
 > [note] Bez přípony
