@@ -163,7 +163,7 @@ uvidíš řádky jako:
 
 Co dělá který signál, to se dozvíš v dokumentaci konkrétního serveru.
 Signálů je málo, a tak se často „zneužívají“ – třeba `SIGWINCH` by se formálně
-měl posílat když se změní velikost terminálu; programy jako `nano` nebo
+měl posílat když se změní velikost terminálu; programy jako `vim` nebo
 `top` si po jeho přijetí zjistí novou velikost a překreslí výstup.
 Ale Apache `httpd` ho používá pro ukončení.
 

@@ -204,13 +204,21 @@ přehrávač a uloženou tuhle hudbu.)
 
 ## Vytváření souborů
 
-Přepni se do adresáře `clanek` a pak spusť *textový editor* jménem `nano`,
+Přepni se do adresáře `clanek` a pak spusť *textový editor* jménem `vim`,
 kterým vytvoříš soubor `osnova.txt`:
 
 ```console
 $ cd thesis
-$ nano osnova.txt
+$ vim osnova.txt
 ```
+
+Pokud editor není nainstalovaný, spusť následující příkaz k jeho instalaci:
+
+```console
+$ sudo dnf install vim -y
+```
+Následně budeš vyzvána k zadání hesla, napiš jej do příkazové řádky a stiskni <kbd>Enter</kbd>. 
+Neboj se, že se heslo nezobrazuje.
 
 > [Editor?]
 > `nano` je textový editor, podobně jako VSCode nebo Nano.
@@ -224,16 +232,14 @@ $ nano osnova.txt
 > I takový editor můžeš pustit z příkazové řádky. Většinou můžeš na příkazové
 > řádce i zadat soubor, který chceš vytvořit či změnit: `gedit osnova.txt`.
 
-Do editoru napiš pár řádek textu:
 
+Do editoru napiš pár řádek textu:
 {{ figure(
-  img=static('nano.png'),
-  alt='Editor Nano s otevřeným souborem',
+  img=static('vim.png'),
+  alt='Editor vim s otevřeným souborem',
 ) }}
 
 Potom soubor ulož a editor zavři.
-Jak se to dělá zkratkovitě napovídá dolní lišta, kde znak `^` znamená
-<kbd>Ctrl</kbd>.
 
 1. Uložit (zapsat) soubor: stiskni <kbd>Ctrl</kbd>+<kbd>O</kbd> a `nano`
    tě vyzve k zadání jména souboru. Jméno `osnova.txt`, které jsi zadal{{a}}
@@ -258,7 +264,7 @@ Jak se to dělá zkratkovitě napovídá dolní lišta, kde znak `^` znamená
 > Používáš-li Bash s klávesnicí pro macOS, jde často opravdu
 > o <kbd>Control</kbd>, nikoli <kbd>⌘ Command</kbd>.
 
-Když `nano` skončí, nic po sobě na obrazovce nenechá.
+Když `vim` skončí, nic po sobě na obrazovce nenechá.
 Můžeš si ale ověřit, že se soubor vytvořil:
 
 ```console

@@ -112,7 +112,7 @@ cp: nelze vytvořit obyčejný soubor '/usr/bin/mcd': Operace zamítnuta
 $ echo "..." > /usr/bin/mujprogram
 bash: /usr/bin/mujprogram: Operace zamítnuta
 
-$ nano /usr/bin/mujprogram   # obdobná chyba nastane při uložení
+$ vim /usr/bin/mujprogram   # obdobná chyba nastane při uložení
 ```
 
 Když budeš chtít podobně měnit systém, musíš poprosit administrátora systému,
@@ -607,11 +607,11 @@ $ sudo less /etc/shadow
 Jsme ve virtuálním počítači, pojďme ho trochu rozbít:
 
 ```console
-$ nano /usr/bin/zkouska
+$ vim /usr/bin/zkouska
 ```
 
 ```console
-$ sudo nano /usr/bin/zkouska
+$ sudo vim /usr/bin/zkouska
 ```
 
 Když jsem (přes `sudo`) superuživatelem, `su` se mě neptá na heslo:

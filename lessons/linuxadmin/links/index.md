@@ -203,7 +203,7 @@ A když do souboru něco zapíšeš, projeví se to tam i tam – `basnicka.txt`
 a `takybasnicka.txt` jsou jen dvě jména stejného souboru:
 
 > [note]
-> Pro zápis použij `echo` nebo `nano`; složitější editory můžou při
+> Pro zápis použij `echo` nebo `vim`; složitější editory můžou při
 > uložení vytvořit nový soubor.
 
 ```console

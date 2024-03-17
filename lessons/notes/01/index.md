@@ -158,7 +158,7 @@ Po zmáčknutí Enter to nic neřekne. Když program uspěje, tak je zticha. Chy
 ### Vytvoření prázdného souboru
 ```
 cd thesis
-nano draft.txt
+vim draft.txt
 ```
 Ten poslední rádek vytvoří nový soubor, otevře stávající, když už existuje.
 

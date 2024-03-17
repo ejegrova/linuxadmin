@@ -94,14 +94,14 @@ Pokud budeš mít za úkol napsát progress bar, určitě si na to nainstaluj kn
 Další sekvence umí smazat obrazovku, pohybovat kurzorem a podobně.
 
 Právě na tomto principu fungují terminálové editory.
-Kdybys přesvědčil{{a}} `nano`, že to na co je napojený je terminál (což bohužel není snadné),
+Kdybys přesvědčil{{a}} `vim`, že to na co je napojený je terminál (což bohužel není snadné),
 mohl{{a}} bys teoreticky udělat něco jako
 ```
-$ nano > /tmp/nano-vystup
+$ vim > /tmp/vim-vystup
 ```
 A výsledek si zobrazit třeba přes:
 ```
-less /tmp/nano-vystup
+less /tmp/vim-vystup
 ```
 
 Zkus si to s příkazem `sl`, který je potřeba doinstalovat:

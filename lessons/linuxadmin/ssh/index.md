@@ -16,7 +16,7 @@ Technicky to není složité: terminál je jen soubor, do kterého se zapisuje t
 co napíšeš na klávesnici a ze kterého lze číst výstup shellu a spouštěných
 programů.
 Dokonce i vychytávky jako barvičky nebo hrátky s kurzorem (které používá
-editor `nano` nebo skrolovátko `less`) se dají posílat jako text.
+editor `vim` nebo skrolovátko `less`) se dají posílat jako text.
 
 Nejsložitější na celé věci je komunikaci *zabezpečit*.
 Když se posílá všechno co napíšeš na klávesnici,
