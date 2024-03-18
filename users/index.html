@@ -77,7 +77,7 @@ měnit ani mazat:</p>
 <span class="gp">$ </span><span class="nb">echo</span> <span class="s2">&quot;...&quot;</span> &gt; /usr/bin/mujprogram
 <span class="go">bash: /usr/bin/mujprogram: Operace zamítnuta</span>
 
-<span class="gp">$ </span>nano /usr/bin/mujprogram   <span class="c1"># obdobná chyba nastane při uložení</span>
+<span class="gp">$ </span>vim /usr/bin/mujprogram   <span class="c1"># obdobná chyba nastane při uložení</span>
 </pre></div><p>Když budeš chtít podobně měnit systém, musíš poprosit administrátora systému,
 aby změny udělal.
 A když jsi administrátorkou ty, budeš na tyhle změny
@@ -398,8 +398,8 @@ aby umožnily opravdu jen to k čemu slouží.</p>
 <span class="gp">$ </span>sudo ls -l
 </pre></div><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo less /etc/shadow
 </pre></div><p>Jsme ve virtuálním počítači, pojďme ho trochu rozbít:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>nano /usr/bin/zkouska
-</pre></div><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo nano /usr/bin/zkouska
+<div class="highlight"><pre><span></span><span class="gp">$ </span>vim /usr/bin/zkouska
+</pre></div><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo vim /usr/bin/zkouska
 </pre></div><p>Když jsem (přes <code>sudo</code>) superuživatelem, <code>su</code> se mě neptá na heslo:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>sudo su test1
 </pre></div><p>Ale <code>sudo</code> funguje to jen pro <em>administrátory</em> (<code>wheel</code>):</p>
