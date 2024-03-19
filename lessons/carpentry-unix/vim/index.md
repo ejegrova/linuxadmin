@@ -24,7 +24,7 @@ ještě s klávesou <kbd>Ctrl</kbd>. Mnoho činností lze vykonat pomocí myši.
 
 Editor Vim vznikl jako následovník staršího editoru Vi, který se používal na
 UNIXových systémech vybavených monitorem. Klávesnice u terminálů tehdy běžně
-neměly kurzorové šipky ani navigační klávesy. Proto vznikl editor, která má
+neměly kurzorové šipky ani navigační klávesy. Proto vznikl editor, který má
 oddělené režimy vkládání textu od režimu pohybu kurzoru a manipulace s textem.
 
 U vimu rozlišujeme 3 hlavní režimy práce:
