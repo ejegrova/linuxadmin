@@ -74,11 +74,7 @@
                     }
                 },
                 "source_file": "lessons/carpentry-unix/create/info.yml",
-                "static_files": {
-                    "vim.png": {
-                        "path": "create/vim.png"
-                    }
-                },
+                "static_files": {},
                 "title": "Práce se soubory a adresáři"
             },
             "carpentry-unix/filedir": {
@@ -232,6 +228,36 @@
                 "source_file": "lessons/carpentry-unix/pipefilter-nelle/info.yml",
                 "static_files": {},
                 "title": "Nela a medúzy: Kontrola souborů"
+            },
+            "carpentry-unix/vim": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "napsal Martin Zelený, 2024",
+                            "založeno na kurzu <a href=\"https://github.com/ZelenyMartin/uvod-do-linuxu/tree/main/prikazova-radka/absolutni-minimum-editoru-vim\"><em>Úvod do Linuxu</em></a>, 2022 Martin Zelený"
+                        ],
+                        "content": {
+                            "path": "vim/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/carpentry-unix/vim/index.md",
+                        "title": "Textový editor Vim",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/carpentry-unix/vim/info.yml",
+                "static_files": {
+                    "vim.png": {
+                        "path": "vim/vim.png"
+                    }
+                },
+                "title": "Textový editor Vim"
             },
             "hw/bash-1": {
                 "pages": {
@@ -1625,6 +1651,11 @@
                     {
                         "lesson_slug": "carpentry-unix/create",
                         "title": "Práce se soubory a adresáři",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "carpentry-unix/vim",
+                        "title": "Textový editor Vim",
                         "type": "lesson"
                     },
                     {
