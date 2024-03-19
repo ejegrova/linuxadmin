@@ -204,78 +204,16 @@ přehrávač a uloženou tuhle hudbu.)
 
 ## Vytváření souborů
 
-Přepni se do adresáře `clanek` a pak spusť *textový editor* jménem `vim`,
-kterým vytvoříš soubor `osnova.txt`:
+Přepni se do adresáře `clanek` a vytvoř soubor `osnova.txt` pomocí příkazu
+`touch`:
 
 ```console
-$ cd thesis
-$ vim osnova.txt
+$ cd clanek
+$ touch osnova.txt
 ```
-
-Pokud editor není nainstalovaný, spusť následující příkaz k jeho instalaci:
-
-```console
-$ sudo dnf install vim -y
-```
-Následně budeš vyzvána k zadání hesla, napiš jej do příkazové řádky a stiskni <kbd>Enter</kbd>. 
-Neboj se, že se heslo nezobrazuje.
-
-> [Editor?]
-> `nano` je textový editor, podobně jako VSCode nebo Nano.
-> Je jednoduchý, má docela málo funkcí, ale protože je malý, bývá
-> předinstalovaný na spoustě systémů.
->
-> Ještě častěji než `nano` najdeš na Linuových systémech editor `vi`,
-> který je složitější na naučení, ale velice mocný.
->
-> A samozřejmě můžeš použít grafický editor `gedit`, nebo si nainstalovat jiný.
-> I takový editor můžeš pustit z příkazové řádky. Většinou můžeš na příkazové
-> řádce i zadat soubor, který chceš vytvořit či změnit: `gedit osnova.txt`.
-
-
-Do editoru napiš pár řádek textu:
-{{ figure(
-  img=static('vim.png'),
-  alt='Editor vim s otevřeným souborem',
-) }}
-
-Potom soubor ulož a editor zavři.
-
-1. Uložit (zapsat) soubor: stiskni <kbd>Ctrl</kbd>+<kbd>O</kbd> a `nano`
-   tě vyzve k zadání jména souboru. Jméno `osnova.txt`, které jsi zadal{{a}}
-   při spuštění, bude předvyplněné, tak jen stiskni <kbd>Enter</kbd>.
-
-2. Ukončit Nano: <kbd>Ctrl</kbd>+<kbd>X</kbd>.
-
-> [note]
-> Klávesové zktratky s <kbd>Ctrl</kbd> se na příkazové řádce zapisují různě.
-> Můžeš se setkat s těmito zápisy pro <kbd>Ctrl</kbd>+<kbd>X</kbd>:
-> * `Control-X`
-> * `Control+X`
-> * `Ctrl-X`
-> * `Ctrl+X`
-> * `^X`
-> * `C-X`
->
-> Který zápis je použit závisí na konextu, např. na tom, kolik je na obrazovce
-> k dispozici místa, nebo i na stáří aplikace.
-> (Historicky na sobě ta klávesa neměla vždy napsáno `Ctrl`.)
->
-> Používáš-li Bash s klávesnicí pro macOS, jde často opravdu
-> o <kbd>Control</kbd>, nikoli <kbd>⌘ Command</kbd>.
-
-Když `vim` skončí, nic po sobě na obrazovce nenechá.
-Můžeš si ale ověřit, že se soubor vytvořil:
-
-```console
-$ ls
-kapitola-1/  osnova.txt
-```
-
-{# (`touch` is left as an exercise) #}
 
 > [note] Různé způsoby práce se soubory
-> Vytvářet adresáře a asoubory samozřejmě můžeš i z grafického „klikátka“.
+> Vytvářet adresáře a soubory samozřejmě můžeš i z grafického „klikátka“.
 > Příkazy v terminálu a grafické programy jsou různé způsoby jak se soubory
 > pracovat, ale samotné soubory jsou vždy stejné.
 >
