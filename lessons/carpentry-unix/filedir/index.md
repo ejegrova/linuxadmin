@@ -676,7 +676,7 @@ Je tu 19 možností, které nezačínají všechny stejně.
 Když ale Nela zmáčkne <kbd>Tab</kbd> podruhé, všechny tyto možnosti se vypíšou
 a může si z nich vybrat – dopsat další písmenko a znovu zmáčknout <kbd>Tab</kbd>.
 
-Tomuhle se říká *doplňování taulátorem* (angl. *tab completion*) a velice
+Tomuhle se říká *doplňování tabulátorem* (angl. *tab completion*) a velice
 to zjednodušuje práci se shellem.
 
 
