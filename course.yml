@@ -93,6 +93,8 @@ sessions:
   - lesson: linuxadmin/fd
   - lesson: linuxadmin/fork-teaser
     title: "Bonus: Funkce, které ovládají proces"
+  - lesson: hw/process-log
+    type: homework
 
 - title: Bash III
   date: 2024-04-10
