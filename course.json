@@ -440,6 +440,31 @@
                 "static_files": {},
                 "title": "Úkol"
             },
+            "hw/process-log": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "napsal Ladislav Hano, 2023"
+                        ],
+                        "content": {
+                            "path": "process-log/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/hw/process-log/index.md",
+                        "title": "Úkol - Zápis údajů o procesech",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/hw/process-log/info.yml",
+                "static_files": {},
+                "title": "Úkol - Zápis údajů o procesech"
+            },
             "hw/sudo": {
                 "pages": {
                     "index": {
@@ -1750,6 +1775,11 @@
                         "lesson_slug": "linuxadmin/fork-teaser",
                         "title": "Bonus: Funkce, které ovládají proces",
                         "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "hw/process-log",
+                        "title": "Úkol - Zápis údajů o procesech",
+                        "type": "homework"
                     }
                 ],
                 "serial": "3",
