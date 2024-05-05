@@ -56,7 +56,7 @@ ze [stránek PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.ht
 
 Na rozdíl od `httpd` se balíček s SSH serverem ve Fedoře nejmenuje `sshd`.
 Historicky totiž byl pro HTTP k dispozici jen Apache,
-ale pro SSH bylo na výběr z více několik možností.
+ale pro SSH bylo na výběr z více možností.
 Dnes se většinou používá OpenSSH, který si nainstaluj následovně:
 
 ```console
