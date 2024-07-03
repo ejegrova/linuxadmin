@@ -19,9 +19,9 @@ Funkce `sys.exit()` vyhodí výjimku, která – když ji nezpracuješ – ukon�
 program s danou návratovou hodnotou.
 
 ```python
-import os
+import sys
 try:
-    os._exit(7)
+    sys.exit(7)
 finally:
     print('Tohle se vypíše')
 print('Tohle už ne')
