@@ -10,9 +10,9 @@ Dokonce i <code>time.sleep(10000000)</code> se časem vrátí, jen to dlouho trv
 Program který na výjimku není připravený skončí.</p>
 <p>Funkce <code>sys.exit()</code> vyhodí výjimku, která – když ji nezpracuješ – ukončí
 program s danou návratovou hodnotou.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">_exit</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
 <span class="k">finally</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tohle se vypíše&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tohle už ne&#39;</span><span class="p">)</span>
