@@ -1,12 +1,12 @@
 # Instalace na Apple Silicon
 ## Potřebuješ vůbec tento návod?
-Tento návod budeš potřebovat pokud používáš počítač od Apple s Apple procesory řady M (také známa jako Apple Silicon). 
+Tento návod budeš potřebovat, pokud používáš počítač od Apple s Apple procesory řady M (také známa jako Apple Silicon). 
 
 Tyto procesory se v Apple počítačích začaly objevovat v roce 2020.
 
 Jestli už víš, že Tvé zařízení používá procesor Intel, můžeš přestat číst tento návod a přejdi [sem]({{ subpage_url('virtualbox') }}).
 
-Pokud jsi stále na pochybách, raději zkontroluj jaké zařízení vlastně máš.
+Pokud jsi stále na pochybách, raději zkontroluj, jaké zařízení vlastně máš.
 
 {{ anchor('jak-poznat-ktery-procesor-mas') }}
 ### Jak poznat který procesor máš
@@ -107,7 +107,7 @@ Obraz by v názvu měl obsahovat "Fedora" a mít koncovku `.iso`, případně b�
 
 Tím by mělo být vytvoření virtuálního počítače dokončeno!
 
-Nyní by mělo být možné jej spustit kliknutím na ikonku start.
+Nyní by mělo být možné jej spustit kliknutím na ikonku "Start".
 {{ figure(
     img=static('apple-silicon/utm-start-vm.png'),
     alt='Spuštění virtuálního stroje v UTM',
