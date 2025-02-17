@@ -13,7 +13,7 @@ a vpravo několik ikonek. (Všechno to samozřejmě jde různě přenastavit.)
     alt='GNOME Shell',
 ) }}
 
-Kliknutím na tlačítko vlevo nahoře, příp. stiskem klávesy windows 
+Kliknutím na tlačítko vlevo nahoře, příp. stiskem klávesy "Windows", 
 se ukáže přehled:
 
 {{ figure(
@@ -26,7 +26,7 @@ se ukáže přehled:
   grafických programů.
 
 * Nahoře je hledací lišta, pomocí které můžeš hledat programy ke spuštění,
-  soubory k otevření, nastavení ke změně, a tak podobně.
+  soubory k otevření, nastavení ke změně a tak podobně.
 
   *Tip*: Na hledací lištu není potřeba klikat, stačí začít psát na klávesnici!
 
@@ -65,7 +65,7 @@ Ukáže se menu se systémovým nastavením: hlasitost zvuku, připojení k int
 nastavení, vypnutí/odhlášení.
 (Na opravdovém počítači tu najdeš i např. nastavení jasu obrazovky, Bluetooth,
 atd.)
-Nastavení (doporučuju časem postupně projít, abys zjistil{{a}} co všechno je
+Nastavení (doporučuju časem postupně projít, abys zjistil{{a}}, co všechno je
 možné).
 
 {{ figure(
