@@ -3,13 +3,13 @@
 Máme tu kurz Linuxové administrace, ale co je vlastně Linux?
 
 Striktně řečeno, *Linux* je název *jádra* (angl. *kernel*) operačního systému,
-tedy softwaru, který se stará o najzákladnější funkčnost počítače:
+tedy softwaru, který se stará o nejzákladnější funkčnost počítače:
 o komunikaci s hardwarem (klávesnicí, obrazovkou, diskem, síťovou kartou atd.),
 a o to, aby na počítači mohly běžet ostatní programy.
 
 Celý systém se pak skládá ze spousty dalších komponent, které se starají např.
 o spouštění programů, vykreslování grafických okýnek, připojování k internetu,
-ediaci souborů nebo přehrávání hudby.
+editaci souborů nebo přehrávání hudby.
 
 Na to všechno existuje software s *otevřeným zdrojovým kódem* (Open Source),
 což znamená, že si kdokoli může stáhnout kód daného programu a upravit si ho
