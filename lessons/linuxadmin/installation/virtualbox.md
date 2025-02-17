@@ -1,6 +1,6 @@
 # Virtuální počítač – instalace VirtualBox
 
-Virtualbox si nejdříve stáhni a nainstaluj z webových stránek https://www.virtualbox.org/wiki/Downloads a postupuj podle pokynů k tvému aktuálně běžícímu operačnímu systému (hostiteli).
+VirtualBox si nejdříve stáhni a nainstaluj z webových stránek https://www.virtualbox.org/wiki/Downloads a postupuj podle pokynů k tvému aktuálně běžícímu operačnímu systému (hostiteli).
 
 Když program spustíš, objeví se grafické okno.
 Klikni na tlačitko „Nový“ a pokračuj podle obrázkového návodu:
@@ -39,8 +39,8 @@ Klikni na tlačitko „Nový“ a pokračuj podle obrázkového návodu:
 
 
 5. Tím je virtuální počítač vytvořen.
-   Spusť ho zelenou šipečkou „spustit“.
-   VirtualBox se zeptá na *obraz disku* ze kterého bude instalovat.
+   Spusť ho zelenou šipečkou „Spustit“.
+   VirtualBox se zeptá na *obraz disku*, ze kterého bude instalovat.
    Vyber *obraz disku*, který sis stáhl{{a}} dříve.
 
   {{ figure(
