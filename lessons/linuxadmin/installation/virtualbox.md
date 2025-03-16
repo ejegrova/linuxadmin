@@ -39,7 +39,7 @@ Klikni na tlačitko „Nový“ a pokračuj podle obrázkového návodu:
 
 
 5. Tím je virtuální počítač vytvořen.
-   Spusť ho zelenou šipečkou „Spustit“.
+   Spusť ho zelenou šipečkou "Spustit".
    VirtualBox se zeptá na *obraz disku*, ze kterého bude instalovat.
    Vyber *obraz disku*, který sis stáhl{{a}} dříve.
 
