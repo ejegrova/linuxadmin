@@ -65,7 +65,7 @@ Ukáže se menu se systémovým nastavením: hlasitost zvuku, připojení k int
 nastavení, vypnutí/odhlášení.
 (Na opravdovém počítači tu najdeš i např. nastavení jasu obrazovky, Bluetooth,
 atd.)
-Nastavení (doporučuju časem postupně projít, abys zjistil{{a}}, co všechno je
+Nastavení (doporučuju časem postupně projít, abys zjistila, co všechno je
 možné).
 
 {{ figure(
