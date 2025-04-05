@@ -35,7 +35,7 @@ Vzhledem k omezením spojených s architekturou Apple Silicon procesorů bude ne
 UTM je svobodný software, což mimo jiné znamená, že je zcela zdarma.
 
 Pokud náhodou používáš balíčkovací nástroj brew, UTM nainstaluješ v terminálu pomocí příkazu 
-`brew install --cask utm` a můžeš pokračovat [další kapitolou]({{ subpage_url('#vytvoření-virtuálního-počítače') }}).
+`brew install --cask utm` a můžeš pokračovat [další kapitolou]({{ subpage_url('apple-silicon#vytvoreni-virtualniho-pocitace') }}).
 
 Jinak UTM můžeš stáhnout z [oficiálních stránek](https://mac.getutm.app) kliknutím na tlačítko "Download".
 {{ figure(
@@ -63,6 +63,7 @@ Na ten cvakni a vyskočí na tebe instalační okno.
 Nyní přetáhni UTM do složky "Applications".
 Tím by měla být instalace dokončena.
 
+{{ anchor('vytvoreni-virtualniho-pocitace') }}
 ## Vytvoření virtuálního počítače
 {{ figure(
     img=static('apple-silicon/utm-create-vm.png'),
