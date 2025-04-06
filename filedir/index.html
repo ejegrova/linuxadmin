@@ -1,4 +1,6 @@
-<h1>Navigace v souborech a adresářích</h1>
+<h1 id="navigace_vsouborech_a_adresarich">Navigace v souborech a adresářích
+<a href="#navigace_vsouborech_a_adresarich" class="header-link">#</a>
+</h1>
 <p>Část operačního systému, která se stará o soubory a adresáře,
 je <em>souborový systém</em>.
 Organizuje data do souborů (angl. <em>files</em>), které obsahují informace,
@@ -30,7 +32,8 @@ Vypadá to zhruba nějak takhle:</p>
  ├── bin
  ├── etc
  ├── home
- ╰── tmp</code></pre></div><p>Na začátku je <em>kořenový adresář</em> (angl. <em>root directory</em>), který obsahuje
+ ╰── tmp
+</code></pre></div><p>Na začátku je <em>kořenový adresář</em> (angl. <em>root directory</em>), který obsahuje
 všechno ostatní.
 Jmenuje se <code>/</code>, lomítko; to je to první lomítko v <code>/home/nela</code>.</p>
 <p>V tomto adresáři je několik dalších adresářů: <code>bin</code> (kde jsou programy),
@@ -55,7 +58,8 @@ Nela zrovna používá sdílený univerzitní systém, takže je tu víc:</p>
  │ ├── imhotep
  │ ├── matyas
  │ ╰── nela
- ╰── tmp</code></pre></div><p>Uživatel <em>imhotep</em> má domovský adresář <code>/home/imhotep</code>,
+ ╰── tmp
+</code></pre></div><p>Uživatel <em>imhotep</em> má domovský adresář <code>/home/imhotep</code>,
 Matyáš má <code>/home/matyas</code>.
 A protože v našem příkladu počítač používá Nela, je domovský adresář
 <code>/home/nela</code>.
@@ -75,7 +79,7 @@ Můžeš zařídit, aby ukázal víc informací: přidej <em>přepínač</em>
 <li><code>*</code> značí spustitelné soubory,</li>
 <li>bez symbolu jsou normální soubory.</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -F
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F
 <span class="go">Dokumenty/  Obrázky/  Stažené/  Veřejné/</span>
 <span class="go">Hudba/      Plocha/   Šablony/  Videa/</span>
 </pre></div><div class="admonition note"><p>Přepínač od názvu příkazu musíš oddělit mezerou.
@@ -95,9 +99,11 @@ Pořád se můžeš vracet k předchozím příkazům pomocí <kbd>↑</kbd> a
 <kbd>↓</kbd>, nebo se i dostat k historii textu rolováním kolečkem myši.</p>
 <p>Příkaz <code>clear</code> dělá něco podobného, ale smaže víc historie – rolování
 fungovat nebude, ale <kbd>↑</kbd>/<kbd>↓</kbd> ano.</p>
-</div><h2>Syntax shellového příkazu</h2>
+</div><h2 id="syntax_shelloveho_prikazu">Syntax shellového příkazu
+<a href="#syntax_shelloveho_prikazu" class="header-link">#</a>
+</h2>
 <p>Teď zadej příkaz níže; rozebereme si ho:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -F /
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F<span class="w"> </span>/
 </pre></div><p>Ono <code>ls</code> na začátku je <em>příkaz</em>, kterému dáváš <em>přepínač</em> <code>-F</code> a <em>argument</em> <code>/</code>.</p>
 <p>Přepínač <code>-F</code> jsme už viděli.
 Přepínače obecně nějakým způsobem mění chování příkazu.
@@ -117,7 +123,7 @@ Kdybys vynechala mezeru mezi <code>-F</code>  a <code>/</code>, dostal by progra
 <code>-F/</code>, což taky nebude fungovat.</p>
 <p>A záleží na velikosti písmen. Příkaz <code>LS</code> neexistuje.
 Příkaz <code>ls -s</code> vypíše velikost souborů; <code>ls -S</code> soubory podle velikosti seřadí:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -s /bin
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-s<span class="w"> </span>/bin
 <span class="go">celkem 271152</span>
 <span class="go">   64 [</span>
 <span class="go">   64 ab</span>
@@ -129,7 +135,7 @@ Příkaz <code>ls -s</code> vypíše velikost souborů; <code>ls -S</code> soubo
 <span class="go">  124 afs5log</span>
 <span class="go">    4 alias</span>
 <span class="go">...</span>
-</pre></div><div class="highlight"><pre><span></span><span class="gp">$ </span>ls -S /bin
+</pre></div><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-S<span class="w"> </span>/bin
 <span class="go">podman</span>
 <span class="go">qemu-system-x86_64</span>
 <span class="go">qemu-system-i386</span>
@@ -138,7 +144,7 @@ Příkaz <code>ls -s</code> vypíše velikost souborů; <code>ls -S</code> soubo
 <span class="go">gnome-control-center</span>
 <span class="go">...</span>
 </pre></div><p>Jsou to dva různé přepínače, které se dají zkombinovat:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -s -S /bin
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-s<span class="w"> </span>-S<span class="w"> </span>/bin
 <span class="go">celkem 271152</span>
 <span class="go">56432 podman</span>
 <span class="go">13000 qemu-system-x86_64</span>
@@ -147,7 +153,9 @@ Příkaz <code>ls -s</code> vypíše velikost souborů; <code>ls -S</code> soubo
 <span class="go"> 4700 cstool</span>
 <span class="go"> 4564 gnome-control-center</span>
 <span class="go">...</span>
-</pre></div><h2>Nápověda</h2>
+</pre></div><h2 id="napoveda">Nápověda
+<a href="#napoveda" class="header-link">#</a>
+</h2>
 <p>Příkaz <code>ls</code> má spoustu dalších přepínačů.
 Prakticky nikdo si je nepamatuje všechny.</p>
 <p>Jsou dva časté způsoby, jak zjistit jak se ten který příkaz používá:</p>
@@ -159,11 +167,13 @@ Prakticky nikdo si je nepamatuje všechny.</p>
 <div class="highlight"><pre><span></span><span class="go">man ls</span>
 </pre></div></li>
 </ol>
-<h3>Přepínač <code>--help</code></h3>
+<h3 id="prepinac_code--helpcode">Přepínač <code>--help</code>
+<a href="#prepinac_code--helpcode" class="header-link">#</a>
+</h3>
 <p>Spousta programů psaných pro shell zná přepínač <code>--help</code>, který vypíše
 zhuštěné informace o tom, jaké přepínače příkaz umí zpracovat.
 Zkontroluj si, že <code>ls</code> už pokryl skoro celou abecedu:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls --help
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>--help
 <span class="go">Použití: ls [PŘEPÍNAČ]… [SOUBOR]…</span>
 <span class="go">Vypisuje informace o SOUBORECH (implicitně z aktuálního adresáře). Jestliže</span>
 <span class="go">není zadán žádný z přepínačů -cftuvSUX nebo --sort, výstup bude seřazen</span>
@@ -194,10 +204,12 @@ Zkontroluj si, že <code>ls</code> už pokryl skoro celou abecedu:</p>
 </pre></div><div class="admonition note"><p class="admonition-title">Nepodporované přepínače</p>
 <p>Když zadáš přepínač, který daný příkaz nezná, dostaneš většinou chybovou
 hlášku, která tě navede na <code>--help</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -j
-</pre></div></div><h3>Příkaz <code>man</code></h3>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-j
+</pre></div></div><h3 id="prikaz_codemancode">Příkaz <code>man</code>
+<a href="#prikaz_codemancode" class="header-link">#</a>
+</h3>
 <p>Druhá možnost jak se něco dozvědět o příkazu <code>ls</code> je:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>man ls
+<div class="highlight"><pre><span></span><span class="gp">$ </span>man<span class="w"> </span>ls
 </pre></div><p>To z terminálu udělá „čtečku“ (<em>pager</em>) s podrobnějším popisem příkazu a
 jeho přepínačů.</p>
 <p>K navigaci v dokumentu můžeš použít šipky <kbd>↑</kbd> a <kbd>↓</kbd>,
@@ -213,10 +225,12 @@ O překlad se starají dobrovolníci: nemusí být vždy úplně aktuální
 a někdy o neaktuálnosti najdeš i varování.</p>
 <p>Základní funkčnost příkazů jako <code>ls</code> se nemění desítky let,
 takže neaktuálnost často zas tolik nevadí. Kdybys ale chtěla oficiální
-nápovědu v angličtině, napiš na začátek příkazu <code>LANG=en_US</code> (bez mezer kolem
+nápovědu v angličtině, napiš na začátek příkazu <code>LANG=en_US </code> (bez mezer kolem
 rovnítka, s mezerou za <code>en_US</code>):</p>
-<div class="highlight"><pre><span></span>$ <span class="nv">LANG</span><span class="o">=</span>en man ls
-</pre></div></div><h3>Web</h3>
+<div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nv">LANG</span><span class="o">=</span>en<span class="w"> </span>man<span class="w"> </span>ls
+</pre></div></div><h3 id="web">Web
+<a href="#web" class="header-link">#</a>
+</h3>
 <p>Třetí možnost, jak dostat informace o příkazu, je samozřejmě Internet.
 Když k hledanému výrazu připíšeš <code>unix command</code> nebo <code>unix man page</code>,
 dostaneš relevantnější výsledky.</p>
@@ -224,7 +238,9 @@ dostaneš relevantnější výsledky.</p>
 stránky projektu GNU, kde najdeš oficiální zevrubnou dokumentaci
 k <a href="https://www.gnu.org/software/coreutils/manual/coreutils.html">základním příkazům</a>
 i <a href="https://www.gnu.org/manual/manual.html">ostatním GNU projektům</a>.</p>
-<h2>Další přepínače pro <code>ls</code></h2>
+<h2 id="dalsi_prepinace_pro_codelscode">Další přepínače pro <code>ls</code>
+<a href="#dalsi_prepinace_pro_codelscode" class="header-link">#</a>
+</h2>
 <p>Co dělá přepínač <code>-l</code>?
 Co se stane, když <code>-l</code> zkombinuješ s <code>-h</code>?</p>
 <p>Už víš kde najít nápovědu, tak zkus zjistit odpověď.</p>
@@ -235,11 +251,13 @@ Co se stane, když <code>-l</code> zkombinuješ s <code>-h</code>?</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <p>Přepínač <code>-l</code> zapne „dlouhý“ formát, kde je vidět spousta dalších informací
-o souborech: velikost, datum poslední změny, nebo vlastníka.
-Když přidáš <code>-h</code> (tedy: <code>ls -h -l</code>), velikost souboru se zobrazí ve formátu
-„pro lidi“, zaokrouhleně — např. místo <code>5369</code> se vypíše <code>5.3K</code>.</p>
+<span></span>o souborech: velikost, datum poslední změny, nebo vlastníka.
+<span></span>Když přidáš <code>-h</code> (tedy: <code>ls -h -l</code>), velikost souboru se zobrazí ve formátu
+<span></span>„pro lidi“, zaokrouhleně — např. místo <code>5369</code> se vypíše <code>5.3K</code>.</p>
     </div>
-</div><p>Příkaz <code>ls</code> normálě řadí soubory podle abecedy (A-Z).
+</div>
+
+<p>Příkaz <code>ls</code> normálě řadí soubory podle abecedy (A-Z).
 Příkaz <code>ls -t</code> je seřadí podle data poslední změny.
 Příkaz <code>ls -r</code> je seřadí podle abecedy, ale opacně (Z-A)</p>
 <p>Tipneš si, co dělá příkaz <code>ls -t -r</code>?</p>
@@ -250,10 +268,14 @@ Příkaz <code>ls -r</code> je seřadí podle abecedy, ale opacně (Z-A)</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <p><code>ls -t -r</code> seřadí soubory podle data poslední změny, od nejnovějšího.
-To se může hodit až budeš hledat kde jsi naposledy udělala změnu,
-nebo jestli se objevil nový výstupní soubor.</p>
+<span></span>To se může hodit až budeš hledat kde jsi naposledy udělala změnu,
+<span></span>nebo jestli se objevil nový výstupní soubor.</p>
     </div>
-</div><h2>Kombinování přepínačů</h2>
+</div>
+
+<h2 id="kombinovani_prepinacu">Kombinování přepínačů
+<a href="#kombinovani_prepinacu" class="header-link">#</a>
+</h2>
 <p>Jednopísmenné přepínače, které začínají jednou pomlčkou, se dají kombinovat
 dohromady:</p>
 <ul>
@@ -263,18 +285,20 @@ dohromady:</p>
 <p>U „dlouhých“ přepínačů jako <code>--help</code> to nefunguje.</p>
 <div class="admonition note"><p>Takhle funguje naprostá většina příkazů, ale některé – často starší nebo
 nějak specializované – používají jiné konvence.</p>
-</div><h2>Obsah dalších adresářů</h2>
+</div><h2 id="obsah_dalsich_adresaru">Obsah dalších adresářů
+<a href="#obsah_dalsich_adresaru" class="header-link">#</a>
+</h2>
 <p>Příkaz <code>ls</code> umí zobrazit obsah jakéhokoli adresáře, ne jen toho aktuálního.
 Podívej se teď do svého adresáře <code>Dokumenty</code>, a to s přepínačem <code>-F</code>, který
 označí druhy souborů.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -F Dokumenty
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F<span class="w"> </span>Dokumenty
 <span class="go">data-shell.zip   data-shell/</span>
 </pre></div><p>Měla bys vidět všechny soubory ve svých Dokumentech: archiv, který jsi
 před chvílí stáhla a adresář, kam se rozbalil.
 A možná i nějaké jiné.</p>
 <p>Na adresář <code>data-shell</code>, který je v Dokumentech, se můžeš podívat několika způsoby.</p>
 <p>První je zadat <em>cestu</em> k němu, tedy <code>Dokumenty/data-shell</code>.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -F Dokumenty/data-shell
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F<span class="w"> </span>Dokumenty/data-shell
 <span class="go">creatures/          molecules/          notes.txt           solar.pdf</span>
 <span class="go">data/               north-pacific-gyre/ pizza.cfg           writing/</span>
 </pre></div><p>Příkaz <code>ls</code> se podíval do adresáře <code>Dokumenty</code> a v něm pak do adresáře
@@ -282,19 +306,19 @@ A možná i nějaké jiné.</p>
 <div class="admonition note"><p>Cesta <code>Dokumenty/data-shell</code> nezačíná lomítkem, vychází tedy z aktuálního
 adresáře. Můžeš použít „celou“ cestu, která lomítkem začíná,
 ale v té musíš uvést i svůj domovsý adresář. Například:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -F /home/nela/Dokumenty/data-shell<span class="sb">`</span>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F<span class="w"> </span>/home/nela/Dokumenty/data-shell<span class="sb">`</span>
 </pre></div></div><p>Další způsob je tou cestou projít pomocí příkazu <code>cd</code>, který změní aktuální
 adresář (z angl. <strong>c</strong>hange <strong>d</strong>irectory).
 (To jméno je trošku zavádějící: v adresáři se nic nezmění,
 jen příkazová řádka začne pracovat v jiném adresáři.
 Jako bys na ten adresář klikla v grafickém prohlížeči souborů.)</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> Dokumenty
-<span class="gp">$ </span><span class="nb">cd</span> data-shell
-<span class="gp">$ </span><span class="nb">cd</span> data
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>Dokumenty
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>data-shell
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>data
 </pre></div><p>Každý příkaz <code>cd</code> změní tvůj aktuální adresář, takže celá tahle série příkazů
 tě postupně provede přes <code>Dokumenty</code> a <code>Dokumenty/data-shell</code> až do
 <code>Dokumenty/data-shell/data</code>.</p>
-<p>Všimni si že samotný příkaz <code>cd</code> nic nevypisuje.
+<p>Všimni si že samotný příkaz <code>cd </code> nic nevypisuje.
 To je normální.
 Když se něco nepovede, dostaneš chybovou hlášku; když je všechno v pořádku,
 není potřeba tě otravovat.</p>
@@ -303,18 +327,18 @@ ale kdyby to nestačilo, můžeš se vždycky zeptat kde jsi:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">pwd</span>
 <span class="go">/home/nela/Dokumenty/data-shell/data</span>
 </pre></div><p>Příkaz <code>ls -F</code> teď bude ukazovat obsah nového aktuálního adresáře:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -F
-<span class="go">amino-acids.txt   elements/     pdb/            salmon.txt</span>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F
+<span class="go">amino-acids.txt   elements/     pdb/	        salmon.txt</span>
 <span class="go">animals.txt       morse.txt     planets.txt     sunspot.txt</span>
 </pre></div><p>Když teď zkusíš „jít“ do adresáře <code>data-shell</code>, nepůjde to.
 V aktuálním adresáři žádný <code>data-shell</code> neexistuje:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> data-shell
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>data-shell
 <span class="go">-bash: cd: data-shell: Adresář nebo soubor neexistuje</span>
 </pre></div><p>Na disku samozřejmě nějaký adresář <code>data-shell</code> máš, a dokonce docela „blízko“,
 ale <code>cd</code> – a ostatní příkazy shellu – hledají pouze v aktuálním adresáři,
 a nikde jinde.</p>
 <p>Aby ses dostala do „nadřazeného“ adresáře, použij dvě tečky, <code>..</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> ..
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>..
 </pre></div><p>Dvě tečky jsou vždy jméno <em>nadřazeného</em> adresáře (angl. <em>parent directory</em>),
 tedy adresáře, který obsahuje ten aktuální.
 Můžeš si to ověřit pomocí <code>pwd</code>:</p>
@@ -322,7 +346,7 @@ Můžeš si to ověřit pomocí <code>pwd</code>:</p>
 <span class="go">/home/nela/Dokumenty/data-shell/</span>
 </pre></div><p>Speciální adresář <code>..</code> se normálně neukazuje, ale můžeš ho zobrazit pomocí
 přepínače <code>-a</code> (nebo ekvivalentního <code>--all</code>):</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -aF
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-aF
 <span class="go">./   .bash_profile  data/       north-pacific-gyre/  pizza.cfg  thesis/</span>
 <span class="go">../  creatures/     molecules/  notes.txt            solar.pdf  writing/</span>
 </pre></div><p>Vida! objevilo se několik položek, které předtím byly skryté:</p>
@@ -338,8 +362,8 @@ soubor <code>.gitignore</code>.)</li>
 jména příslušných adresářů.
 Můžeš je použít kdykoli, když pojmenováváš adresář, dokonce i jako součást
 cesty. Zkus si:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls ..
-<span class="gp">$ </span>ls creatures/../data/
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>..
+<span class="gp">$ </span>ls<span class="w"> </span>creatures/../data/
 </pre></div><div class="admonition note"><p>Teď je doufám vidět, proč se pojmenování adresáře (nebo souboru)
 s použitím podadresářů se říká <em>cesta</em> (angl. <em>path</em>): cesta říká, jak se
 „dostat“ na nějaké místo.
@@ -369,12 +393,14 @@ v nápovědě daného příkazu.
 Některé příkazy (jako <code>ls -</code>) si ale pomlčku vyloží jako normální argument.</p>
 </div><p>Jsi-li teď v domovském adresáři, zkus <code>cd</code> dát celou cestu – místo tří
 příkazů <code>cd</code> použij jeden, s jmény jednotlivých adresářů oddělenými <code>/</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> Dokumenty/data-shell/data
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>Dokumenty/data-shell/data
 </pre></div><p>A pomocí <code>pwd</code> zkontroluj, že jsi na stejném místě jako po sekvenci
 <code>cd Dokumenty</code>; <code>cd data-shell</code>; <code>cd data</code>, tedy:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">pwd</span>
 <span class="go">/home/nela/Dokumenty/data-shell/data</span>
-</pre></div><h2>Relativní a absolutní cesty</h2>
+</pre></div><h2 id="relativni_a_absolutni_cesty">Relativní a absolutní cesty
+<a href="#relativni_a_absolutni_cesty" class="header-link">#</a>
+</h2>
 <p>Do domovského adresáře se teď můžeš dostat pomocí několika způsobů:</p>
 <ul>
 <li><code>cd</code> bez argumentu</li>
@@ -383,7 +409,7 @@ příkazů <code>cd</code> použij jeden, s jmény jednotlivých adresářů od
 </ul>
 <p>Další způsob je použití <em>absolutní cesty</em> (angl. <em>absolute path</em>).
 Je to <em>celé</em> jméno adresář, včetně počátečního lomítka:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> /home/nela
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>/home/nela
 </pre></div><p>Absolutní cesta označuje daný adresář, ať už jsi kdekoli.
 Některé příklady absolutních cest jsou:</p>
 <ul>
@@ -403,7 +429,9 @@ Jakákoli cesta bez počátečního lomítka je relativní:</p>
 <p>Ať už je cesta relativní nebo absolutní, lomítko <em>na konci</em> značí,
 že jde o adresář.
 Tohle koncové lomítko můžeš vynechat.</p>
-<h2>Vlnovková zkratka</h2>
+<h2 id="vlnovkova_zkratka">Vlnovková zkratka
+<a href="#vlnovkova_zkratka" class="header-link">#</a>
+</h2>
 <p>Shell dává speciální význam znaku <code>~</code> (vlnovka).
 Když nějaký argument začíná <code>~/</code> (nebo je jen <code>~</code>), shell místo něj doplní tvůj
 domovský adresář (a vytvoří tak absolutní cestu).
@@ -421,7 +449,9 @@ jména adresářů se vším všudy.</p>
 Například příkaz <code>echo</code> svůj argument vypíše;
 vyzkoušej si, do dělá <code>echo Ahoj!</code> a <code>echo ~/Ahoj!</code></p>
 </div><p>(XXX: Další cvičení – viz <a href="http://swcarpentry.github.io/shell-novice/02-filedir/index.html#absolute-vs-relative-paths">SC</a>)</p>
-<h2>Nela a medúzy – Doplňování</h2>
+<h2 id="nela_a_meduzy_doplnovani">Nela a medúzy – Doplňování
+<a href="#nela_a_meduzy_doplnovani" class="header-link">#</a>
+</h2>
 <p>Nela teď ví spoustu nových věcí o adresářích a chce si zorganizovat
 soubory, které bude vytvářet.
 Vytvořila si proto adresář <code>north-pacific-gyre</code> (severní tichomořský vír)
@@ -443,25 +473,27 @@ Protože jeji přístroje zapisují textové soubory, ukládá je jako
 <code>NENE01729A.txt</code>, <code>NENE01812A.txt</code>, atd.
 Všech 1520 souborů přijde do stejného adresáře.</p>
 <p>Teď, když je v adresáři <code>data-shell</code>, se na soubory podívá příkazem:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -F north-pacific-gyre/2012-07-03
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F<span class="w"> </span>north-pacific-gyre/2012-07-03
 </pre></div><p>To je docela dost písmenek, ale může si to ulehčit: napíše jen:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -F nor
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F<span class="w"> </span>nor
 </pre></div><p>… a zmáčkne <kbd>Tab</kbd>. Shell automaticky doplní jméno adresáře, který
 začíná na <code>nor</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -F north-pacific-gyre/
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F<span class="w"> </span>north-pacific-gyre/
 </pre></div><p>A pak zmáčkne <kbd>Tab</kbd>. Shell automaticky doplní jméno jediného adresáře
 – <code>2012-07-03/</code>.
 (Kdyby tu byl ještě, řekněme, <code>2019-09-12</code>, shell by doplnil jen <code>201</code> a další
 písmenko by nechal Nelu dopsat.)</p>
 <p>Výsledek je:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -F north-pacific-gyre/2012-07-03/
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F<span class="w"> </span>north-pacific-gyre/2012-07-03/
 </pre></div><p>Další <kbd>Tab</kbd> už neudělá nic.
 Je tu 19 možností, které nezačínají všechny stejně.
 Když ale Nela zmáčkne <kbd>Tab</kbd> podruhé, všechny tyto možnosti se vypíšou
 a může si z nich vybrat – dopsat další písmenko a znovu zmáčknout <kbd>Tab</kbd>.</p>
 <p>Tomuhle se říká <em>doplňování tabulátorem</em> (angl. <em>tab completion</em>) a velice
 to zjednodušuje práci se shellem.</p>
-<h2>Další triky: Kopírování</h2>
+<h2 id="dalsi_triky_kopirovani">Další triky: Kopírování
+<a href="#dalsi_triky_kopirovani" class="header-link">#</a>
+</h2>
 <p>Když už jsme u zkratek, pojďme se podívat ještě na jednu: vkládání.</p>
 <p>Známá kombinace <kbd>Ctrl</kbd>+<kbd>C</kbd>, <kbd>Ctrl</kbd>+<kbd>V</kbd>
 v příkazové řádce <em>nefunguje</em>.

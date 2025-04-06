@@ -1,5 +1,7 @@
 <div class="admonition warning"><p>Tohle jsou jen velice strohé poznámky, ne materiály k samostudiu.</p>
-</div><h1>Systemd jednotky</h1>
+</div><h1 id="systemd_jednotky">Systemd jednotky
+<a href="#systemd_jednotky" class="header-link">#</a>
+</h1>
 <p>Opakování</p>
 <ul>
 <li><code>systemctl status sshd</code></li>
@@ -46,20 +48,25 @@
 <li><code>man systemd.service</code>, ...</li>
 <li><code>man systemd.service</code>, <code>man systemd.mount</code></li>
 </ul>
-<h2>Timer</h2>
+<h2 id="timer">Timer
+<a href="#timer" class="header-link">#</a>
+</h2>
 <ul>
 <li><code>man systemd.timer</code></li>
 <li><code>man systemd.time</code></li>
 <li><code>man systemd.unit</code></li>
 </ul>
-<h2>Naše služba</h2>
+<h2 id="nase_sluzba">Naše služba
+<a href="#nase_sluzba" class="header-link">#</a>
+</h2>
 <p><code>/etc/systemd/system/ahoj.service</code>:</p>
 <div class="highlight"><pre><code>[Unit]
 Description=echo
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/echo Ahoj!</code></pre></div><ul>
+ExecStart=/usr/bin/echo Ahoj!
+</code></pre></div><ul>
 <li><code>sudo systemctl daemon-reload</code></li>
 <li><code>sudo systemctl start ahoj.service</code></li>
 <li><code>sudo systemctl status ahoj.service</code></li>
@@ -71,23 +78,29 @@ Description=echo timer
 [Timer]
 OnCalendar=*-*-* *:*:00/10
 AccuracySec=1s
-Unit=ahoj.service</code></pre></div><ul>
+Unit=ahoj.service
+</code></pre></div><ul>
 <li><code>sudo systemctl daemon-reload</code></li>
 <li><code>sudo systemctl start ahoj.timer</code></li>
 <li><code>sudo systemctl status ahoj.service</code> (!)</li>
 </ul>
-<h2>Uživatelská služba &amp; časovač</h2>
-<div class="highlight"><pre><code>mkdir -p ~/.config/systemd/user/</code></pre></div><p><code>~/.config/systemd/user/gong.service</code>:</p>
+<h2 id="uzivatelska_sluzba_amp_casovac">Uživatelská služba &amp; časovač
+<a href="#uzivatelska_sluzba_amp_casovac" class="header-link">#</a>
+</h2>
+<div class="highlight"><pre><code>mkdir -p ~/.config/systemd/user/
+</code></pre></div><p><code>~/.config/systemd/user/gong.service</code>:</p>
 <div class="highlight"><pre><code>[Unit]
 Description=Gong
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/mplayer /usr/share/sounds/gnome/default/alerts/sonar.ogg</code></pre></div><p><code>~/.config/systemd/user/gong.timer</code>:</p>
+ExecStart=/usr/bin/mplayer /usr/share/sounds/gnome/default/alerts/sonar.ogg
+</code></pre></div><p><code>~/.config/systemd/user/gong.timer</code>:</p>
 <div class="highlight"><pre><code>[Unit]
 Description=Gong
 
 [Timer]
 OnCalendar=*-*-* *:*:00/10
 AccuracySec=1s
-Unit=gong.service</code></pre></div>
+Unit=gong.service
+</code></pre></div>

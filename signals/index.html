@@ -1,5 +1,7 @@
 <div class="admonition warning"><p>Tohle jsou jen poznámky, ne materiály k samostudiu.</p>
-</div><h1>Signály</h1>
+</div><h1 id="signaly">Signály
+<a href="#signaly" class="header-link">#</a>
+</h1>
 <p>Signál (angl. <em>signal</em>) je způsob, jak poslat „upozornění“ běžícímu procesu.
 I když ten proces zrovna dělá něco jiného, může na signál zareagovat.
 Vlastně, jak si ukážeme, na signál zareagovat <em>musí</em>.</p>
@@ -11,7 +13,9 @@ rourou nebo přes síť), ale i v těchto případech se dá signálem upozorni
 Například <code>httpd</code> čte konfiguraci ze spousty souborů,
 ale signálem se dá přimět, aby je všechny načetl znova.
 Příkaz <code>systemctl reload httpd</code> dělá právě tohle: pošle HTTP serveru signál.</p>
-<h2>Přijetí signálu</h2>
+<h2 id="prijeti_signalu">Přijetí signálu
+<a href="#prijeti_signalu" class="header-link">#</a>
+</h2>
 <p>Když procesu pošleš signál, tak ten proces <em>přeruší</em> to co zrovna dělá
 a signál zpracuje.
 Co přesně se stane závisí na druhu signálu; možnosti jsou tyto:</p>
@@ -29,26 +33,30 @@ kterou proces nastavil.</li>
 </ul>
 <p>Když se proces na signály předem nepřipraví, provede se nějaká výchozí akce.
 Ta závisí na druhu signálu, ale nejčastější jsou první dvě: proces se ukončí.</p>
-<h2>Druhy signálů</h2>
+<h2 id="druhy_signalu">Druhy signálů
+<a href="#druhy_signalu" class="header-link">#</a>
+</h2>
 <p>Každý druh signálu má své číslo a zkratkovité jméno.
 Jejich seznam najdeš v manuálové stránce <code>signal(7)</code>, pomocí příkazu:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>man <span class="m">7</span> signal
+<div class="highlight"><pre><span></span><span class="gp">$ </span>man<span class="w"> </span><span class="m">7</span><span class="w"> </span>signal
 </pre></div><div class="admonition note"><p>Pozor, <code>man signal</code> zobrazí stránku <code>signal(2)</code> – nápovědu pro funkci
 <code>signal</code>, nikoli signály obecně.
 To číslo je číslo „sekce“ manuálu; seznam sekcí najdeš v <code>man man</code>.</p>
 </div><p>Každý signál má i své číslo, které se ale může na různých systémech
 a procesorech lišit.
 Lepší je proto používat jména – snad kromě čísla 9 pro <code>SIGKILL</code>.</p>
-<h2>Posílání signálů</h2>
+<h2 id="posilani_signalu">Posílání signálů
+<a href="#posilani_signalu" class="header-link">#</a>
+</h2>
 <p>Příkaz na posílání signálů už znáš: je to <code>kill</code>.
 Přepínačem pojmenovaným podle signálu můžeš vybrat, který signál pošleš.</p>
 <p>Zkus si to!</p>
 <p>V jedom terminálu zadej:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sleep <span class="m">1000</span>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sleep<span class="w"> </span><span class="m">1000</span>
 </pre></div><p>A ve druhém třeba:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -a <span class="p">|</span> grep sleep
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-a<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>sleep
 <span class="go"> 12345678 pts/3   00:00:00 sleep</span>
-<span class="gp">$ </span><span class="nb">kill</span> -SIGABRT <span class="m">12345678</span>
+<span class="gp">$ </span><span class="nb">kill</span><span class="w"> </span>-SIGABRT<span class="w"> </span><span class="m">12345678</span>
 </pre></div><p>Signál <code>SIGABRT</code> proces dostane když se snaží provést neplatnou operaci –
 instrukci, které procesor nerozumí.
 To je většinou hodně závažná chyba.
@@ -61,7 +69,7 @@ pomocí <code>abrt-cli list</code> podívat, že chyba byla zaznamenána.</p>
 <ul>
 <li><code>SIGINT</code> se posílá když zmáčkneš <kbd>Ctrl</kbd>+<kbd>C</kbd>.</li>
 <li><code>SIGTERM</code> posílá <code>kill</code> když mu nezadáš jiný signál.</li>
-<li><code>SIGKILL</code> (9) se posílá když zmáčkneš <kbd>Ctrl</kbd>+<kbd>\</kbd>;
+<li><code>SIGKILL</code> (9) se posílá když zmáčkneš <kbd>Ctrl</kbd>+<kbd>&lt;/kbd&gt;;
 proces se „natvrdo“ ukončí.
 U tohoto signálu si procesy nemůžou nastavit jiné chování:
 proces se vždy ukončí.</li>
@@ -71,7 +79,9 @@ Podobně jako u <code>SIGKILL</code> si i u tohoto signálu si procesy nemůžou
 jiné chování.</li>
 <li><code>SIGCONT</code> posílá příkaz <code>fg</code>; pozastavený proces se obnoví.</li>
 </ul>
-<h2>Signály v Pythonu</h2>
+<h2 id="signaly_vpythonu">Signály v Pythonu
+<a href="#signaly_vpythonu" class="header-link">#</a>
+</h2>
 <p>To, že se přijetí signálu přeruší cokoli co proces zrovna dělá,
 se dá přirovnat k výjimkám v Pythonu.
 Koneckonců, výjimka <code>KeyboardInterrupt</code> je jen reakce Pythonu na signál
@@ -81,13 +91,13 @@ ale má se zavolat funkce která způsobí výjimku.</p>
 <p>Program v Pythonu můžeš „připravit“ na výjimky pomocí <code>try</code> a <code>except</code>.
 Na to, aby se program připravil na přijetí signálu, slouží funkce
 <code>signal</code> z modulu <code>signal</code>:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">signal</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">signal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Moje PID:&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>
 
-<span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">sig_number</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">handler</span><span class="p">(</span><span class="n">sig_number</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Dostal jsem signál </span><span class="si">{</span><span class="n">sig_number</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">signal</span><span class="o">.</span><span class="n">strsignal</span><span class="p">(</span><span class="n">sig_number</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGUSR1</span><span class="p">,</span> <span class="n">handler</span><span class="p">)</span>
@@ -100,7 +110,9 @@ Na to, aby se program připravil na přijetí signálu, slouží funkce
 <p>Můžeš si ověřit, že pro <code>SIGKILL</code> a <code>SIGSTOP</code> funkce <code>signal.signal</code> selže.
 A taky že předefinování <code>SIGINT</code> přenastaví chování
 <kbd>Ctrl</kbd>+<kbd>C</kbd> – právě pro takové situace se hodí <code>SIGKILL</code>.</p>
-<h2>Signály a démoni</h2>
+<h2 id="signaly_a_demoni">Signály a démoni
+<a href="#signaly_a_demoni" class="header-link">#</a>
+</h2>
 <p>Démoni systémových služeb často reagují na signály.
 Když se podíváš na <code>systemctl cat httpd</code> a <code>systemctl cat sshd</code>,
 uvidíš řádky jako:</p>

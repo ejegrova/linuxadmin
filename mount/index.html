@@ -1,5 +1,9 @@
-<h1>Mount</h1>
-<h2>Disk jako soubor</h2>
+<h1 id="mount">Mount
+<a href="#mount" class="header-link">#</a>
+</h1>
+<h2 id="disk_jako_soubor">Disk jako soubor
+<a href="#disk_jako_soubor" class="header-link">#</a>
+</h2>
 <p>Minule jsme si řekli, disk obsahuje, podobně jako zazipovaný archiv,
 nejen obsah souborů ale i informace on nich (<em>inode</em>).</p>
 <p>Obsah souboru je dlouhá sekvence nul a jedniček (kterou často lze dekódovat
@@ -16,7 +20,7 @@ adresářovou strukturu s jednotlivými soubory, které můžeš číst zvláš
 nebo jako na jediný dlouhý soubor, který obsahuje informace o souborech
 a jejich obsahu (podobně jako zazipovaný archiv).</p>
 <p>Kde je soubor který odpovídá celému disku, to ti řekne příkaz <code>findmnt</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>findmnt /
+<div class="highlight"><pre><span></span><span class="gp">$ </span>findmnt<span class="w"> </span>/
 <span class="go">TARGET SOURCE           FSTYPE OPTIONS</span>
 <span class="go">/      /dev/vda2[/root] btrfs  rw,relatime,seclabel,compress=zstd:1,space_cache,</span>
 </pre></div><p>Disk pro adresář <code>/</code> je přístupný v souboru <code>/dev/vda2</code>
@@ -37,16 +41,16 @@ Ve sloupci <em>options</em> je pak detailní nastavení:</p>
 <p>Tohle je příklad – u tvého disku tohle nastavení možná vypadá jinak.</p>
 <p>A co je ten soubor s celým diskem – v mém případě
 <code>/dev/vda2</code>?</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -l /dev/vda2
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-l<span class="w"> </span>/dev/vda2
 <span class="go">brw-rw----. 1 root disk 252, 0 15. lis 14.06 /dev/vda2</span>
 </pre></div><p>Všimni si, že výpis z <code>ls -l</code> má tam, kde u nodmálních souborů najdeš <code>-</code>,
 u adresářů <code>d</code> a odkazů <code>l</code>, uvedeno <code>b</code>.
 Nejde tedy o normální soubor.
 Víc informací poskytne <code>stat</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>stat /dev/vda2
+<div class="highlight"><pre><span></span><span class="gp">$ </span>stat<span class="w"> </span>/dev/vda2
 <span class="go">  Soubor: /dev/vda2</span>
-<span class="go">Velikost: 0             Bloků: 0          I/O blok: 4096   blokové zařízení</span>
-<span class="go">Zařízení: 5h/5d I-uzel: 256         Odkazů: 1     Druh zařízení: fc,2</span>
+<span class="go">Velikost: 0         	Bloků: 0          I/O blok: 4096   blokové zařízení</span>
+<span class="go">Zařízení: 5h/5d	I-uzel: 256         Odkazů: 1     Druh zařízení: fc,2</span>
 <span class="go">   Práva: (0660/brw-rw----)  UID: (    0/    root)   GID: (    6/    disk)</span>
 <span class="go"> Kontext: system_u:object_r:fixed_disk_device_t:s0</span>
 <span class="go">     Přístup: 2021-11-15 14:06:35.687000000 +0100</span>
@@ -58,10 +62,10 @@ informace ve větších blocích.</p>
 <div class="admonition note"><p>Kromě blokových existují i znaková zařízení (angl. <em>character device</em>),
 kam se zapisuje po jednotlivých znacích.
 Jsou to třeba terminály:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>stat /dev/tty0
+<div class="highlight"><pre><span></span><span class="gp">$ </span>stat<span class="w"> </span>/dev/tty0
 <span class="go">  Soubor: /dev/tty0</span>
-<span class="go">Velikost: 0           Bloků: 0          I/O blok: 4096   znakové zařízení</span>
-<span class="go">Zařízení: 5h/5d   I-uzel: 13          Odkazů: 1     Druh zařízení: 4,0</span>
+<span class="go">Velikost: 0         	Bloků: 0          I/O blok: 4096   znakové zařízení</span>
+<span class="go">Zařízení: 5h/5d	I-uzel: 13          Odkazů: 1     Druh zařízení: 4,0</span>
 <span class="go">[...]</span>
 </pre></div><p>Zapisovat větší soubory po jednotlivých znacích by bylo pomalé;
 na disky se proto zapisuje třeba 4MB dat najednou.
@@ -85,10 +89,12 @@ Velikost disků a množství volného a použitého místa ti ukáže příkaz <
 informace o všech discích.
 Hodí se proto možnost zadat konkrétní disk a přepínač <code>-h</code>,
 který velikosti zaokrouhlí a přidá jednotky:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>df -h /
+<div class="highlight"><pre><span></span><span class="gp">$ </span>df<span class="w"> </span>-h<span class="w"> </span>/
 <span class="go">Souborový systém                        Velikost Užito Volno Uži% Připojeno do</span>
 <span class="go">/dev/mapper/fedora_localhost--live-root      17G  7,1G  8,8G  45% /</span>
-</pre></div><h2>Kde je co připojeno</h2>
+</pre></div><h2 id="kde_je_co_pripojeno">Kde je co připojeno
+<a href="#kde_je_co_pripojeno" class="header-link">#</a>
+</h2>
 <p>Jak ukazuje výstup příkazu <code>df</code>, na počítači můžeš mít více „disků“ –
 nebo obecněji, víc <em>souborových systémů</em>.
 Ne všechny souborové systémy jsou totiž uložené na disku – některé můžou
@@ -138,7 +144,7 @@ v čemž je dost podobný ZIP archivům</li>
 </ul>
 <div class="admonition note"><p>„Flashky“ často používají souborové systémy jako FAT, který lze bez problémů
 přečíst na všech systémech.
-Takové systémy nepodporují Linuxové vychytávky: znaky jako <code>*</code>, <code>\</code>, <code>"</code>
+Takové systémy nepodporují Linuxové vychytávky: znaky jako <code>*</code>, <code>\</code>, <code>&quot;</code>
 ve jménech souborů, symbolické a tvrdé odkazy, rozlišování velikosti písmen
 a podobně.</p>
 </div><p>Zkus si ve virtuálním počítači připojit/odpojit instalační DVD a podívej se,
@@ -147,7 +153,8 @@ co se stane s výstupem <code>findmnt</code>.
 Přibude tam něco jako:</p>
 <div class="highlight"><pre><code>├─/run                       tmpfs      tmpfs    rw,nosuid,nodev,seclabel,size=402224k,nr_inodes=
 │ ├─/run/media/petr/Fedora-WS-Live-34-1-2
-│ │                          /dev/sr0   iso9660  ro,nosuid,nodev,relatime,nojoliet,check=s,map=n,</code></pre></div><p>To znamená, že soubory z adresáře <code>/run/media/petr/Fedora-WS-Live-34-1-2</code>
+│ │                          /dev/sr0   iso9660  ro,nosuid,nodev,relatime,nojoliet,check=s,map=n,
+</code></pre></div><p>To znamená, že soubory z adresáře <code>/run/media/petr/Fedora-WS-Live-34-1-2</code>
 se čtou z instalačního DVD – konkrétně z blokového zařízení <code>/dev/sr0</code>,
 které reprezentuje virtuální DVD mechaniku.</p>
 <p>Když má systém přistoupit k souboru jako <code>/run/media/petr/Fedora-WS-Live-34-1-2/images/efiboot.img</code>,
@@ -157,7 +164,9 @@ Podle toho systém pozná, na jakém je soubor zařízení a jakým způsobem
 je má číst, zapisovat a kódovat (tj. jestli jde o <code>ext4</code>, <code>iso</code>, atd.).</p>
 <p><code>/run/media/petr/Fedora-WS-Live-34-1-2/images/efiboot.img</code> tedy přísluší souboru
 <code>/images/efiboot.img</code> na instalačním DVD.</p>
-<h2>Jaké mám disky</h2>
+<h2 id="jake_mam_disky">Jaké mám disky
+<a href="#jake_mam_disky" class="header-link">#</a>
+</h2>
 <p>Všechny disky (bloková zařízení) na systému ukazuje program <code>lsblk</code>:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>lsblk
 <span class="go">NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT</span>
@@ -185,12 +194,14 @@ a datový oddíl kterému rozumí oba systémy (třeba s <code>fat64</code>).</p
 třeba programem <code>gparted</code>.
 Pozor na to, že manipulací s oddíly disku se dá celkem
 jednoduše zničit celý systém.</p>
-<h2>Připojování</h2>
+<h2 id="pripojovani">Připojování
+<a href="#pripojovani" class="header-link">#</a>
+</h2>
 <p>Stáhni si obsah malého instalačního CD: „Virtual“ z <a href="https://alpinelinux.org/downloads/">alpinelinux.org/downloads/</a>.
 Můžeš k tomu použít program <code>wget</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>wget https://dl-cdn.alpinelinux.org/alpine/v3.14/releases/x86_64/alpine-virt-3.14.3-x86_64.iso -O alpine.iso
+<div class="highlight"><pre><span></span><span class="gp">$ </span>wget<span class="w"> </span>https://dl-cdn.alpinelinux.org/alpine/v3.14/releases/x86_64/alpine-virt-3.14.3-x86_64.iso<span class="w"> </span>-O<span class="w"> </span>alpine.iso
 </pre></div><div class="admonition note"><p>Kopíruješ-li na srazu z projektoru, použij tuhle zkratku:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>wget https://tinyurl.com/alpine-3-14 -O alpine.iso
+<div class="highlight"><pre><span></span><span class="gp">$ </span>wget<span class="w"> </span>https://tinyurl.com/alpine-3-14<span class="w"> </span>-O<span class="w"> </span>alpine.iso
 </pre></div></div><p>Jde o obsah disku, který je uložený v souboru – podobně jako instalační DVD,
 které jsi stahovala pro teto kurz.
 Obsahuje Linuxovou distribuci Alpine, která je menší než je Fedora – neumí toho
@@ -199,9 +210,11 @@ tolik, zato se rychleji stahuje a nezabere tolik místa.</p>
 Přepínačem <code>-o</code> vyber připojení pouze pro čtení (<code>ro</code>);
 dvěma argumenty řekni který soubor připojit (ten stažený)
 a kam ho připojit (<code>/mnt</code>):</p>
-<div class="highlight"><pre><code>$ sudo mount -o ro alpine.iso /mnt</code></pre></div><p>V adresáři <code>/mnt</code> teď budeš mít k dispozici soubory ze staženého CD:</p>
+<div class="highlight"><pre><code>$ sudo mount -o ro alpine.iso /mnt
+</code></pre></div><p>V adresáři <code>/mnt</code> teď budeš mít k dispozici soubory ze staženého CD:</p>
 <div class="highlight"><pre><code>$ ls /mnt
-apks  boot  efi</code></pre></div><p>Pomocí <code>findmnt</code> můžeš zjistit další informace.</p>
+apks  boot  efi
+</code></pre></div><p>Pomocí <code>findmnt</code> můžeš zjistit další informace.</p>
 <p>Při přístupu na soubor jako <code>/mnt/boot/vmlinuz-virt</code> teď systém:</p>
 <ul>
 <li>Podle tabulky přípojných bodů zjistí, na kterém souborovém systému soubor je;
@@ -227,10 +240,12 @@ je ve skutečnosti jen soubor někde na tvém opravdovém počítači.
 (Pro Gnome Boxes je v <code>~/.local/share/gnome-boxes/images</code>.)
 Ve skutečnosti tedy informace procestují ještě několik podobných úrovní,
 než doputují z/na opravdový disk.</p>
-<h2>Odpojování</h2>
+<h2 id="odpojovani">Odpojování
+<a href="#odpojovani" class="header-link">#</a>
+</h2>
 <p>Připojený disk můžeš odpojit pomocí příkazu <code>umount</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo umount /mnt
-<span class="gp">$ </span>ls /mnt
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>umount<span class="w"> </span>/mnt
+<span class="gp">$ </span>ls<span class="w"> </span>/mnt
 </pre></div><p>Když zkusíš odpojit používaný souborový systém (např. <code>/</code> nebo <code>/home</code>),
 zjistíš, že tohle ti systém nedovolí.
 Tohle bývá občas problém při odpojování „flashky“, když je z ní v nějakém
@@ -251,36 +266,44 @@ Je možné souborový systém zkontrolovat a zkusit opravit pomocí <code>fsck</
 detaily najdeš v manuálové stránce toho programu.</p>
 <p>Záznam o tom, co systém dělá, ti vypíše příkaz <code>dmesg</code>.
 Často tu najdeš např. jméno právě připojeného zařízení.</p>
-<h2>Subvolume</h2>
+<h2 id="subvolume">Subvolume
+<a href="#subvolume" class="header-link">#</a>
+</h2>
 <p>Někdy se na jednom souborovém systému nachází víc kořenových adresářů.
 V našich příkladech je <code>/home</code> na disku <code>/dev/vda2[/home]</code>
 a <code>/</code> na disku <code>/dev/vda2[/root]</code>.
 Téhle vychytávce se říká <em>subvolumes</em> (viz např. <code>man btrfs-subvolume</code>).
 Kdybys <em>subvolume</em> chtěla připojit, musíš příkazu <code>mount</code> předat
 volbu jako <code>-o subvolume=/home</code>.</p>
-<h2>Skrytí souboru</h2>
+<h2 id="skryti_souboru">Skrytí souboru
+<a href="#skryti_souboru" class="header-link">#</a>
+</h2>
 <p>Disk musíš vždy připojit na existující adresář – v příkladu výše to byl <code>/mnt</code>,
 který je na připojování disků vyhrazený.</p>
 <p>Když tenhle adresář něco obsahuje, jeho obsah se skryje. Zkus si to:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo touch /mnt/zkouska
-<span class="gp">$ </span>ls /mnt
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>touch<span class="w"> </span>/mnt/zkouska
+<span class="gp">$ </span>ls<span class="w"> </span>/mnt
 <span class="go">zkouska</span>
-<span class="gp">$ </span>sudo mount -o ro alpine.iso /mnt
-<span class="gp">$ </span>ls /mnt
+<span class="gp">$ </span>sudo<span class="w"> </span>mount<span class="w"> </span>-o<span class="w"> </span>ro<span class="w"> </span>alpine.iso<span class="w"> </span>/mnt
+<span class="gp">$ </span>ls<span class="w"> </span>/mnt
 <span class="go">apks  boot  efi</span>
 </pre></div><p>Soubor <code>zkouska</code> teď není přístupný.
 Při přístupu na <code>/mnt/zkouska</code> se systém vůbec nedívá na souborový systém <code>/</code>.</p>
 <p>Když ale disk odpojíš, bude <code>zkouska</code> zase vidět:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo umount /mnt
-<span class="gp">$ </span>ls /mnt
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>umount<span class="w"> </span>/mnt
+<span class="gp">$ </span>ls<span class="w"> </span>/mnt
 <span class="go">zkouska</span>
-<span class="gp">$ </span>sudo rm /mnt/zkouska
-</pre></div><h3>Další speciální zařízení</h3>
+<span class="gp">$ </span>sudo<span class="w"> </span>rm<span class="w"> </span>/mnt/zkouska
+</pre></div><h3 id="dalsi_specialni_zarizeni">Další speciální zařízení
+<a href="#dalsi_specialni_zarizeni" class="header-link">#</a>
+</h3>
 <p>Blokové zařízení umí číst nebo zapisovat kusy informací – většinou obsah
 souborů nebo informace o nich (<em>inode</em>).</p>
 <p>Ne všecha bloková zařízení ale reprezentují <em>disk</em>.
 Pojďme se podívat na několik příkladů jiných druhů.</p>
-<h4>Šifrování disku</h4>
+<h4 id="sifrovani_disku">Šifrování disku
+<a href="#sifrovani_disku" class="header-link">#</a>
+</h4>
 <p>Šifrování disku se řeší podobně. Například:</p>
 <ul>
 <li>Zařízení <code>/dev/mapper/luks-...</code> je připojeno se souborový systémem <code>btrfs</code>.
@@ -289,10 +312,12 @@ Data zapsaná na tohle zařízení ale nejdou přímo na disk:
 systém je zašifruje a výsledek zapíše do zařízení <code>/dev/sda1</code>.
 Podobně funguje čtení: blok z <code>/dev/mapper/luks-...</code> se čte tak,
 že se přečte z <code>/dev/sda1</code> a dešifruje.</li>
-<li>Zařízení <code>/dev/sda1</code> pak je oddíl na opravdovém disku. 
+<li>Zařízení <code>/dev/sda1</code> pak je oddíl na opravdovém disku.
 Klidně to ale může být disk virtuální nebo normální soubor.</li>
 </ul>
-<h4>LLVM a RAID</h4>
+<h4 id="llvm_a_raid">LLVM a RAID
+<a href="#llvm_a_raid" class="header-link">#</a>
+</h4>
 <p>Můžeš mít několik fyzických disků spojených dohromady jako jeden
 souborový systém.
 Tímto se jednoduše zvětšuje nebo zmenšuje kapacita disku.
@@ -309,7 +334,9 @@ Na nový disk se pak nakopírují data z těch ostatních.</p>
 <a href="https://en.wikipedia.org/wiki/RAID">RAID</a>.
 Jestli se chystáš pracovat jako systémový administrátor,
 měla by ses s nimi rozhodně časem seznámit.</p>
-<h3>Souborové systémy bez disku</h3>
+<h3 id="souborove_systemy_bez_disku">Souborové systémy bez disku
+<a href="#souborove_systemy_bez_disku" class="header-link">#</a>
+</h3>
 <p>Souborový systém je způsob, jak data na disku (nebo jiném zařízení)
 interpretovat jako soubory a adresáře – jak číst, zapisovat, procházet adresář,
 měnit práva a podobně.
@@ -318,7 +345,7 @@ Souborový systém ale nemusí nutně pracovat s diskem.</p>
 ale odpoví podle toho, jaké procesy zrovna na počítači běží.
 Podobně funguje adresář <code>/proc/self/fd</code>, který obsahuje otevřené soubory
 aktuálního procesu:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -l /proc/self/fd &lt; /dev/null
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-l<span class="w"> </span>/proc/self/fd<span class="w"> </span>&lt;<span class="w"> </span>/dev/null
 <span class="go">celkem 0</span>
 <span class="go">lr-x------. 1 petr petr 64 15. lis 16.02 0 -&gt; /dev/null</span>
 <span class="go">lrwx------. 1 petr petr 64 15. lis 16.02 1 -&gt; /dev/pts/0</span>
@@ -341,7 +368,9 @@ Po vypnutí stroje tak obsah zmizí.</p>
 <p>Existují i souborové systémy sdílené mezi několika počítači: všechny operace
 (čtení, psaní, změny práv, atd.) se posílají po síti na server a odpovědi
 systém reprezentuje jako soubory a adresáře.</p>
-<h2>findmnt a mount</h2>
+<h2 id="findmnt_a_mount">findmnt a mount
+<a href="#findmnt_a_mount" class="header-link">#</a>
+</h2>
 <p>Z historických důvodů dává příkaz <code>mount</code> dává ty samé informace jako <code>findmnt</code>:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>mount
 <span class="go">sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime,seclabel)</span>
@@ -352,14 +381,16 @@ systém reprezentuje jako soubory a adresáře.</p>
 </pre></div><p>Toto použití najdeš ve spoustě existujících návodů,
 podle manuálových stránek <code>mount</code> je ale <code>findmnt</code> lepší varianta.</p>
 <p>Pro skripty a jiné programové zpracování se hodí přepínače <code>-l</code> a <code>-n</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>findmnt -ln
+<div class="highlight"><pre><span></span><span class="gp">$ </span>findmnt<span class="w"> </span>-ln
 <span class="go">TARGET                   SOURCE     FSTYPE   OPTIONS</span>
 <span class="go">/sys                     sysfs      sysfs    rw,nosuid,nodev,noexec,relatime,seclabel</span>
 <span class="go">/proc                    proc       proc     rw,nosuid,nodev,noexec,relatime</span>
 <span class="go">/dev                     devtmpfs   devtmpfs rw,nosuid,seclabel,size=993372k,nr_inodes=248343,mode</span>
 <span class="go">/sys/kernel/security     securityfs security rw,nosuid,nodev,noexec,relatime</span>
 </pre></div><p>Nebo <code>-J</code> pro JSON.</p>
-<h2><code>/etc/fstab</code></h2>
+<h2 id="codeetcfstabcode"><code>/etc/fstab</code>
+<a href="#codeetcfstabcode" class="header-link">#</a>
+</h2>
 <p>Seznam zařízení která se připojí při startu systému najdeš
 v souboru <code>/etc/fstab</code>.
 Ten se vytváří se při instalaci, ale můžeš ho měnit i ručně.

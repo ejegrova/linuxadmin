@@ -1,6 +1,8 @@
-<h1>Adresářová struktura</h1>
+<h1 id="adresarova_struktura">Adresářová struktura
+<a href="#adresarova_struktura" class="header-link">#</a>
+</h1>
 <p>Nyní se podíváme na strukturu souborového systému.</p>
-<p>V grafickém programu zobrazujícím soubory (např. <code>nautilus</code>) otevři adresář <code>/</code>. 
+<p>V grafickém programu zobrazujícím soubory (např. <code>nautilus</code>) otevři adresář <code>/</code>.
 Je dobré mít v nastavení (<em>Předvolby</em>, <em>Preferences</em>) zaškrtnutou možnost
 <em>Umožnit rozbalování složek</em> (<em>Allow files to expand</em>),
 která u adresářů ukáže malé rozbalovací trojúhelníčky.</p>
@@ -12,10 +14,10 @@ Použij klávesovou zkratku <kbd>Ctrl</kbd>+<kbd>L</kbd>, která ti umožní zad
 jakoukoli cestu, zadej <code>/</code> a <kbd>Enter</kbd>.
 Nautilus pak <code>/</code> zobrazí jako <em>Počítač</em>; na to můžeš kliknout a přidat
 do záložek, ať se sem příště dostaneš rychleji.</p>
-<p>V adresáři <code>/</code> najdeš všechny soubory, které existují na disku. 
+<p>V adresáři <code>/</code> najdeš všechny soubory, které existují na disku.
 Pro strukturu tohoto adresáře existuje standard,
 pojmenovaný <a href="https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Filesystem Hiearchy Standard</a>,
-který popisuje, kam ukládat jaké soubory. 
+který popisuje, kam ukládat jaké soubory.
 Základní struktura systémových souborů tak bývá na všech unixových systémech stejná.
 Je univerzální, navržená nejen pro osobní počítače,
 ale různé jiné stroje (servery, sdílené pracovní stanice na univerzitách, apod.).
@@ -28,9 +30,11 @@ Je potřeba ty soubory rozdělovat podle toho jak se k nim v těchto případech
 <li>které jsou součástí systému, a které doinstalované/vytvořené „ručně“.</li>
 </ul>
 <p>Půjdeme na to podle abecedy.</p>
-<h2>/bin</h2>
+<h2 id="bin">/bin
+<a href="#bin" class="header-link">#</a>
+</h2>
 <p>Jeden z adresářů, který patří do <code>PATH</code>.
-Obsahuje naprostou většinu příkazů které můžeš spustit, 
+Obsahuje naprostou většinu příkazů které můžeš spustit,
 a které nainstalované jako součást systému.
 Najdeš zde <code>cat</code>, <code>echo</code> <code>bash</code> i <code>ls</code>.</p>
 <p>Na Fedoře je <code>/bin</code> <em>symlink</em> na <code>/usr/bin</code>.
@@ -40,7 +44,9 @@ Příkazy, které administrátor potřeboval na tohle zpřistupnění, byly v <
 zbytek (např. okýnkové grafické prostředí) v <code>/usr/bin</code></p>
 <p>V dnešní době relativně velkých disků toto rozdělení nedává smysl,
 a tak je <code>/bin</code> a <code>/usr/bin</code> to samé.</p>
-<h2>/boot</h2>
+<h2 id="boot">/boot
+<a href="#boot" class="header-link">#</a>
+</h2>
 <p>Zde jsou soubory, které konfigurují to, co se stane po zapnutí počítače:
 odkud se načte linuxové jádro, jak se připraví zbytek disku
 a jak se jádro spustí.</p>
@@ -49,14 +55,16 @@ tady je např. konfigurace menu pro jejich výběr.</p>
 <p>Na Fedoře tu (zvlášť po aktualizaci systému) najdeš hned několik konfigurací.
 Kdyby jedna z nějakého důvodu nefungovala,
 nemusíš celý systém přeinstalovat – můžeš vybrat jinou.</p>
-<h2>/dev</h2>
-<p>Název <code>/dev</code> je od <em>device</em> - zařízení. 
+<h2 id="dev">/dev
+<a href="#dev" class="header-link">#</a>
+</h2>
+<p>Název <code>/dev</code> je od <em>device</em> - zařízení.
 Tady jsou soubory, které ovládají či řídí zařízení přípojená k tvému počítači.</p>
 <p>Vzpomínáš si, jak jsme říkali,
 že soubor je cokoli z čeho se dá číst nebo kam se dá zapisovat?
 <code>/dev</code> je plný velice zvláštních souborů, které tohle dovádějí k absurditě.</p>
 <p>Třeba v <code>/dev/input</code> jsou zařízení pro klávesnici a myš.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls /dev/input
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>/dev/input
 <span class="go">by-id    event1  event4  js0     mouse1</span>
 <span class="go">by-path  event2  event5  mice    mouse2</span>
 <span class="go">event0   event3  event6  mouse0  mouse3</span>
@@ -77,7 +85,9 @@ Tady jsou soubory, které ovládají či řídí zařízení přípojená k tv�
 <p>Jedná o nastavení celého počítače, takže aby sem mohla něco zapsat,
 musíš být superuživatelem.
 A když tam zapíšeš něco špatně, můžeš si tím zničit systém.</p>
-<h2>/etc</h2>
+<h2 id="etc">/etc
+<a href="#etc" class="header-link">#</a>
+</h2>
 <p>Obsahuje konfigurační soubory.
 Najdeš spoustu adresářů rozmanitých programů, kde je uloženo jejich nastavení.
 Když jsi systémový administrátor a chceš nastavit uložené heslo k WiFi,
@@ -102,13 +112,17 @@ jsou na tomto počítači vidět jako souborové systémy.
 Tady se dá se zde nastavit třeba
 z jakého vzdáleného počítače se má vzít adresář <code>/home</code>.</p>
 <p>Samotný <code>/home</code> je další v abecedě, ale podívejme se nejdřív na <code>lib*</code>.</p>
-<h2>/lib a /lib64</h2>
+<h2 id="lib_a_lib64">/lib a /lib64
+<a href="#lib_a_lib64" class="header-link">#</a>
+</h2>
 <p>Obě ty složky jsou odkazy na <code>/usr/lib</code> a <code>/usr/lib64</code>.
 Je to ze stejného důvodu jako u <code>/bin</code> a <code>/usr/bin</code>:
 původně v adresářích <code>/lib</code> a <code>/lib64</code> byly obsaženy systémové knihovny
 nutné pro administraci; dnes jsou sjednoceny se systémovými knihovnami
 pro běžnou práci.</p>
-<h3>Věc o architekturách - x86_64, ARM atd.</h3>
+<h3 id="vec_o_architekturach_-_x86_64_arm_atd">Věc o architekturách - x86_64, ARM atd.
+<a href="#vec_o_architekturach_-_x86_64_arm_atd" class="header-link">#</a>
+</h3>
 <p>Ty nejrychlejší programy na systému jsou zkompilované do <em>binárních souborů</em>.
 Když je otevřeš pomoci například <code>less</code>, uvidíš nečitelný binární výstup.
 Zkus:</p>
@@ -128,9 +142,9 @@ Třeba knihovna <code>libc.so</code> poskytuje základní funkce jako oterírán
 souborů a knihovna <code>libm.so</code> matematické funkce jako sinus nebo odmocninu.
 Další knihovny jsou k dispozici jako <code>lib*.so</code>, občas s číslem verze na konci
 a občas v podadresáři <code>/lib64</code>.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ll /lib64/libc.so
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ll<span class="w"> </span>/lib64/libc.so
 <span class="go">-rw-r--r--. 1 root root 253 16. čec 04.26 /lib64/libc.so</span>
-<span class="gp">$ </span>ll /lib64/libm.so
+<span class="gp">$ </span>ll<span class="w"> </span>/lib64/libm.so
 <span class="go">-rw-r--r--. 1 root root 110 16. čec 04.26 /lib64/libm.so</span>
 </pre></div><p>Procesory Intel (a AMD) mají zvláštnost, že rozumí dvěma „jazykům“,
 tedy kódování instrukcí: starší (32-bitový) <code>x86</code>
@@ -140,7 +154,9 @@ Ty pro starší variantu jsou v <code>/lib</code> (protože tam je starší pro
 novější v <code>/lib64</code>.
 Na tvém systému je adresář <code>/lib</code> téměř prázdný, protože dnes se programy
 kompilují jen pro tu novější verzi.</p>
-<h2>/home</h2>
+<h2 id="home">/home
+<a href="#home" class="header-link">#</a>
+</h2>
 <p>Místo pro uživatelské domovské adresáře.
 Uvnitř je adresář <code>home/<var>tvojejmeno</var></code>, zkráceně <code>~</code>,
 do nějž si můžeš jako uživatel dát, co jen chceš :)</p>
@@ -153,7 +169,7 @@ místo přímo do <code>~</code>.
 V něm si své potřebné informace ukládají do složek podle svého jména.</p>
 <p>Soubor <code>/home/petr/.config/user-dirs.dirs</code> například obsahuje jména adresářů,
 do kterých grafické programy ukládají data:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>cat /home/petr/.config/user-dirs.dirs
+<div class="highlight"><pre><span></span><span class="gp">$ </span>cat<span class="w"> </span>/home/petr/.config/user-dirs.dirs
 <span class="go">...</span>
 <span class="go">XDG_DOCUMENTS_DIR=&quot;$HOME/Dokumenty&quot;</span>
 <span class="go">XDG_MUSIC_DIR=&quot;$HOME/Hudba&quot;</span>
@@ -173,12 +189,12 @@ Když si nainstaluješ program jen pro sebe, spustitelný program se uloží do
 <code>~/.local/bin</code>, knihovny do <code>~/.local/lib</code> a nastavení do <code>~/.local/etc</code>.
 jako by se instaloval do systému (čili do stejných složek), ale pouze pro tebe.</p>
 <p>Pythonní programy můžeš pro uživatele instalovat pomocí <code>pip install --user</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install --user cowsay
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>cowsay
 <span class="go">...</span>
 <span class="go">Successfully installed cowsay-2.0.3</span>
-<span class="gp">$ </span><span class="nb">type</span> cowsay
+<span class="gp">$ </span><span class="nb">type</span><span class="w"> </span>cowsay
 <span class="go">cowsay je /home/petr/.local/bin/cowsay</span>
-<span class="gp">[petr@localhost link]$ </span>cowsay Ahoj!
+<span class="gp">[petr@localhost link]$ </span>cowsay<span class="w"> </span>Ahoj!
 <span class="go">  _____</span>
 <span class="go">&lt; Ahoj! &gt;</span>
 <span class="go">  =====</span>
@@ -186,7 +202,9 @@ jako by se instaloval do systému (čili do stejných složek), ale pouze pro te
 </pre></div><p>(Většinou je ale lepší použít virtuální prostředí. Když budeš instalovat
 pomocí <code>--user</code> do <code>~/.local</code>, po lěkolika měsících či letech tam budeš mít
 pořádný nepořádek – spoustu nekompatibilních verzí knihoven a příkazů.)</p>
-<h2>/libexec</h2>
+<h2 id="libexec">/libexec
+<a href="#libexec" class="header-link">#</a>
+</h2>
 <p>Možná máš tuto složku jen jako součást <code>/usr</code>.
 Jsou zde programy, které by se neměly spouštět přímo z příkazové řádky.
 Najdeš zde skripty, které využívají přímo programy nainstalované,
@@ -195,33 +213,43 @@ Takové skryté prográmky dávají vývojaři programů do <code>/libexec</code
 <p>Třeba <code>/usr/libexec/git-core/git-diff</code> je program, který spustí <code>git</code> když
 zadáš <code>git diff</code>.
 Nikdo a nic jiného by ho spouštět neměl.</p>
-<h2>/lost+found</h2>
+<h2 id="lostfound">/lost+found
+<a href="#lostfound" class="header-link">#</a>
+</h2>
 <p>Když spadne počítač a zhavaruje disk, systém se pak z toho vzpamatuje a může
 najít nějaké soubory, které nejsou zařazené do žádného adresáře.
 Nalezené soubory jsou přesunuty sem.
 V ideálním případě je tento adresář prázdný a neměl by být přístupný pro každého,
 protože některé z těch souborů můžou obsahovat citlivé údaje.</p>
-<h2>/media</h2>
+<h2 id="media">/media
+<a href="#media" class="header-link">#</a>
+</h2>
 <p>Když vložíš flashku či CD, v <code>/media</code> tady se automaticky
 vytvářely adresáře s obsahem toho zařízení.
 Dneska zas to tak moc nedělá a je pro to lepší místo.
 Občas tu z historických najdeš symbolický odkaz na to lepší místo.</p>
-<h2>/mnt</h2>
+<h2 id="mnt">/mnt
+<a href="#mnt" class="header-link">#</a>
+</h2>
 <p>Sem se připojovují externí disky.</p>
 <p>Na osobních počítačích se s tím už tolik nepotkáš – když vložíš do počítače
 <em>flashku</em>, systém ji automaticky najde a zpřístupní (na jiném místě).
 Ale na serverech, kde se disky připojují „ručně“, jsou často v <code>/mnt</code>.
 Stejně tak třeba na univerzitě většinou najdeš sdílené disky právě tady.</p>
 <p>(Víse o pcipojování příště.)</p>
-<h2>/opt</h2>
+<h2 id="opt">/opt
+<a href="#opt" class="header-link">#</a>
+</h2>
 <p>Tady se dávají věci, které nejsou dělané přímo pro tvou distribuci.
 Programy, které jsou napsány přímo pro ten systém, dávají jakousi záruku, že všechno bude dobře spolupracovat.
 Tyto ukládají své soubory do hlavního souborového systému.
 Pro ostatní případy se to dává do <code>/opt</code>, do složek se jménem autora, firmy nebo softwaru.</p>
 <p>Pokud si nainstaluješ Chrome od Googlu, VS Code od Microsoftu nebo Zoom od… Zoomu,
 měly by se objevit zde.</p>
-<h2>/proc</h2>
-<p>Obsahuje informace o aktuálně běžících procesech. 
+<h2 id="proc">/proc
+<a href="#proc" class="header-link">#</a>
+</h2>
+<p>Obsahuje informace o aktuálně běžících procesech.
 Každý proces tady má svou složku a v ní informace například o paměti, kterou používá.
 Existují pak třeba programy, které se podívají dovnitř a jsou podle obsahu paměti schopné říct,
 jaké funkce daný proces zrovna volání a kolik času stráví v této funkci.
@@ -233,12 +261,14 @@ Nebo třeba otevřené soubory (jako to dělá <code>lsof</code>).</p>
 </ul>
 <p><code>/proc/self</code> je symbolický odkaz na adresář s aktuálně běžícím procesem.
 Můžeš díky němu zjistit číslo právě běžícího procesu:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -l /proc/self
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-l<span class="w"> </span>/proc/self
 <span class="go">lrwxrwxrwx 1 root root 0 říj 17 09:48 /proc/self -&gt; 6692</span>
 </pre></div><p>6692 je zde číslo procesu <code>ls</code>.</p>
-<h2>/root</h2>
+<h2 id="root">/root
+<a href="#root" class="header-link">#</a>
+</h2>
 <p>Domovský adresář pro superuživatele.</p>
-<p>Proč <code>root</code> nemá svou složku v <code>/home</code>? 
+<p>Proč <code>root</code> nemá svou složku v <code>/home</code>?
 Jde o to, že běžné uživatelské účty bývají občas sdílené.
 Představ si počítačovou učebnu na univerzitě:
 Připojíš se k libovolnému počítači a dostaneš k dispozici své soubory.</p>
@@ -246,7 +276,9 @@ Připojíš se k libovolnému počítači a dostaneš k dispozici své soubory.<
 Zavolá se administrátor, přihlásí se jako <em>root</em> a vyřeší problém.
 Domovská složka <em>roota</em> musí být proto k dispozici vždy, i když je nějaký
 problém s <code>/home</code>.</p>
-<h2>/run</h2>
+<h2 id="run">/run
+<a href="#run" class="header-link">#</a>
+</h2>
 <p>Obsahuje informace potřebné za běhu.
 Když daný program skončí, informace v <code>/run</code> se dají smazat.
 Je to novější standard, ne všechny programy ho používají – často podobné
@@ -256,17 +288,23 @@ flashky.
 Disk je tak k dispozici tomu, kdo byl přihlášený když se flashka objevila.</p>
 <p>Ve virtuálním počítači je možné virtuálně vložit CD (jeho obsah v souboru .ISO);
 když to uděláš, obsah se objeví v <code>/run/media/*</code>.</p>
-<h2>/sbin</h2>
+<h2 id="sbin">/sbin
+<a href="#sbin" class="header-link">#</a>
+</h2>
 <p>Tady jsou programy pro superuživatele, které by neměl spouštět běžný
 uživatel – nástroje na opravy disků, analýzu chyb, nastavení síťování
 a spousta jiných.</p>
 <p>Mezi <code>/bin</code> (<code>/usr/bin</code>) a <code>/sbin</code> (<code>/usr/sbin</code>) není v praxi moc velký rozdíl.
 V <code>PATH</code> máš normálně oba.</p>
-<h2>/srv</h2>
+<h2 id="srv">/srv
+<a href="#srv" class="header-link">#</a>
+</h2>
 <p>Pokud na tvém počítači má běžet webový server, sem se tradičně dávají věci
 které takový server zpřístupní.
 Nejspíš tam teď nic nemáš.</p>
-<h2>/sys</h2>
+<h2 id="sys">/sys
+<a href="#sys" class="header-link">#</a>
+</h2>
 <p>Informace o systému.
 Když je potřeba dát k dispozici nějaké informace o systému, nebo zařídit,
 aby se dal ovládat, je zde na to soubor.
@@ -274,7 +312,9 @@ Dají se tu nastavit např. detaily správy paměti nebo (na opravdovém počít
 třeba rychlost větráčků.</p>
 <p>Je podobný jako <code>/dev</code>: soubory v <code>/dev</code> se tvoří na základě
 informací v <code>/sys</code>.</p>
-<h2>/tmp</h2>
+<h2 id="tmp">/tmp
+<a href="#tmp" class="header-link">#</a>
+</h2>
 <p>Sem se dávají dočasné soubory.
 Na moderních systémech se tato složka automaticky smaže při startu systému.</p>
 <p>Historicky se sem ukládaly např. stažené soubory z prohlížeče nebo
@@ -287,9 +327,13 @@ Například když v prohlížeči zmáčkneš u stahování přílohy <em>otevř
 <em>stáhni</em>, tak se příloha stáhne do <code>/tmp</code>.</p>
 <p>Krom toho existuje i <code>/var/tmp</code>, kam se dávají dočasné soubory
 které nechceš smazat po restartu počítače.</p>
-<h2>/usr</h2>
+<h2 id="usr">/usr
+<a href="#usr" class="header-link">#</a>
+</h2>
 <p>Složky pro uživatele, kopírují strukturu kořenového adresáře.</p>
-<h2>/var</h2>
+<h2 id="var">/var
+<a href="#var" class="header-link">#</a>
+</h2>
 <p>Tady jsou soubory, které se mění za běhu systému.
 <code>/var/mail</code> je systémová pošta. E-mail je standard starší než internet – zprávy
 se dají posílat i mezi uživateli v rámci jednoho počítače.</p>

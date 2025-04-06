@@ -1,9 +1,13 @@
-<h1>Instalace balíčků</h1>
+<h1 id="instalace_balicku">Instalace balíčků
+<a href="#instalace_balicku" class="header-link">#</a>
+</h1>
 <p>Jakým způsobem instaluješ software na linuxovém systému?</p>
-<p>Pravděpodobně máš k dispozici grafický program, kde si můžeš dostupné programy prohlédnout, přečíst jejich popisky, kouknout na obrázky, jak vypadají, a zakliknout tlačítko "Instaluj".
+<p>Pravděpodobně máš k dispozici grafický program, kde si můžeš dostupné programy prohlédnout, přečíst jejich popisky, kouknout na obrázky, jak vypadají, a zakliknout tlačítko &quot;Instaluj&quot;.
 Grafický instalátor se postará o vše potřebné a zpřístupní ti ikonku nového programu v nabídce aplikací.</p>
 <p>My se ale dnes podíváme hlouběji, na systémy, díky kterým můžeš instalovat balíčky jednotným způsobem.</p>
-<h2>Balíčkovací systémy</h2>
+<h2 id="balickovaci_systemy">Balíčkovací systémy
+<a href="#balickovaci_systemy" class="header-link">#</a>
+</h2>
 <p>Linuxové systémy používají takzvané <em>balíčkovací systémy</em> (angl. <em>package managers</em>).
 Filozofie pod nimi je přímočará - je to vlastně o tom, že stáhneš archiv
 a rozbalíš si ho na disk podobně jak ZIP-ový adresář.
@@ -25,7 +29,9 @@ Instalace jednoho balíčku tak často znamená, že musíš instalovat mnohem v
 balíčků - ten “hlavní” a všechny ostatní, na kterých závisí.</p>
 <p>Podobná situace nastane při odinstalování: kromě „hlavního“ odinstalovaného
 programu se smažou i dalśi balíčky, které nebudou potřeba.</p>
-<h2>Dva systémy</h2>
+<h2 id="dva_systemy">Dva systémy
+<a href="#dva_systemy" class="header-link">#</a>
+</h2>
 <p>Hodně systémů používá balíčkovací nástroje dva.
 Jeden základní zvládá samotnou instalaci a odinstalaci, plus zjišťování
 a kontrolu toho, co je zrovna nainstalováno.
@@ -48,36 +54,12 @@ Podobně jako <code>dnf</code> stahuje a instaluje včetně závislostí.</p>
 <p>Volba balíčkovacího systému se v různých Linuxových distribucích liší.
 Často to je jedna z mála částí systému, které nejdou snadno vyměnit za jinou.
 Tady je malý přehled:</p>
-<table>
-<thead><tr>
-<th>Distro</th>
-<th>Základní systém</th>
-<th>Nadstavby</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Fedora</td>
-<td>RPM</td>
-<td>DNF; yum</td>
-</tr>
-<tr>
-<td>Debian &amp; Ubuntu</td>
-<td>APT</td>
-<td>aptitude; Synaptic; APT</td>
-</tr>
-<tr>
-<td>Arch Linx</td>
-<td>pacman</td>
-<td>pacman</td>
-</tr>
-<tr>
-<td>OpenSUSE</td>
-<td>RPM</td>
-<td>YaST</td>
-</tr>
-</tbody>
-</table>
+<p>| Distro          | Základní systém             | Nadstavby                    |
+| --------------- | --------------------------- | ---------------------------- |
+| Fedora          | RPM                         | DNF; yum                     |
+| Debian &amp; Ubuntu | APT                         | aptitude; Synaptic; APT      |
+| Arch Linx       | pacman                      | pacman                       |
+| OpenSUSE        | RPM                         | YaST                         |</p>
 <p>Tyto balíčkovací nástroje spravují samotný operační systém:
 vše od jádra přes shell až po „uživatelské“ aplikace.
 Instalují software ke kterému mají přístup všichni uživatelé systému;
@@ -92,19 +74,21 @@ Android); některé jsou univerzálnější (Nix, Conda, Homebrew, Flatpak, Snap
 </div><p>Máme nainstalovanou Fedoru; pojďme se tedy podívat na RPM a DNF.
 Nástroje ostatních systémů vesměs umí stené základní operace,
 ale příkazy budou vdy vypadat trošku jinak.</p>
-<h2>RPM – informace o balíčcích</h2>
+<h2 id="rpm_informace_o_baliccich">RPM – informace o balíčcích
+<a href="#rpm_informace_o_baliccich" class="header-link">#</a>
+</h2>
 <p>Pomocí <code>rpm -q</code> (z angl. <em>query</em>, dotaz) se zeptáš na informace o balíčku,
 který máš nainstalovaný.
 Samotným přepínačem <code>-q</code> dostaneš aktuálně nainstalovanou verzi:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm -q bash
+<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm<span class="w"> </span>-q<span class="w"> </span>bash
 <span class="go">bash-5.1.0-2.fc34.x86_64</span>
-<span class="gp">$ </span>rpm -q python3
+<span class="gp">$ </span>rpm<span class="w"> </span>-q<span class="w"> </span>python3
 <span class="go">python3-3.9.7-1.fc34.x86_64</span>
-<span class="gp">$ </span>rpm -q gnome-terminal
+<span class="gp">$ </span>rpm<span class="w"> </span>-q<span class="w"> </span>gnome-terminal
 <span class="go">gnome-terminal-3.40.3-1.fc34.x86_64</span>
 </pre></div><div class="admonition note"><p>V některých případech může být nainstalovaných verzí víc, např.
 u jádra systému:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm -q kernel
+<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm<span class="w"> </span>-q<span class="w"> </span>kernel
 <span class="go">kernel-5.11.12-300.fc34.x86_64</span>
 <span class="go">kernel-5.14.16-201.fc34.x86_64</span>
 </pre></div><p>Kdyby „poslední“ verze byla špatná – nepodařilo by se s ní zapnout
@@ -120,7 +104,7 @@ Nový uživatel tedy v domovském adresáři bude mít <code>.bashrc</code>, <c
 atd.</p>
 <p>Příkaz <code>rpm -q --requires bash</code> vypíše závislosti – to co <code>bash</code> potřebuje,
 aby mohl být nainstalován:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm -q --requires bash
+<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm<span class="w"> </span>-q<span class="w"> </span>--requires<span class="w"> </span>bash
 <span class="go">/usr/bin/sh</span>
 <span class="go">config(bash) = 5.1.0-2.fc34</span>
 <span class="go">filesystem &gt;= 3</span>
@@ -157,7 +141,7 @@ nějaký jiný balíček. Není to ale přímo jméno balíčku.</li>
 </ul>
 <p>Příkaz <code>rpm -q --provides bash</code> vypíše „virtuální závislosti“,
 které ostatním balíčkům poskytuje <code>bash</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm -q --provides bash
+<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm<span class="w"> </span>-q<span class="w"> </span>--provides<span class="w"> </span>bash
 <span class="go">/bin/bash</span>
 <span class="go">/bin/sh</span>
 <span class="go">bash = 5.1.0-2.fc34</span>
@@ -168,19 +152,21 @@ si ji poskytuje (<code>--provides</code>).
 To je normální.</p>
 </div><p>Když chceš zjistit, který balíček poskytuje některou závislost,
 můžeš použít přepínač <code>--whatprovides</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm -q --whatprovides <span class="s1">&#39;libc.so.6()(64bit)&#39;</span>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm<span class="w"> </span>-q<span class="w"> </span>--whatprovides<span class="w"> </span><span class="s1">&#39;libc.so.6()(64bit)&#39;</span>
 <span class="go">glibc-2.33-20.fc34.x86_64</span>
 </pre></div><p><code>libc.so.6()(64bit)</code>, tedy standardní knihovnu jazyka C,
 poskytuje balíček <code>glibc</code>.
 A které balíčky tuhle věc potřebují?
 Ty vypíše přepínač <code>--whatrequires</code>, a je jich hodně:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm -q --whatrequires <span class="s1">&#39;libc.so.6()(64bit)&#39;</span>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm<span class="w"> </span>-q<span class="w"> </span>--whatrequires<span class="w"> </span><span class="s1">&#39;libc.so.6()(64bit)&#39;</span>
 <span class="go">[...]</span>
-<span class="gp">$ </span>rpm -q --whatrequires <span class="s1">&#39;libc.so.6()(64bit)&#39;</span> <span class="p">|</span> wc -l
-</pre></div><h2>Informace o Pythonu</h2>
+<span class="gp">$ </span>rpm<span class="w"> </span>-q<span class="w"> </span>--whatrequires<span class="w"> </span><span class="s1">&#39;libc.so.6()(64bit)&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+</pre></div><h2 id="informace_o_pythonu">Informace o Pythonu
+<a href="#informace_o_pythonu" class="header-link">#</a>
+</h2>
 <p>Balíček s Pythonem se na Fedoře jmenuje <code>python3</code>.
 Zkus se podívat, jaké soubory obsahuje:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm -ql python3
+<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm<span class="w"> </span>-ql<span class="w"> </span>python3
 <span class="go">/usr/bin/pydoc</span>
 <span class="go">/usr/bin/pydoc3</span>
 <span class="go">/usr/bin/pydoc3.9</span>
@@ -196,7 +182,7 @@ Zkus se podívat, jaké soubory obsahuje:</p>
 </pre></div><p>To je docela málo!
 Hlavní část Pythonu – standardní knihovna – je totiž „schovaná“ v jedné ze
 závislostí:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm -q --requires python3
+<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm<span class="w"> </span>-q<span class="w"> </span>--requires<span class="w"> </span>python3
 <span class="go">libc.so.6()(64bit)</span>
 <span class="go">libc.so.6(GLIBC_2.2.5)(64bit)</span>
 <span class="go">libpython3.9.so.1.0()(64bit)</span>
@@ -209,11 +195,11 @@ závislostí:</p>
 </pre></div><p>Je to <code>python3-libs(x86-64)</code>.</p>
 <p>Když chceš zjistit, který balíček tuhle poskytuje,
 můžeš použít přepínač <code>--whatprovides</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm -q --whatprovides <span class="s1">&#39;python3-libs(x86-64)&#39;</span>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm<span class="w"> </span>-q<span class="w"> </span>--whatprovides<span class="w"> </span><span class="s1">&#39;python3-libs(x86-64)&#39;</span>
 <span class="go">python3-libs-3.9.7-1.fc34.x86_64</span>
 </pre></div><p>A opravdu, balíček <code>python3-libs</code> verze <code>3.9.7-1.fc34.x86_64</code>
 poskytuje závislost <code>python3-libs(x86-64)</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm -q --provides python3-libs-3.9.7-1.fc34.x86_64
+<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm<span class="w"> </span>-q<span class="w"> </span>--provides<span class="w"> </span>python3-libs-3.9.7-1.fc34.x86_64
 <span class="go">bundled(libmpdec) = 2.5.0</span>
 <span class="go">bundled(mpdecimal) = 2.5.0</span>
 <span class="go">libpython3.9.so.1.0()(64bit)</span>
@@ -224,17 +210,19 @@ poskytuje závislost <code>python3-libs(x86-64)</code>:</p>
 <span class="go">python3.9-libs = 3.9.7-1.fc34</span>
 </pre></div><p>A pomocí <code>rpm -q -l python3-libs</code> můžeš zobrazit soubory v tomto balíčku.
 Tentokrát je jich několik tisíc.</p>
-<h2>Repozitář</h2>
+<h2 id="repozitar">Repozitář
+<a href="#repozitar" class="header-link">#</a>
+</h2>
 <p>Příkaz <code>rpm</code> nekomunikuje po internetu.
 Neumí tedy prohledávat balíčky které ještě nemáš nainstalované
 nebo zjišťovat, jestli u některých z nich není k dispozici nová verze.</p>
 <p>Takž můžeš zjistit, jak se jmenuje balíček s příkazem <code>bash</code> nebo <code>cat</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm -q --whatprovides /usr/bin/bash
+<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm<span class="w"> </span>-q<span class="w"> </span>--whatprovides<span class="w"> </span>/usr/bin/bash
 <span class="go">bash-5.1.0-2.fc34.x86_64</span>
-<span class="gp">$ </span>rpm -q --whatprovides /usr/bin/cat
+<span class="gp">$ </span>rpm<span class="w"> </span>-q<span class="w"> </span>--whatprovides<span class="w"> </span>/usr/bin/cat
 <span class="go">coreutils-8.32-30.fc34.x86_64</span>
 </pre></div><p>Ale nemůžeš to udělatpro příkaz <code>ogg123</code> (pokud ho nemáš nainstalovaný):</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm -q --whatprovides /usr/bin/ogg123
+<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm<span class="w"> </span>-q<span class="w"> </span>--whatprovides<span class="w"> </span>/usr/bin/ogg123
 <span class="go">chyba: soubor /usr/bin/ogg123: Adresář nebo soubor neexistuje</span>
 </pre></div><p>K tomu je potřeba prohlédnout <em>repozitář</em> – seznam všeho softwaru,
 který Fedora poskytuje.</p>
@@ -242,7 +230,7 @@ který Fedora poskytuje.</p>
 <code>rpm</code>, ale „ví“ i o balíčcích, které zrovna nejsou nainstalované.</p>
 <p>Obdoba <code>rpm -q</code> je <code>dnf repoquery</code>.
 Můžeš se tedy podívat, jaký balíček obsahuje příkaz <code>ogg123</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>dnf repoquery --whatprovides /usr/bin/ogg123
+<div class="highlight"><pre><span></span><span class="gp">$ </span>dnf<span class="w"> </span>repoquery<span class="w"> </span>--whatprovides<span class="w"> </span>/usr/bin/ogg123
 <span class="go">Fedora 34 - x86_64                              6.8 MB/s |  74 MB     00:10    </span>
 <span class="go">Fedora 34 openh264 (From Cisco) - x86_64        2.5 kB/s | 2.5 kB     00:01    </span>
 <span class="go">Fedora Modular 34 - x86_64                      2.3 MB/s | 4.9 MB     00:02    </span>
@@ -255,14 +243,16 @@ Co jsou ale ty řádky nad tím?</p>
 který sedá nainstalovat).
 Když ho pustíš znovu, místo aktualizace jen vypíše poznámku o tom, že jsou
 naposledy stažené informace dost aktuální:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>dnf repoquery --whatprovides /usr/bin/ogg123
+<div class="highlight"><pre><span></span><span class="gp">$ </span>dnf<span class="w"> </span>repoquery<span class="w"> </span>--whatprovides<span class="w"> </span>/usr/bin/ogg123
 <span class="go">Poslední kontrola metadat: před 0:00:48, Po 22. listopadu 2021, 14:53:50.</span>
 <span class="go">vorbis-tools-1:1.4.2-2.fc34.x86_64</span>
 </pre></div><div class="admonition note"><p>Informace o stahování a aktuálnosti se vypsaly na standardní chybový výstup.
 Když ten přesměruješ do <code>/dev/null</code>, dostaneš jen samotné jméno balíčku:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>dnf repoquery --whatprovides /usr/bin/ogg123 <span class="m">2</span>&gt;/dev/null
+<div class="highlight"><pre><span></span><span class="gp">$ </span>dnf<span class="w"> </span>repoquery<span class="w"> </span>--whatprovides<span class="w"> </span>/usr/bin/ogg123<span class="w"> </span><span class="m">2</span>&gt;/dev/null
 <span class="go">vorbis-tools-1:1.4.2-2.fc34.x86_64</span>
-</pre></div></div><h2>Instalace a odinstalace</h2>
+</pre></div></div><h2 id="instalace_a_odinstalace">Instalace a odinstalace
+<a href="#instalace_a_odinstalace" class="header-link">#</a>
+</h2>
 <p>RPM umí i instalovat (<code>-i</code>) a mazat (<code>-e</code>) balíčky, ale protože neřeší
 závislosti a stahování, hodí se to jen v hodně zvláštních situacích, např:</p>
 <ul>
@@ -280,14 +270,14 @@ nejspíš nebude správně fungovat, ale když jsi <code>root</code>, můžeš v
 (větně nepotřebných závislostí)</p>
 </li>
 <li><p><code>dnf update</code> - aktualizace – <code>dnf</code> se podívá na internet,
- zjistí nejnovější verze všech balíčků, které máš nainstalované a nabídne
- novější verze.</p>
+zjistí nejnovější verze všech balíčků, které máš nainstalované a nabídne
+novější verze.</p>
 </li>
 </ul>
 <p>Na rozdíl od <code>dnf repoquery</code> a <code>rpm -q</code> tyhle příkazy modifikují systém,
 a tak je potřeba je pouštět s právy superuživatele – tedy pomocí <code>sudo</code>.</p>
 <p>Zkus si nainstalovat balíček <code>vorbis-tools</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo dnf install vorbis-tools
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>vorbis-tools
 <span class="go">Poslední kontrola metadat: před 0:42:11, Po 22. listopadu 2021, 14:35:00.</span>
 <span class="go">Závislosti vyřešeny.</span>
 <span class="go">============================================================================================</span>
@@ -325,7 +315,7 @@ a tak je potřeba je pouštět s právy superuživatele – tedy pomocí <code>
 Kdybys ho spouštěla automaticky, ze skriptu, můžeš použít přepínač <code>-y</code>
 (z angl. <em>yes</em>, ano) – <code>dnf</code> se pak na takové otázky nebude ptát a bude
 předpokládat kladnou odpověď. Zkus si to na odinstalaci:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo dnf remove -y vorbis-tools
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>remove<span class="w"> </span>-y<span class="w"> </span>vorbis-tools
 <span class="go">Závislosti vyřešeny.</span>
 <span class="go">============================================================================================</span>
 <span class="go"> Balíček                Architektura     Verze                      Repozitář         Velikost</span>
@@ -356,15 +346,17 @@ předpokládat kladnou odpověď. Zkus si to na odinstalaci:</p>
 Protože DNF přístup k repozitáři, umí vybrat správný balíček i podle souboru,
 který zadáš.
 Když tedy chceš nainstalovat opříkaz <code>ogg123</code>, můžeš zadat:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo dnf install /usr/bin/ogg123
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>/usr/bin/ogg123
 <span class="go">[...]</span>
 <span class="go">Hotovo!</span>
 </pre></div><p>A teď si štěknutí můžeš přehrát.
 (Doufám že na virtuálním počítači to půjde slyšet.)</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>locate bark.ogg
+<div class="highlight"><pre><span></span><span class="gp">$ </span>locate<span class="w"> </span>bark.ogg
 <span class="go">/usr/share/sounds/gnome/default/alerts/bark.ogg</span>
-<span class="gp">sh-5.1$ </span>ogg123 -d alsa /usr/share/sounds/gnome/default/alerts/bark.ogg
-</pre></div><h2>Repozitáře</h2>
+<span class="gp">sh-5.1$ </span>ogg123<span class="w"> </span>-d<span class="w"> </span>alsa<span class="w"> </span>/usr/share/sounds/gnome/default/alerts/bark.ogg
+</pre></div><h2 id="repozitare">Repozitáře
+<a href="#repozitare" class="header-link">#</a>
+</h2>
 <p>Repozitář je místo na internetu, kde jsou ke stažení balíčky.
 Ruzné repozitáře obsahují různé balíčky.
 Můžeš si jich přidat několik.
@@ -391,7 +383,7 @@ Tento projekt spravuje dva repozitáře:</p>
 „Free“ je tu od „freedom“ – volnost software používat, zkoumat a měnit.</p>
 </div><p>Na stránkách <a href="https://rpmfusion.org/">rpmfusion</a> se můžeš doklikat k návodu,
 jak přidat repozitář do svého systému. Pro <em>free</em> variantu to je:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-<span class="k">$(</span>rpm -E %fedora<span class="k">)</span>.noarch.rpm
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-<span class="k">$(</span>rpm<span class="w"> </span>-E<span class="w"> </span>%fedora<span class="k">)</span>.noarch.rpm
 </pre></div><p>Při první instalaci z nového repozitáře se DNF zeptá, jestli věříš
 šifrovacím klíčům, kterýmijsou balíčky podepsané:</p>
 <div class="highlight"><pre><span></span><span class="go">Importuje se GPG klíč 0xD651FF2E:</span>
@@ -405,7 +397,7 @@ Jestli sedí, je balíček podepsaný od správců RPM Fusion.</p>
 <p>Když se instalace povede, budeš mít na systému nový balíček
 <code>rpmfusion-free-release</code>.
 Ten přidává nastavení repozitáře do <code>/etc/yum.repos.d/</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm -ql rpmfusion-free-release
+<div class="highlight"><pre><span></span><span class="gp">$ </span>rpm<span class="w"> </span>-ql<span class="w"> </span>rpmfusion-free-release
 <span class="go">/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-2020</span>
 <span class="go">/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-32</span>
 <span class="go">/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-32-primary</span>
@@ -417,12 +409,14 @@ Ten přidává nastavení repozitáře do <code>/etc/yum.repos.d/</code>:</p>
 <span class="go">/etc/yum.repos.d/rpmfusion-free-updates.repo</span>
 <span class="go">/etc/yum.repos.d/rpmfusion-free.repo</span>
 </pre></div><p>Od teď můžeš nainstalovat přehrávače videa/hudby jako <code>mplayer</code> nebo <code>vlc</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo dnf install mplayer
-<span class="gp">$ </span>mplayer /usr/share/sounds/gnome/default/alerts/bark.ogg
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>mplayer
+<span class="gp">$ </span>mplayer<span class="w"> </span>/usr/share/sounds/gnome/default/alerts/bark.ogg
 </pre></div><div class="admonition note"><p>Zvuky ve formátu <code>.ogg</code> jde přehrávat pomocí <code>ogg123</code>,
 tedy i bez přidání <code>rpmfusion</code>.
 <code>mplayer</code> ale funguje i s <code>.mp3</code> a ostatními.</p>
-</div><h2>Další repozitáře</h2>
+</div><h2 id="dalsi_repozitare">Další repozitáře
+<a href="#dalsi_repozitare" class="header-link">#</a>
+</h2>
 <p>Podobný „dodatečný“ repozitář si může založit kdokoli.
 Kdyby ses chtěla do tvoření balíčků ponořit, výsledky své práce můžeš
 distribuovat na stránkách <a href="https://copr.fedorainfracloud.org/">COPR</a>.
@@ -435,14 +429,17 @@ kam si může kdokoli nahrát svůj software, pod jménem <strong>PPA</strong>
 <p>Pro systémy CentOS, RHEL atd. existuje sada repozitářů <strong>EPEL</strong>
 (Extra Packages for Enterprise Linux), který má podobná pravidla
 jako Fedora.</p>
-</div><h2>Co je nainstalováno?</h2>
+</div><h2 id="co_je_nainstalovano">Co je nainstalováno?
+<a href="#co_je_nainstalovano" class="header-link">#</a>
+</h2>
 <p>Pomocí <code>dnf</code> můžeš instalovat jak grafické aplikace (na které funguje
 i grafický nástroj <em>Gnome Software</em> tak i programy pro příkazovou řádku
 nebo systémové knihovny.
 Taky se můžeš např. podívat jaký  software máš nainstalovaný
 (což jde i bez <code>sudo</code>):</p>
-<div class="highlight"><pre><code>$ sudo dnf list installed</code></pre></div><p>Taky můžeš celý systém aktualizovat – DNF najde balíčky pro které
+<div class="highlight"><pre><code>$ sudo dnf list installed
+</code></pre></div><p>Taky můžeš celý systém aktualizovat – DNF najde balíčky pro které
 je v repozitářích k dispozici novější verze, stáhne je a nahradí jimi
 to co máš nainstalováno:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo dnf update
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>update
 </pre></div>

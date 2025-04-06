@@ -1,4 +1,6 @@
-<h1>Firewall</h1>
+<h1 id="firewall">Firewall
+<a href="#firewall" class="header-link">#</a>
+</h1>
 <div class="admonition warning"><p>Toto jsou jen poznámky, ne materiály k samostudiu</p>
 </div><p>Ještě než půjdeme na náš dnešní úkol, musíme pozměnit nastavení firewallu na naší Fedoře.
 Firewall je síťové zařízení, které povoluje/blokuje připojení podle zadaných parametrů.
@@ -18,12 +20,14 @@ z jiného počítače, je třeba otevřít port 80.
 který defaultně porty z beszpečnostních důvodů zavíře – znepřístupní.
 Na konfiguraci firewallu existuje nástroj.
 Webový server na virtuálním počítači povolíš příkazem:</p>
-<div class="highlight"><pre><span></span><span class="gp"># </span>firewall-cmd --add-service<span class="o">=</span>http
+<div class="highlight"><pre><span></span><span class="gp"># </span>firewall-cmd<span class="w"> </span>--add-service<span class="o">=</span>http
 <span class="go">success</span>
 </pre></div><p>A zapiš, že má být povolen port pro <code>http</code> po dalším startu:</p>
-<div class="highlight"><pre><span></span><span class="gp"># </span>firewall-cmd --permanent --add-service<span class="o">=</span>http 
+<div class="highlight"><pre><span></span><span class="gp"># </span>firewall-cmd<span class="w"> </span>--permanent<span class="w"> </span>--add-service<span class="o">=</span>http<span class="w"> </span>
 <span class="go">success</span>
-</pre></div><h2>Zjištění adresy</h2>
+</pre></div><h2 id="zjisteni_adresy">Zjištění adresy
+<a href="#zjisteni_adresy" class="header-link">#</a>
+</h2>
 <div class="highlight"><pre><code>$ ip a
 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -36,4 +40,5 @@ Webový server na virtuálním počítači povolíš příkazem:</p>
     inet 192.168.122.64/24 brd 192.168.122.255 scope global dynamic noprefixroute enp1s0
        valid_lft 3107sec preferred_lft 3107sec
     inet6 fe80::4aa5:69dc:eba6:6e54/64 scope link noprefixroute 
-       valid_lft forever preferred_lft forever</code></pre></div>
+       valid_lft forever preferred_lft forever
+</code></pre></div>

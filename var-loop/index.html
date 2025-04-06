@@ -1,16 +1,18 @@
-<h1>Proměnné a cyklus</h1>
-<p>Přesuň se do složky <code>data-shell/creatures</code>. 
+<h1 id="promenne_a_cyklus">Proměnné a cyklus
+<a href="#promenne_a_cyklus" class="header-link">#</a>
+</h1>
+<p>Přesuň se do složky <code>data-shell/creatures</code>.
 Jsou v ní tři soubory:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>ls
 <span class="go">basilisk.dat  minotaur.dat  unicorn.dat</span>
-</pre></div><p>Podívej se, jaké informace tyto soubory obsahují. 
+</pre></div><p>Podívej se, jaké informace tyto soubory obsahují.
 Na začátku každého z nich je nějaká informace o zvířeti které popisují,
 a následuje část DNA sekvence.
 Tvůj úkol je zjistit, jaké informace se nachází na prvních třech řádcích
 každého souboru.
 Pro tento úkol se může hodit například příkaz <code>head</code>.
 (Všimni si, co <code>head</code> dělá když mu dáš ke zpracování více souborů.)</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>head -n3 *.dat
+<div class="highlight"><pre><span></span><span class="gp">$ </span>head<span class="w"> </span>-n3<span class="w"> </span>*.dat
 <span class="go">==&gt; basilisk.dat &lt;==</span>
 <span class="go">COMMON NAME: basilisk</span>
 <span class="go">CLASSIFICATION: basiliscus vulgaris</span>
@@ -37,14 +39,18 @@ souboru <code>basilisk.dat</code>.</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <p>Můžeš na to jít postupně: nejprve vybereš dva první řádky,
-pak z těch dvou jeden poslední.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>head -n2 basilisk.dat <span class="p">|</span> tail -n1
-<span class="go">CLASSIFICATION: basiliscus vulgaris</span>
-</pre></div>
+<span></span>pak z těch dvou jeden poslední.</p>
+<span></span><div class="highlight"><pre><span></span><span class="gp">$ </span>head<span class="w"> </span>-n2<span class="w"> </span>basilisk.dat<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n1
+<span></span><span class="go">CLASSIFICATION: basiliscus vulgaris</span>
+<span></span></pre></div>
     </div>
-</div><p>Teď stačí pokaždé přepsat jméno souboru a máš to! To je ale trochu otravné.
+</div>
+
+<p>Teď stačí pokaždé přepsat jméno souboru a máš to! To je ale trochu otravné.
 Jde to zjednodušit? Samozřejmě.</p>
-<h2>Proměnné</h2>
+<h2 id="promenne">Proměnné
+<a href="#promenne" class="header-link">#</a>
+</h2>
 <p>V Pythonu bychom pro takový opakovaný kus kódu
 použili proměnnou a napsali cyklus.
 To se teď naučíme dělat v Bashi. Začneme proměnnými.</p>
@@ -52,13 +58,13 @@ To se teď naučíme dělat v Bashi. Začneme proměnnými.</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nv">jmeno</span><span class="o">=</span>minotaur.dat
 </pre></div><p>Pozor na to, že kolem rovnítka nesmí být mezery!</p>
 <p>Když pak chceš použit obsah této proměnné a napíšeš <code>echo jmeno</code>, co to vypíše?</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">echo</span> jmeno
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">echo</span><span class="w"> </span>jmeno
 <span class="go">jmeno</span>
 </pre></div><p>Jak vidíš, není to správná cesta.
 Abys Bashi dala najevo že chceš skutečně vypsat obsah proměnné <code>jmeno</code>,
 je potřeba něco navíc.
 To něco je speciální operátor: dolar před jménem proměnné.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">echo</span> <span class="nv">$jmeno</span>
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$jmeno</span>
 <span class="go">minotaur.dat</span>
 </pre></div><p>Na rozdíl od Pythonu se v Bashi proměnné nedosazují automaticky.
 Je na to vždy potřeba použít <code>$</code>.</p>
@@ -70,15 +76,15 @@ ne “použít proměnnou”.</p>
 stejného znaku.)</p>
 </div><p>Proměnnou můžeš použít jako název souboru.
 Následujícím příkazem získáš druhý řádek ze souboru, který je uložený v proměnné <code>jmeno</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>head -n2 <span class="nv">$jmeno</span> <span class="p">|</span> tail -n1
+<div class="highlight"><pre><span></span><span class="gp">$ </span>head<span class="w"> </span>-n2<span class="w"> </span><span class="nv">$jmeno</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n1
 <span class="go">CLASSIFICATION: bos hominus</span>
 </pre></div><p>Podobně jako v Pythonu můžeš novým přiřazením přepsat obsah proměnné a zpřístupnit tak pro další příkazy jiná data pod stejným jménem.</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nv">jmeno</span><span class="o">=</span>unicorn.dat
-<span class="gp">$ </span>head -n2 <span class="nv">$jmeno</span> <span class="p">|</span> tail -n1
+<span class="gp">$ </span>head<span class="w"> </span>-n2<span class="w"> </span><span class="nv">$jmeno</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n1
 <span class="go">CLASSIFICATION: equus monocer</span>
 
 <span class="gp">$ </span><span class="nv">jmeno</span><span class="o">=</span>basilisk.dat
-<span class="gp">$ </span>head -n2 <span class="nv">$jmeno</span> <span class="p">|</span> tail -n1
+<span class="gp">$ </span>head<span class="w"> </span>-n2<span class="w"> </span><span class="nv">$jmeno</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n1
 <span class="go">CLASSIFICATION: basiliscus vulgaris</span>
 </pre></div><p>Do proměnných se hodí dávat i příkazy, které pak podle potřeby můžeš přepsat něčím jiným.
 Představ si, že normálně používáš program <code>less</code> pro čtení souborů.
@@ -87,15 +93,17 @@ kde program <code>less</code> není. Je tam ale archaický program <code>more</c
 <p>V takových případech můžeš jméno programu brát z proměnné:</p>
 <p>Příklad</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nv">moje_ctecka</span><span class="o">=</span>less
-<span class="gp">$ </span><span class="nv">$moje_ctecka</span> unicorn.dat
+<span class="gp">$ </span><span class="nv">$moje_ctecka</span><span class="w"> </span>unicorn.dat
 </pre></div><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nv">moje_ctecka</span><span class="o">=</span>more
-<span class="gp">$ </span><span class="nv">$moje_ctecka</span> unicorn.dat
+<span class="gp">$ </span><span class="nv">$moje_ctecka</span><span class="w"> </span>unicorn.dat
 </pre></div><p>Všimni si, jak se výstup pokaždé mění.</p>
-<h2>Cyklus for</h2>
+<h2 id="cyklus_for">Cyklus for
+<a href="#cyklus_for" class="header-link">#</a>
+</h2>
 <p>Pojďme teď proměnné využít v cyklech.</p>
 <p>Cyklus <code>for</code> se v Bashi zapisuje podobně jako v Pythonu, jen potřebuje trochu
 víc psaní a odřádkovávání.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span> jmeno <span class="k">in</span> a b c
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span><span class="w"> </span>jmeno<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>b<span class="w"> </span>c
 <span class="go">&gt; do</span>
 <span class="go">&gt;     echo $jmeno</span>
 <span class="go">&gt; done</span>
@@ -114,10 +122,10 @@ Hezké odsazení ale zvětšuje přehlednost kódu.
 V materiálech je proto píšu.</p>
 <p>Když za <code>done</code> zmáčkneš <kbd>Enter</kbd>, vypíše se postupně <code>a</code>, <code>b</code> a <code>c</code>.</p>
 <p>Když pak dáš šipku nahoru, místo víceřádkového příkazu ti ho Bash vypíše v jednořádkové formě.
-Jednotlivé příkazy budou odděleny středníky. 
+Jednotlivé příkazy budou odděleny středníky.
 Středník a nový řádek (<kbd>Enter</kbd>) v Bashi většinou znamenají totéž.
 (Ale nejsou <em>přesně</em> totéž – všimni si že za <code>do</code> středník není.)</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span> jmeno <span class="k">in</span> a b c<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="nv">$jmeno</span><span class="p">;</span> <span class="k">done</span>
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span><span class="w"> </span>jmeno<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>b<span class="w"> </span>c<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$jmeno</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
 <span class="go">a</span>
 <span class="go">b</span>
 <span class="go">c</span>
@@ -130,33 +138,37 @@ Zkus to udělat.</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <p>Jak na to? Dobré je si úkol rozdělit na dva kroky: cyklus přes soubory a samotný výpis.</p>
-<p>Nejprve si ve <code>for</code> cyklu vypiš obsah proměnné pomocí <code>echo</code>, aby sis byla jistá, že pracuješ se správnou hodnotou. 
-Když si zvykneš na výpomoc programu <code>echo</code>, ušetříš si v budoucnu spoustu starostí :)</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span> jmeno <span class="k">in</span> *.dat
-<span class="go">&gt; do</span>
-<span class="go">&gt;     echo $jmeno</span>
-<span class="go">&gt; done</span>
-<span class="go">basilisk.dat</span>
-<span class="go">minotaur.dat</span>
-<span class="go">unicorn.dat</span>
-</pre></div><p>Teď už víš, že rámec cyklu <code>for</code> cyklu je napsán správně.
-A tak můžeš místo <code>echo</code> provést už známý příkaz s <code>head</code> a <code>tail</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span> jmeno <span class="k">in</span> *.dat
-<span class="go">&gt; do</span>
-<span class="go">&gt;     head -n 2 $jmeno | tail -n 1</span>
-<span class="go">&gt; done</span>
-<span class="go">CLASSIFICATION: basiliscus vulgaris</span>
-<span class="go">CLASSIFICATION: bos hominus</span>
-<span class="go">CLASSIFICATION: equus monoceros</span>
-</pre></div>
+<span></span><p>Nejprve si ve <code>for</code> cyklu vypiš obsah proměnné pomocí <code>echo</code>, aby sis byla jistá, že pracuješ se správnou hodnotou.
+<span></span>Když si zvykneš na výpomoc programu <code>echo</code>, ušetříš si v budoucnu spoustu starostí :)</p>
+<span></span><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span><span class="w"> </span>jmeno<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.dat
+<span></span><span class="go">&gt; do</span>
+<span></span><span class="go">&gt;     echo $jmeno</span>
+<span></span><span class="go">&gt; done</span>
+<span></span><span class="go">basilisk.dat</span>
+<span></span><span class="go">minotaur.dat</span>
+<span></span><span class="go">unicorn.dat</span>
+<span></span></pre></div><p>Teď už víš, že rámec cyklu <code>for</code> cyklu je napsán správně.
+<span></span>A tak můžeš místo <code>echo</code> provést už známý příkaz s <code>head</code> a <code>tail</code>:</p>
+<span></span><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span><span class="w"> </span>jmeno<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.dat
+<span></span><span class="go">&gt; do</span>
+<span></span><span class="go">&gt;     head -n 2 $jmeno | tail -n 1</span>
+<span></span><span class="go">&gt; done</span>
+<span></span><span class="go">CLASSIFICATION: basiliscus vulgaris</span>
+<span></span><span class="go">CLASSIFICATION: bos hominus</span>
+<span></span><span class="go">CLASSIFICATION: equus monoceros</span>
+<span></span></pre></div>
     </div>
-</div><h3>Kontrola příkazu…</h3>
+</div>
+
+<h3 id="kontrola_prikazu">Kontrola příkazu…
+<a href="#kontrola_prikazu" class="header-link">#</a>
+</h3>
 <p>Kdybys chtěla udělat něco drastičtějšího než jen vypsat části souborů,
 doporučuju přidat ještě prostřední krok: použij <code>echo</code> pro vypsání
 samotného příkazu a zkontroluj, že se vypíšou opravdu příkazy
 chceš provést.</p>
 <p>Příklad:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span> jmeno <span class="k">in</span> *.dat
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span><span class="w"> </span>jmeno<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.dat
 <span class="go">&gt; do</span>
 <span class="go">&gt;     echo rm $jmeno </span>
 <span class="go">&gt; done</span>
@@ -167,30 +179,34 @@ chceš provést.</p>
 <p>Při přidávání <code>echo</code> si ale dej pozor na přesměrování a jiné “potrubní”
 speciální znaky.
 Následující příkaz nedělá jenom kontrolu:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span> jmeno <span class="k">in</span> *.dat
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span><span class="w"> </span>jmeno<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.dat
 <span class="go">&gt; do</span>
 <span class="go">&gt;     echo cat $jmeno &gt;&gt; vsechno.txt</span>
 <span class="go">&gt; done</span>
 </pre></div><p>Místo něj by bylo lepší napsat:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span> jmeno <span class="k">in</span> *.dat
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span><span class="w"> </span>jmeno<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.dat
 <span class="go">&gt; do</span>
 <span class="go">&gt;     echo &quot;cat $jmeno &gt;&gt; vsechno.txt&quot;</span>
 <span class="go">&gt; done</span>
-</pre></div><h3>…vnořené cykly…</h3>
+</pre></div><h3 id="vnorene_cykly">…vnořené cykly…
+<a href="#vnorene_cykly" class="header-link">#</a>
+</h3>
 <p>Cykly se dají i vnořovat, podobně jako v Pythonu.
 Následující příkaz kontroluje připravení adresářové struktury pro
 měření vlastností několika molekul za několika různých teplot:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span> molekula <span class="k">in</span> cubane ethane methane
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span><span class="w"> </span>molekula<span class="w"> </span><span class="k">in</span><span class="w"> </span>cubane<span class="w"> </span>ethane<span class="w"> </span>methane
 <span class="go">&gt; do</span>
 <span class="go">&gt;     for teplota in 25 30 37 40</span>
 <span class="go">&gt;     do</span>
 <span class="go">&gt;         echo mkdir $molekula-$teplota</span>
 <span class="go">&gt;     done</span>
 <span class="go">&gt; done</span>
-</pre></div><h3>…a něco o chybách</h3>
+</pre></div><h3 id="a_neco_o_chybach">…a něco o chybách
+<a href="#a_neco_o_chybach" class="header-link">#</a>
+</h3>
 <p>Tady je příklad časté chyby, kdy počítač sice udělá to co chceš,
 ale zároveň vypíše chybovou hlášku <code>head: cannot open 'ls' for reading: No such file or directory</code>.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span> jmeno <span class="k">in</span> ls *.dat
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span><span class="w"> </span>jmeno<span class="w"> </span><span class="k">in</span><span class="w"> </span>ls<span class="w"> </span>*.dat
 <span class="go">&gt; do</span>
 <span class="go">&gt;     head -n 2 $jmeno | tail -n 1</span>
 <span class="go">&gt; done</span>
@@ -203,13 +219,15 @@ Odpověď je jednoduchá: Bash interpretuje část <code>ls *.dat</code> jako <e
 Do proměnné <code>jmeno</code> tedy přiřadí postupně slova <code>ls</code>, pak <code>basilisk.dat</code>, pak <code>minotaur.dat</code> atd.
 Příkaz <code>head -n 2 $jmeno</code> si pak u <code>ls</code> stěžuje, že takový soubor neexistuje.</p>
 <p>Můžeš taky narazit na jinou chybu. Už víš, že <code>for</code> cyklus prochází slova, ne příkazy. V příkladu níže jsme zapomněli v těle cyklu uvést <code>echo</code>. Co se stane, když ho spustíš?</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span> jmeno <span class="k">in</span> cat dog mouse
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="k">for</span><span class="w"> </span>jmeno<span class="w"> </span><span class="k">in</span><span class="w"> </span>cat<span class="w"> </span>dog<span class="w"> </span>mouse
 <span class="go">&gt; do</span>
 <span class="go">&gt;     $jmeno</span>
 <span class="go">&gt; done</span>
-</pre></div><p>To, co je pro první řádek cyklu slovo, se v těle používá jako Bashový příkaz. 
-Zavolala jsi tedy příkaz <code>cat</code> bez argumentů, který čeká na vstup z klávesnice. 
+</pre></div><p>To, co je pro první řádek cyklu slovo, se v těle používá jako Bashový příkaz.
+Zavolala jsi tedy příkaz <code>cat</code> bez argumentů, který čeká na vstup z klávesnice.
 Ukončíš-li ho klávesovou zkratkou <kbd>Ctrl</kbd>+<kbd>D</kbd>,
 objeví se následně chybový výpis o tom, že příkazy <code>dog</code> a <code>mouse</code> nejsou Bashi známé.</p>
-<h2>While?</h2>
+<h2 id="while">While?
+<a href="#while" class="header-link">#</a>
+</h2>
 <p>V Bashi existuje taky cyklus <code>while</code>. Seznámíme se s ním ale až později.</p>

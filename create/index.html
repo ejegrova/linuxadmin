@@ -1,29 +1,35 @@
-<h1>Práce se soubory a adresáři</h1>
+<h1 id="prace_se_soubory_a_adresari">Práce se soubory a adresáři
+<a href="#prace_se_soubory_a_adresari" class="header-link">#</a>
+</h1>
 <p>Teď, když umíš zkoumat soubory a adresáře, je můžeš začít vytvářet.</p>
-<h2>Co už máme?</h2>
+<h2 id="co_uz_mame">Co už máme?
+<a href="#co_uz_mame" class="header-link">#</a>
+</h2>
 <p>Nejdřív se vrať do adresáře <code>data-shell</code> a pomocí <code>ls -F</code> se koukni,
 co v něm Nela už má:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> ~/Dokumenty/data-shell
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>~/Dokumenty/data-shell
 <span class="gp">$ </span><span class="nb">pwd</span>
 <span class="go">/home/nela/Desktop/data-shell</span>
-<span class="gp">$ </span>ls -F
+<span class="gp">$ </span>ls<span class="w"> </span>-F
 <span class="go">creatures/  data/  molecules/  north-pacific-gyre/  notes.txt  pizza.cfg  solar.pdf  writing/</span>
-</pre></div><h2>Vytvoření adresáře</h2>
+</pre></div><h2 id="vytvoreni_adresare">Vytvoření adresáře
+<a href="#vytvoreni_adresare" class="header-link">#</a>
+</h2>
 <p>Nela se rozhodla začít psát text své práce.</p>
 <p>Vytvoř nový adresář zvaný <code>clanek</code>.
 Použij k tomu příkaz <code>mkdir</code> (který nic nevypisuje):</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir clanek
+<div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir<span class="w"> </span>clanek
 </pre></div><p>Příkaz <code>mkdir</code> (z angl. <em>make directory</em>, vytvoř adresář) vytvoří adresář
 daného jména – nebo přesněji řečeno, na dané cestě.
 Protože je <code>clanek</code> relativní cesta (ač dosud neexistovala),
 nový adresář se vytvoří v aktuálním adresáři:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -F
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F
 <span class="go">creatures/  data/ clanek/  molecules/  north-pacific-gyre/  notes.txt  pizza.cfg  solar.pdf  writing/</span>
 </pre></div><p>A zatím v něm nic není:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -F clanek
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F<span class="w"> </span>clanek
 </pre></div><p>Kdyby ses pokusila vytvořit několik vnořených adresářů najednou,
 nebude to fungovat:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir clanek/kapitola-1/sekce-1/podsekce-1
+<div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir<span class="w"> </span>clanek/kapitola-1/sekce-1/podsekce-1
 <span class="go">mkdir: adresář „clanek/kapitola-1/sekce-1/podsekce-1“ nelze vytvořit: Adresář nebo soubor neexistuje</span>
 </pre></div><p>Chybová hláška tu je trošku zavádějící: <code>mkdir</code> si ve skutečnosti stěžuje
 na to, že neexistuje <code>clanek/kapitola-1/sekce-1</code>, kde by se měl vytvořit
@@ -31,7 +37,7 @@ adresář <code>podsekce-1</code>.</p>
 <p>V tomto případě můžeš buď vytvořit jednotlivé adresáře postupně, nebo použít
 přepínač <code>-p</code> (z angl. <em>parents</em>), který vytvoří i všechny potřebné nadřazené
 („rodičovské“) adresáře:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir -p clanek/kapitola-1/sekce-1/podsekce-1
+<div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir<span class="w"> </span>-p<span class="w"> </span>clanek/kapitola-1/sekce-1/podsekce-1
 </pre></div><p>Příkaz <code>mkdir</code> nic nevypsal.
 Nevypsal ani chybovou hlášku, což u většiny příkazů znamená že všechno proběhlo
 v pořádku.</p>
@@ -39,7 +45,7 @@ v pořádku.</p>
 Příkaz <code>ls</code> má přepínač <code>-R</code>, který vypíše obsah <em>všech</em> adresářů na které
 narazí, a to <strong>R</strong>ekurzivně – když v podadresáři najde další podadresář,
 „zanoří“ se i do něj.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -FR clanek
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-FR<span class="w"> </span>clanek
 <span class="go">kapitola-1/</span>
 
 <span class="go">clanek/kapitola-1:</span>
@@ -51,7 +57,7 @@ narazí, a to <strong>R</strong>ekurzivně – když v podadresáři najde dal�
 <span class="go">clanek/kapitola-1/sekce-1/podsekce-1:</span>
 </pre></div><p>Případně použij příkaz <code>tree</code>, který adresářovou strukturu vypíše
 „skoro graficky“:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>tree clanek
+<div class="highlight"><pre><span></span><span class="gp">$ </span>tree<span class="w"> </span>clanek
 <span class="go">clanek</span>
 <span class="go">└── kapitola-1</span>
 <span class="go">    └── sekce-1</span>
@@ -64,7 +70,9 @@ jsou <code>ls</code> nebo <code>mkdir</code>.
 Zřejmě se ještě nenašel dobrovolník který by <code>tree</code> přeložil do češtiny, nebo
 dokonce nikdo ani nepřidal podporu pro neanglické jazyky.
 Čím méně používané příkazy budeš zkoušet, tím častěji na angličtinu narazíš.</p>
-</div><h2>Pojmenovávání souborů a adresářů</h2>
+</div><h2 id="pojmenovavani_souboru_a_adresaru">Pojmenovávání souborů a adresářů
+<a href="#pojmenovavani_souboru_a_adresaru" class="header-link">#</a>
+</h2>
 <p>Teď, když víš jak vytvářet adresáře, se pojďme zaměřit na to,
 jak je pojmenovávat.
 Konkrétně jak je pojmenovávat tak, aby práce s nimi byla „v řádce“
@@ -127,9 +135,9 @@ máš dvě možnosti:</p>
 <ul>
 <li>Celé jméno uzavři do jednoduchých uvozovek, <code>'</code>.
 To funguje vždy, jen tak nejde napsat samotná jednoduchá uvozovka.</li>
-<li>Celé jméno uzavři do dvojitých uvozovek, <code>"</code>.
-Na rozdíl od Pythonu je mezi <code>'</code> a <code>"</code> rozdíl: ve dvojitých uvozovkách
-mají některé znaky (<code>$</code>, <code>`</code> a <code>!</code>) stále speciální funkci.
+<li>Celé jméno uzavři do dvojitých uvozovek, <code>&quot;</code>.
+Na rozdíl od Pythonu je mezi <code>'</code> a <code>&quot;</code> rozdíl: ve dvojitých uvozovkách
+mají některé znaky (<code>$</code>, <code><code>&lt;/code&gt; a </code>!`) stále speciální funkci.
 Je jich ale málo.</li>
 <li>Před speciální znaky dej zpětné lomítko, <code>\</code>, které funguje podobně jako
 v Pythonu.
@@ -138,22 +146,26 @@ Zpětná lomítka používá Bash při doplňování pomocí <kbd>Tab</kbd>.</li
 <p>Autor tohoto textu má mezery ve jménech skladeb – autoři hudby většinou
 na příkazovou řádku nemyslí a přejmenovávání je otrava.
 Tak používám příkazy jako:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>mplayer <span class="s2">&quot;disc 1/11 - On to Grasstown.mp3&quot;</span>
-<span class="gp">$ </span>mplayer disc<span class="se">\ </span><span class="m">1</span>/11<span class="se">\ </span>-<span class="se">\ </span>On<span class="se">\ </span>to<span class="se">\ </span>Grasstown.mp3
+<div class="highlight"><pre><span></span><span class="gp">$ </span>mplayer<span class="w"> </span><span class="s2">&quot;disc 1/11 - On to Grasstown.mp3&quot;</span>
+<span class="gp">$ </span>mplayer<span class="w"> </span>disc<span class="se">\ </span><span class="m">1</span>/11<span class="se">\ </span>-<span class="se">\ </span>On<span class="se">\ </span>to<span class="se">\ </span>Grasstown.mp3
 </pre></div><p>(Což ti teď nebude fungovat, pokud náhodou nemáš nainstalovaný tenhle
 přehrávač a uloženou tuhle hudbu.)</p>
-<h2>Vytváření souborů</h2>
+<h2 id="vytvareni_souboru">Vytváření souborů
+<a href="#vytvareni_souboru" class="header-link">#</a>
+</h2>
 <p>Přepni se do adresáře <code>clanek</code> a vytvoř soubor <code>osnova.txt</code> pomocí příkazu
 <code>touch</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> clanek
-<span class="gp">$ </span>touch osnova.txt
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>clanek
+<span class="gp">$ </span>touch<span class="w"> </span>osnova.txt
 </pre></div><div class="admonition note"><p class="admonition-title">Různé způsoby práce se soubory</p>
 <p>Vytvářet adresáře a soubory samozřejmě můžeš i z grafického „klikátka“.
 Příkazy v terminálu a grafické programy jsou různé způsoby jak se soubory
 pracovat, ale samotné soubory jsou vždy stejné.</p>
 <p>Ze začátku je práce v příkazové řádce složitější, ale jakmile si zvykneš,
 změní se to.</p>
-</div><h2>Přesouvání souborů a adresářů</h2>
+</div><h2 id="presouvani_souboru_a_adresaru">Přesouvání souborů a adresářů
+<a href="#presouvani_souboru_a_adresaru" class="header-link">#</a>
+</h2>
 <p>Vrať se do adresáře <code>data-shell</code>.</p>
 <div class="highlight"><pre><span></span><span class="go">cd ~/Dokumenty/data-shell</span>
 </pre></div><p>V adresáři <code>clanek</code> je teď soubor <code>osnova.txt</code>, ve kterém je spíš plán práce
@@ -164,10 +176,10 @@ cesta k souboru. Počítači je celkem jedno jestli se změní adresář nebo
 jen poslední část cesty – jméno.
 Pro obě operace se používá příkaz <code>mv</code> (z angl. <em>move</em>, přesuň), který
 potřebuje dva argumenty, „odkud“ a „kam“:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>mv clanek/osnova.txt clanek/plan.txt
+<div class="highlight"><pre><span></span><span class="gp">$ </span>mv<span class="w"> </span>clanek/osnova.txt<span class="w"> </span>clanek/plan.txt
 </pre></div><p>První argument říká, který existující soubor se má přesunout; druhý je cesta,
 kde se soubor bude nacházet po přesunutí.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls clanek/
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>clanek/
 <span class="go">kapitola-1/  plan.txt</span>
 </pre></div><div class="admonition warning"><p>Pozor na to, že pokud poslední argument („kam“) je existující soubor,
 <code>mv</code> ho <em>přepíše</em>.
@@ -178,7 +190,9 @@ přepínač <code>-i</code> zajistí, že <code>mv</code> před přepsáním sou
 <div class="admonition note"><p>Důležité systémy mají často <code>-i</code> nastaveno jako výchozí chování,
 ale není radno na to spoléhat :)</p>
 </div><p>Příkaz <code>mv</code> umí přesouvat i celé adresáře.</p>
-<h3>Přesouvání do adresáře</h3>
+<h3 id="presouvani_do_adresare">Přesouvání do adresáře
+<a href="#presouvani_do_adresare" class="header-link">#</a>
+</h3>
 <p>Teď ale pojď přesunout <code>plan.txt</code> do <em>aktuálního</em> adresáře.
 Opět použiješ <code>mv</code>, ale místo celého cílového jména („kam“) zadáš jen jméno
 adresáře, kam chceš soubor přesunout.
@@ -195,7 +209,7 @@ chování:</p>
 nesmíš.</p>
 </div><p>Pomocí dvou <code>ls</code> zkontroluj, že soubor z adresáře <code>clanek</code> zmizel, ale objevil
 se v aktuálním adresáři, <code>data-shell</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls clanek
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>clanek
 <span class="go">kapitola-1/</span>
 <span class="gp">$ </span>ls
 <span class="go">creatures  molecules           solar.pdf  writing</span>
@@ -203,10 +217,12 @@ se v aktuálním adresáři, <code>data-shell</code>:</p>
 <span class="go">clanek   notes.txt           plan.txt</span>
 </pre></div><p>V aktuálním adresáři teď máš spoustu balastu.
 Pomocí <code>ls</code> si můžeš místo celého adresáře vypsat i jen jediný soubor:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls plan.txt
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>plan.txt
 <span class="go">plan.txt</span>
 </pre></div><p>To se hodí na zjištění, jestli takový soubor existuje.</p>
-<h3>Přesouvání více souborů</h3>
+<h3 id="presouvani_vice_souboru">Přesouvání více souborů
+<a href="#presouvani_vice_souboru" class="header-link">#</a>
+</h3>
 <p>Příkaz <code>mv</code> umí přesunout i více souborů najednou.
 Když mu předáš víc než dva argumenty, všechny kromě posledního označují
 soubory k přesunutí („odkud”) a poslední adresář, kam se všechny přesunou
@@ -214,48 +230,52 @@ soubory k přesunutí („odkud”) a poslední adresář, kam se všechny pře
 <p>Řekněme že soubor <code>plan.txt</code> patří přece jen ke článku.
 A stejně tak tam patří i <code>notes.txt</code>.
 Přesuň je na správné místo pomocí:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>mv plan.txt notes.txt clanek/
-<span class="gp">$ </span>ls clanek/
+<div class="highlight"><pre><span></span><span class="gp">$ </span>mv<span class="w"> </span>plan.txt<span class="w"> </span>notes.txt<span class="w"> </span>clanek/
+<span class="gp">$ </span>ls<span class="w"> </span>clanek/
 <span class="go">notes.txt  plan.txt</span>
 </pre></div><p>Abys zkontrolovala že na původním místě už soubory nejsou,
 můžeš dát příkazu <code>ls</code> více argumentů najednou.
 Vypíšou se všechny – funguje to podobně jako kdybys <code>ls</code> použila pro
 každý z nich zvlášť:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls plan.txt
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>plan.txt
 <span class="go">ls: nelze přistoupit k &#39;plan.txt&#39;: Adresář nebo soubor neexistuje</span>
-<span class="gp">$ </span>ls notes.txt
+<span class="gp">$ </span>ls<span class="w"> </span>notes.txt
 <span class="go">ls: nelze přistoupit k &#39;notes.txt&#39;: Adresář nebo soubor neexistuje</span>
-<span class="gp">$ </span>ls plan.txt notes.txt
+<span class="gp">$ </span>ls<span class="w"> </span>plan.txt<span class="w"> </span>notes.txt
 <span class="go">ls: nelze přistoupit k &#39;plan.txt&#39;: Adresář nebo soubor neexistuje</span>
 <span class="go">ls: nelze přistoupit k &#39;notes.txt&#39;: Adresář nebo soubor neexistuje</span>
-</pre></div><h2>Kopírování souborů</h2>
+</pre></div><h2 id="kopirovani_souboru">Kopírování souborů
+<a href="#kopirovani_souboru" class="header-link">#</a>
+</h2>
 <p>Příkaz <code>cp</code> funguje velice podobně jako <code>mv</code>, jen soubory kopíruje místo
 přesouvání.</p>
 <p>Řekněme že soubor <code>plan.txt</code> patří ve skutečnosti na obě místa,
 <code>data-shell/</code> i <code>data-shell/clanek/</code>.
 Aktuálně je jen v <code>clanek/</code>, ale můžeš ho zkopírovat i do aktuálního adresáře:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>cp clanek/plan.txt plan.txt
+<div class="highlight"><pre><span></span><span class="gp">$ </span>cp<span class="w"> </span>clanek/plan.txt<span class="w"> </span>plan.txt
 </pre></div><p>Výsledek zkontroluj pomocí <code>ls</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls clanek/plan.txt plan.txt
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>clanek/plan.txt<span class="w"> </span>plan.txt
 <span class="go">clanek/plan.txt  plan.txt</span>
 </pre></div><p>Pomocí <code>cp</code> můžeš kopírovat i celé adresáře, i s celým jejich obsahem,
 včetně podadresářů, pod-podadresářů atd..
 Protože se takhle dá rychle zaplnit disk, potřebuješ k tomu přepínač
 <code>-r</code> (<code>--recursive</code>).</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>cp -r clanek clanek_archiv
-<span class="gp">$ </span>ls clanek clanek_archiv
+<div class="highlight"><pre><span></span><span class="gp">$ </span>cp<span class="w"> </span>-r<span class="w"> </span>clanek<span class="w"> </span>clanek_archiv
+<span class="gp">$ </span>ls<span class="w"> </span>clanek<span class="w"> </span>clanek_archiv
 <span class="go">clanek:</span>
 <span class="go">kap1  notes.txt  plan.txt</span>
 
 <span class="go">clanek_archiv:</span>
 <span class="go">kap1  notes.txt  plan.txt</span>
 </pre></div><div class="admonition note"><p>Příkaz <code>mv</code> takový přepínač nemá: pouhým přesouváním si disk nezaplníš.</p>
-</div><h2>Odstraňování souborů a adresářů</h2>
+</div><h2 id="odstranovani_souboru_a_adresaru">Odstraňování souborů a adresářů
+<a href="#odstranovani_souboru_a_adresaru" class="header-link">#</a>
+</h2>
 <p>Mít dvě kopie souboru <code>plan.txt</code> nakonec nebude to nejlepší rozhodnutí
 (když jednu změníš, která bude platit?)
 Jednu z nich smaž pomocí příkazu <code>rm</code> (z angl. <em>remove</em> – odeber).</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>rm plan.txt
-<span class="gp">$ </span>ls plan.txt
+<div class="highlight"><pre><span></span><span class="gp">$ </span>rm<span class="w"> </span>plan.txt
+<span class="gp">$ </span>ls<span class="w"> </span>plan.txt
 <span class="go">ls: nelze přistoupit k &#39;plan.txt&#39;: Adresář nebo soubor neexistuje</span>
 </pre></div><div class="admonition warning"><p class="admonition-title">Mazání je nevratné</p>
 <p>Grafické prohlížeče souborů – a to i ty Linuxové – většinou mají „odpadkový
@@ -273,14 +293,14 @@ stejně jako kdybys ho polila vodou.)</p>
 Existují na to různé nástroje, ale dobře poslouží např. Gitový repozitář
 který pravidelně <code>push</code>-uješ na vzdálený server.</p>
 </div><p>Když zkusíš smazat adresář, <code>rm</code> se vztekne:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>rm clanek
+<div class="highlight"><pre><span></span><span class="gp">$ </span>rm<span class="w"> </span>clanek
 <span class="go">rm: nelze odstranit &#39;clanek&#39;: je adresářem</span>
 </pre></div><p>Kdybys opravdu chtěla smazat celý adresář a všechen jeho obsah,
 použij přepínač <code>-r</code> (<code>--recursive</code>).
 Doporučuji ho vždy zkombinovat s <code>-i</code> (<code>--interactive</code>), kdy <code>rm</code> u každého
 souboru poprosí o potvrzení,
 případně s <code>-v</code> (<code>--verbose</code>), kdy <code>rm</code> vypíše co dělá.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>rm -rv clanek
+<div class="highlight"><pre><span></span><span class="gp">$ </span>rm<span class="w"> </span>-rv<span class="w"> </span>clanek
 <span class="go">adresář &#39;clanek/kap1/sekce1/posdekce1&#39; smazán</span>
 <span class="go">adresář &#39;clanek/kap1/sekce1&#39; smazán</span>
 <span class="go">adresář &#39;clanek/kap1&#39; smazán</span>
@@ -301,15 +321,19 @@ Byl tak oblíbený u lumpů, kteří ho na internetu doporučovali nováčkům,
 dlouhého přepínače.</p>
 <p>Nezadávej příkazy, které najdeš na internetu, aniž bys věděla co dělají!
 (Pokud tedy nepracuješ ve virtuálním počítači, kde nemáš důležitá data.)</p>
-</div><h2>Práce s více soubory a adresáři</h2>
+</div><h2 id="prace_s_vice_soubory_a_adresari">Práce s více soubory a adresáři
+<a href="#prace_s_vice_soubory_a_adresari" class="header-link">#</a>
+</h2>
 <p>Často budeš potřebovat kopírovat či přesunout víc souborů najednou.
 Pak můžeš všechny potřebné soubory pojmenovat, a nebo jich vybrat několik
 pomocí <em>zástupných znaků</em> (angl. <em>wildcard</em>: divoká karta, žolík)</p>
-<h3>Opakování: Kopírování s více cestami</h3>
+<h3 id="opakovani_kopirovani_svice_cestami">Opakování: Kopírování s více cestami
+<a href="#opakovani_kopirovani_svice_cestami" class="header-link">#</a>
+</h3>
 <p>Přepni se do adresáře <code>data-shell/data</code>.
 Co udělá příkaz níže?</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir zaloha
-<span class="gp">$ </span>cp amino-acids.txt animals.txt zaloha/
+<div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir<span class="w"> </span>zaloha
+<span class="gp">$ </span>cp<span class="w"> </span>amino-acids.txt<span class="w"> </span>animals.txt<span class="w"> </span>zaloha/
 </pre></div><div class="solution" id="solution-0">
     <h3>Řešení</h3>
     <div class="solution-cover">
@@ -317,13 +341,15 @@ Co udělá příkaz níže?</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <p>Zkopíruje soubory <code>amino-acids.txt</code> a <code>animals.txt</code>, tj. všechny argumenty
-kromě posledního, do adresáře <code>zaloha</code>.
-Vytvoří tedy soubory <code>zaloha/amino-acids.txt</code> a <code>zaloha/animals.txt</code>.</p>
+<span></span>kromě posledního, do adresáře <code>zaloha</code>.
+<span></span>Vytvoří tedy soubory <code>zaloha/amino-acids.txt</code> a <code>zaloha/animals.txt</code>.</p>
     </div>
-</div><p>Co udělá příkaz níže?</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls -F
+</div>
+
+<p>Co udělá příkaz níže?</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F
 <span class="go">amino-acids.txt  animals.txt  elements/  morse.txt  pdb/  planets.txt  salmon.txt  sunspot.txt  zaloha/</span>
-<span class="gp">$ </span>cp amino-acids.txt animals.txt morse.txt
+<span class="gp">$ </span>cp<span class="w"> </span>amino-acids.txt<span class="w"> </span>animals.txt<span class="w"> </span>morse.txt
 </pre></div><div class="solution" id="solution-1">
     <h3>Řešení</h3>
     <div class="solution-cover">
@@ -331,38 +357,42 @@ Vytvoří tedy soubory <code>zaloha/amino-acids.txt</code> a <code>zaloha/animal
     </div>
     <div class="solution-body" aria-hidden="true">
         <p>Zkopíroval by první dva soubory (<code>amino-acids.txt</code> a <code>animals.txt</code>)
-do adresáře <code>morse.txt/</code>.
-Jenže <code>morse.txt</code> není adresářem, takže příkaz selže.
-Do souboru nelze dát další soubory.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>cp amino-acids.txt animals.txt morse.txt
-<span class="go">cp: cíl &#39;morse.txt&#39; není adresářem</span>
-</pre></div>
+<span></span>do adresáře <code>morse.txt/</code>.
+<span></span>Jenže <code>morse.txt</code> není adresářem, takže příkaz selže.
+<span></span>Do souboru nelze dát další soubory.</p>
+<span></span><div class="highlight"><pre><span></span><span class="gp">$ </span>cp<span class="w"> </span>amino-acids.txt<span class="w"> </span>animals.txt<span class="w"> </span>morse.txt
+<span></span><span class="go">cp: cíl &#39;morse.txt&#39; není adresářem</span>
+<span></span></pre></div>
     </div>
-</div><h3>Vybírání více souborů pomocí zástupných znaků</h3>
+</div>
+
+<h3 id="vybirani_vice_souboru_pomoci_zastupnych_znaku">Vybírání více souborů pomocí zástupných znaků
+<a href="#vybirani_vice_souboru_pomoci_zastupnych_znaku" class="header-link">#</a>
+</h3>
 <p>Hvězdička, <code>*</code>, je v Bashi <em>žolík</em> neboli <em>zástupný znak</em>, který odpovídá
 libovolnému počtu (0 nebo víc) znaků.
 Budeš-li v adresáři <code>data-shell/molecules</code>, pak „šablona“ <code>*.pdb</code> odpovídá
 souborům <code>ethane.pdb</code>, <code>propane.pdb</code> a všem ostatním, které končí na <code>.pdb</code>.
 Ale <code>p*.pdb</code> odpovídá jen <code>pentane.pdb</code> a <code>propane.pdb</code> – těm, které zároveň
 začínají písmenem <code>p</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> ~/Dokumenty/data-shell/molecules
-<span class="gp">$ </span>ls *.pdb
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>~/Dokumenty/data-shell/molecules
+<span class="gp">$ </span>ls<span class="w"> </span>*.pdb
 <span class="go">cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb</span>
-<span class="gp">$ </span>ls p*.pdb
+<span class="gp">$ </span>ls<span class="w"> </span>p*.pdb
 <span class="go">pentane.pdb  propane.pdb</span>
 </pre></div><p>Další zástupný znak je otazník, <code>?</code>, který odpovídá jen jednomu znaku.
 Takže šablona  <code>?ethane.pdb</code> odpovídá jen jménu <code>methane.pdb</code> – na rozdíl od
 <code>*ethane.pdb</code>, cemuž odpovídá jak <code>methane.pdb</code>, tak i <code>ethane.pdb</code>.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls ?ethane.pdb
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>?ethane.pdb
 <span class="go">methane.pdb</span>
-<span class="gp">$ </span>ls *ethane.pdb
+<span class="gp">$ </span>ls<span class="w"> </span>*ethane.pdb
 <span class="go">ethane.pdb  methane.pdb</span>
 </pre></div><p>Zástupných znaků můžeš použít víc: <code>???ane.pdb</code> odpovídá třem znakům
 následovaným <code>ane.pdb</code>, tedy <code>cubane.pdb ethane.pdb octane.pdb</code>.</p>
 <p>Když Bash zástupné znaky zpracovává, vytvoří seznam odpovídajících souborů
 ještě předtím, než spustí příslušný příkaz.
 Když neodpovídá <em>žádný</em> soubor, pošle příkazu argument tak, jak je:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ls *.pdf
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>*.pdf
 <span class="go">ls: nelze přistoupit k &#39;*.pdf&#39;: Adresář nebo soubor neexistuje</span>
 </pre></div><p>Když ale nějaké názvy odpovídají, dostane příkaz tyto příkazy jako jednotlivé
 argumenty.

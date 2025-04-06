@@ -1,9 +1,15 @@
-<h1>Bash</h1>
+<h1 id="bash">Bash
+<a href="#bash" class="header-link">#</a>
+</h1>
 <p>První krok na cestě za porozuměním Linuxu bude práce s příkazovou řádkou;
 konkrétně <em>shellem</em>.
 Nejdřív si ale přibližme, co to vlastně je.</p>
-<h2>Trocha kontextu, názvosloví a historie</h2>
-<h3>Jádro a GNU/Linux</h3>
+<h2 id="trocha_kontextu_nazvoslovi_a_historie">Trocha kontextu, názvosloví a historie
+<a href="#trocha_kontextu_nazvoslovi_a_historie" class="header-link">#</a>
+</h2>
+<h3 id="jadro_a_gnulinux">Jádro a GNU/Linux
+<a href="#jadro_a_gnulinux" class="header-link">#</a>
+</h3>
 <p>Technicky vzato, <a href="https://www.linuxfoundation.org/projects/linux/">Linux</a>
 je název <em>jádra</em> operačního systému.
 Jádro (angl. <em>kernel</em>) je ta část, která zařizuje aby ostatní programy mohly
@@ -21,7 +27,9 @@ projektu <a href="https://www.gnu.org/">GNU</a>.</p>
 Linux je jen jedniná část.
 Autor tohoto textu považuje pojmenování systému podle <em>dvou</em> částí
 jen o málo lepší než podle jediné, takže zůstaneme u krátkého „Linux“.</p>
-</div><h3>Shell</h3>
+</div><h3 id="shell">Shell
+<a href="#shell" class="header-link">#</a>
+</h3>
 <p>Slovo <em>shell</em> znamená v angličtině <em>skořápka</em>, např. ořechu – tedy „obal“
 kolem jádra.
 Pro nás je to program, který na <em>základě přání uživatele spouští ostatní programy</em>.
@@ -31,7 +39,7 @@ systému, takže ho jako uživatel nemůžeme „oddělit“ od jádra.</p>
 <p>I Linuxové systémy mají grafické shelly. Ten který používáme my je
 <a href="https://wiki.gnome.org/Projects/GnomeShell">GNOME Shell</a>.
 Hlavní úkol shellu je spouštět ostatní programy, ale má i jiné funkce:
- např. ukazuje čas nebo tě umí odhlásit.</p>
+např. ukazuje čas nebo tě umí odhlásit.</p>
 <div class="admonition note"><p>GNOME Shell je jen jedna část prostředí GNOME; v rámci tohoto projektu
 se kromě shellu vyvíjí např. správce souborů
 <a href="https://wiki.gnome.org/Apps/Files"><em>Files</em> (<code>nautilus</code>)</a>,
@@ -54,7 +62,9 @@ Nemá vychytávky novějších shellů jako <a href="http://fishshell.com/"><cod
 ale je dost dobrý na to, aby byl stále nejpopulárnější – najdete ho téměř
 na každém „linuxovém“ počítači (a dokonce i na macOS),
 většinou jako výchozí volbu.</p>
-<h3>Terminál</h3>
+<h3 id="terminal">Terminál
+<a href="#terminal" class="header-link">#</a>
+</h3>
 <p>Samotný textový shell neumí <em>vykreslovat</em> písmenka.
 To v sedmdesátých letech dělala teletypová tiskárna, později videoterminál
 (obrazovka s klávesnicí).
@@ -65,7 +75,9 @@ V prostředí GNOME použijeme program <em>Terminál</em>.
 Jeho funkcí je předávat písmenka napsaná na klávesnici určitému programu,
 a vykreslovat to, co tento program chce vypsat.</p>
 <p>Když Terminál spustíš, spustí se „v něm“ Bash.</p>
-<h3>Proč text?</h3>
+<h3 id="proc_text">Proč text?
+<a href="#proc_text" class="header-link">#</a>
+</h3>
 <p>Proč ovládat počítač textově – psát příkazy na klávesnici místo klikání myší?</p>
 <p>Je to složitější na naučení: příkazy si typicky musíš pamatovat nebo dohledat,
 místo toho abys je našla v menu.
@@ -89,11 +101,13 @@ jako původní terminály: nástroje k zadávání a zobrazování textu.
 Až tedy budeš spravovat <em>microservices</em> v <em>cloudu</em>, nebo <em>clustery</em>
 v superpočítačovém centru, bude tvá klávesnice mnohem ošoupanější než myš.</p>
 <p>Pojďme s tím začít.</p>
-<h2>Pouštění příkazů</h2>
+<h2 id="pousteni_prikazu">Pouštění příkazů
+<a href="#pousteni_prikazu" class="header-link">#</a>
+</h2>
 <p>Když Bash pustíš, ukáže se ti <em>prompt</em> neboli <em>výzva</em> – Bash se ptá na další
 příkaz.</p>
-<div class="highlight"><pre><span></span><span class="gp">$
-</span></pre></div><p>Bash většinou používá <code>$</code>, i když se dá nastavit i jiný symbol.
+<div class="highlight"><pre><span></span><span class="gp">$ </span>
+</pre></div><p>Bash většinou používá <code>$ </code>, i když se dá nastavit i jiný symbol.
 Před dolarem jsou většinou nějaké další informace, typicky aktuální adresář
 a jméno uživatele.</p>
 <p>Důležité je, že prompt není součást příkazu: když tu uvidíš ukázku příkazu,
@@ -111,7 +125,9 @@ Zatímco <code>ls</code> běží, má přístup k terminálu: může vypisovat v
 (Nebo může zpracovávat vstup z klávesnice, např. u funkce <code>input</code> Pythonu.)
 Když doběhne, vrátí se „ke slovu“ opět Bash a výzvou s dolarem se zeptá
 na další příkaz.</p>
-<h2>Nenalezený příkaz</h2>
+<h2 id="nenalezeny_prikaz">Nenalezený příkaz
+<a href="#nenalezeny_prikaz" class="header-link">#</a>
+</h2>
 <p>Když Bash nenajde program který by měl spustit, vypíše chybovou hlášku:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>lss
 <span class="go">bash: lss: Příkaz nebyl nenalezen...</span>
@@ -124,7 +140,9 @@ Některé systémy umí v rámci chybové hlášky i napovědět podobný pří
 <span class="go">Nainstalovat balíček „blender“, který poskytuje příkaz „blender“? [N/y]</span>
 </pre></div><p>Občas se stane, že hledání podobného příkazu trvá příliš dlouho.
 Zastavit hledání můžeš pomocí <kbd>Ctrl</kbd>+<kbd>C</kbd>.</p>
-<h2>Složitější programy</h2>
+<h2 id="slozitejsi_programy">Složitější programy
+<a href="#slozitejsi_programy" class="header-link">#</a>
+</h2>
 <p>Většina tohoto kurzu bude o spouštění malých prográmků, které umí jen jednu
 věc, a o tom jak je spojovat dohromady.
 Ale Bash umí pouštět jakýkoli program, který máš nainstalovaný.
@@ -139,7 +157,9 @@ chtěla za chvilku otevřít okno nové.)</p>
 <p>A některé grafické programy sice pustí Bash zpátky „ke slovu“ rychle,
 ale běží dál a dokonce píšou do terminálu hlášky, které by tě mohly mást.
 Doporučuji proto teď terminálové okno zavřít a otevřít nové.</p>
-<h2>Nela a medúzy</h2>
+<h2 id="nela_a_meduzy">Nela a medúzy
+<a href="#nela_a_meduzy" class="header-link">#</a>
+</h2>
 <p>Jako příklad pro použití Bashe si projdeme kurz od <em>The Carpentries</em>
 – organizaci, která učí vědce.
 Jejich příklad je praktický; možná ne pro tebe, ale úkoly které by byly
@@ -167,7 +187,7 @@ Přesněji řečeno, jak pustit program <code>goostats</code> na každý z tis�
 <p>K tomuto příběhu se váže sada souborů.
 Stáhni si <a href="naucse:static?filename=data-shell.zip">archiv</a> do svého adresáře <code>Dokumenty</code>.
 A potom ho rozbal. To se dělá následujícími příkazy:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> Dokumenty
-<span class="gp">$ </span>unzip data-shell.zip
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>Dokumenty
+<span class="gp">$ </span>unzip<span class="w"> </span>data-shell.zip
 <span class="gp">$ </span><span class="nb">cd</span>
 </pre></div>

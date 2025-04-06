@@ -1,4 +1,6 @@
-<h1>Automatizace administrace – lehký úvod k Ansible</h1>
+<h1 id="automatizace_administrace_lehky_uvod_kansible">Automatizace administrace – lehký úvod k Ansible
+<a href="#automatizace_administrace_lehky_uvod_kansible" class="header-link">#</a>
+</h1>
 <p>Představ si, že jsi systémová administrátorka
 na serverové farmě.
 Staráš se o 500 počítačů. Každý z nich má nastavený časovač na zálohy.
@@ -35,7 +37,9 @@ nebo podobnými systémy běžně pracují.</p>
 SaltStack, nebo Terraform.
 Každý funguje trochu jinak, ale základní koncepty bývají podobné.
 Dnes si ukážeme Ansible.</p>
-<h2>Deklarativní zápis</h2>
+<h2 id="deklarativni_zapis">Deklarativní zápis
+<a href="#deklarativni_zapis" class="header-link">#</a>
+</h2>
 <p>Jeden z konceptuálních rozdílů mezi klasickou administrací a Ansible je ten,
 že Ansible je <em>deklarativní</em>.
 Místo toho, že bys spouštěla příkazy které něco udělají,
@@ -44,7 +48,9 @@ popíšeš jaký má být výsledný stav nastavovaného systému.
 není, tak ho do toho stavu dostat.</p>
 <p>V praxi se tyto přístupy tolik neliší (<code>sudo dnf install httpd</code> taky nedělá
 nic, pokud je <code>httpd</code> už nainstalovaný), ale jde o užitečný úhel pohledu.</p>
-<h2>Idempotence</h2>
+<h2 id="idempotence">Idempotence
+<a href="#idempotence" class="header-link">#</a>
+</h2>
 <p>A když už jsme u cizích slov: úkoly pro Ansible by měly být <em>idempotentní</em>,
 když Ansible pustíš dvakrát za sebou, ve druhém běhu se nic nestane.
 Například „zajisti, že je nainstalovaný <code>httpd</code>“ je idempotentní – pokud to
@@ -58,13 +64,15 @@ Lze tak například úkol „Napiš zprávu, že je vše OK“, který zapíše 
 zprávu při každém spuštění.
 Dobře napsané úkoly ale idempotentní jsou.
 Aspoň v těch důležitých aspektech.</p>
-</div><h2>Instalujeme program</h2>
+</div><h2 id="instalujeme_program">Instalujeme program
+<a href="#instalujeme_program" class="header-link">#</a>
+</h2>
 <p>Nejlepší způsob jak se naučit pracovat s Ansiblem je praxe.
 Zkusme si nainstalovat balíček a nakonfigurovat ho.</p>
 <p>Než začneš, musíš nainstalovat samotní Ansible.
 (Na serverové farmě to je potřeba udělat jen na jednom počítači – na tom,
 který bude řídit ty ostatní.)</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo dnf install ansible
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>ansible
 </pre></div><p>Pak bude potřeba napsat konfigurační soubory.
 Bude jich víc, tak si pro tuto lekci udělej si nový adresář.</p>
 <p>Pro Ansible se píšou tzv. <em>playbooky</em>, což jsou soubory ve formátu
@@ -79,8 +87,8 @@ Protože máš teď k dispozici jen jeden virtuální počítač,
 nastav <code>hosts</code> na <code>localhost</code> a <code>connection</code> na <code>local</code>.</p>
 <div class="highlight"><pre><span></span><span class="c1"># setup.yml</span>
 
-<span class="p p-Indicator">-</span> <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">localhost</span>
-  <span class="nt">connection</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
 </pre></div><p>V praxi se tahle sekce většinou píše do samostatného souboru,
 <a href="https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html">inventáře</a>,
 kde jsou uvedeny i další informace – třeba které ze strojů mají být webové servery
@@ -88,43 +96,44 @@ a které databázové.</p>
 <p>Abys mohla něco nainstalovat, je třeba býti <code>root</code>em.
 To je potřeba zapsat; později pak řekneme ať k tomu Ansible použije <code>sudo</code>
 a heslo.</p>
-<div class="highlight"><pre><span></span>   <span class="nt">become_user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
+<div class="highlight"><pre><span></span><span class="w">   </span><span class="nt">become_user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
 </pre></div><p>Dále se píše stav, do jakého chceš dostat svůj systém.
 K tomu slouží seznam <code>tasks</code>.
 V YAML se seznamy definují pomlčkou u každého prvku.</p>
 <p>Každá úloha musí mít jméno.
 Nainstalujeme si třeba <code>htop</code>, což je vylepšený <code>top</code>:
 program na sledování stavu systému.</p>
-<div class="highlight"><pre><span></span>   <span class="nt">tasks</span><span class="p">:</span>
-   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install htop</span>
-</pre></div><dl>
-<dt></dt><dt>Pro instalaci musíš být `root`, což musíš zadat i v úloze.</dt><dd></dd></dl><div class="highlight"><pre><span></span>     <span class="nt">become</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<div class="highlight"><pre><span></span><span class="w">   </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install htop</span>
+</pre></div><p>Pro instalaci musíš být <code>root</code>, což musíš zadat i v úloze.
+:</p>
+<div class="highlight"><pre><span></span><span class="w">     </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
 </pre></div><p>Tohle <code>become</code> piš pod <code>name</code>: je to další záznam o téhle úloze.
 Pomlčku na začátku řádku, která označuje nový prvek seznamu <code>tasks</code>,
 potřebuješ jen před <code>name</code>. Celý blok <code>tasks</code> bude teď vykadat takhle:</p>
-<div class="highlight"><pre><span></span>   <span class="nt">tasks</span><span class="p">:</span>
-   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install htop</span>
-     <span class="nt">become</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<div class="highlight"><pre><span></span><span class="w">   </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install htop</span>
+<span class="w">     </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
 </pre></div><p>Přichází čas na instrukci, jak balíček nainstalovat.
 Na Fedoře se instaluje pomocí pluginu <code>dnf</code>, kterému řekneš,
 že balíček <code>htop</code> chceš nainstalovat v poslední dostupné verzi:</p>
-<div class="highlight"><pre><span></span>     <span class="nt">dnf</span><span class="p">:</span>
-        <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
-        <span class="nt">name</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">htop</span>
+<div class="highlight"><pre><span></span><span class="w">     </span><span class="nt">dnf</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latest</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">htop</span>
 </pre></div><p>Celý soubor nakonec vypadá takto. Pozor na odsazení:</p>
-<div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">localhost</span>
-  <span class="nt">connection</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
-  <span class="nt">become_user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
-  <span class="nt">tasks</span><span class="p">:</span>
-   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install htop</span>
-     <span class="nt">become</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-     <span class="nt">dnf</span><span class="p">:</span>
-        <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
-        <span class="nt">name</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">htop</span>
+<div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">become_user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install htop</span>
+<span class="w">     </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">     </span><span class="nt">dnf</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latest</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">htop</span>
 </pre></div><p>Teď to zkus spustit:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ansible-playbook -K setup.yml
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ansible-playbook<span class="w"> </span>-K<span class="w"> </span>setup.yml
 <span class="go">BECOME password: </span>
 <span class="go">[WARNING]: provided hosts list is empty, only localhost is available. Note that</span>
 <span class="go">the implicit localhost does not match &#39;all&#39;</span>
@@ -138,12 +147,14 @@ Na Fedoře se instaluje pomocí pluginu <code>dnf</code>, kterému řekneš,
 <span class="go">changed: [localhost]</span>
 
 <span class="go">PLAY RECAP *********************************************************************</span>
-<span class="go">localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0</span>
+<span class="go">localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0  </span>
 </pre></div><p>Parametr <code>-K</code> říká, aby se tě Ansible nejdřív zeptal na heslo pro <code>sudo</code>
 a s tím pak spouští úkoly označené <code>become: yes</code>.</p>
 <p>Když ten samý příkaz pustíš znova, Ansible ohlásí že je vše v pořádku;
 nic se nezměnilo.</p>
-<h2>A co dál?</h2>
+<h2 id="a_co_dal">A co dál?
+<a href="#a_co_dal" class="header-link">#</a>
+</h2>
 <p>Co všechno se dá dělat s Ansiblem?</p>
 <ul>
 <li>instalovat balíčky (to jsme si právě zkusili)</li>
@@ -156,54 +167,56 @@ Ansible obsahuje základní nabídku pluginů, další se dají doinstalovat,
 a když ani to nestačí, můžeš si v Pythonu napsat další.</p>
 <p>Tedy je malá ukázka toho, co je možné; další možnosti najdeš v dokumentaci.
 (Nebo na dalším kurzu?)</p>
-<div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">localhost</span>
-  <span class="nt">connection</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
-  <span class="nt">become_user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
-  <span class="nt">tasks</span><span class="p">:</span>
-   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install packages</span>
-     <span class="nt">become</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-     <span class="nt">dnf</span><span class="p">:</span>
-        <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
-        <span class="nt">name</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">htop</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
-   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Uninstall packages</span>
-     <span class="nt">become</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-     <span class="nt">dnf</span><span class="p">:</span>
-        <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">removed</span>
-        <span class="nt">name</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cowsay</span>
-   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Add a user</span>
-     <span class="nt">become</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-     <span class="nt">user</span><span class="p">:</span>
-        <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">testuser1</span>
-   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Add a file to serve</span>
-     <span class="nt">become</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-     <span class="nt">copy</span><span class="p">:</span>
-        <span class="nt">dest</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/var/www/html/index.html</span>
-        <span class="c1"># Znak `|` v YAML uvozuje odsazený blok s víceřádkovým textem</span>
-        <span class="nt">content</span><span class="p">:</span> <span class="p p-Indicator">|</span>
-            <span class="no">Hello world!</span>
-            <span class="no">Welcome to my server!</span>
-   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Start &amp; enable httpd</span>
-     <span class="nt">become</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-     <span class="nt">systemd</span><span class="p">:</span>
-        <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
-        <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">started</span>
-        <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">become_user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install packages</span>
+<span class="w">     </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">     </span><span class="nt">dnf</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latest</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">htop</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">httpd</span>
+<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Uninstall packages</span>
+<span class="w">     </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">     </span><span class="nt">dnf</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">removed</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cowsay</span>
+<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add a user</span>
+<span class="w">     </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">     </span><span class="nt">user</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testuser1</span>
+<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add a file to serve</span>
+<span class="w">     </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">     </span><span class="nt">copy</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/www/html/index.html</span>
+<span class="w">        </span><span class="c1"># Znak `|` v YAML uvozuje odsazený blok s víceřádkovým textem</span>
+<span class="w">        </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">            </span><span class="no">Hello world!</span>
+<span class="w">            </span><span class="no">Welcome to my server!</span>
+<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Start &amp; enable httpd</span>
+<span class="w">     </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">     </span><span class="nt">systemd</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">httpd</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span>
+<span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Set up RPM fusion</span>
-    <span class="nt">become</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-    <span class="nt">shell</span><span class="p">:</span> <span class="p p-Indicator">|</span>
-      <span class="no">dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm</span>
-    <span class="nt">args</span><span class="p">:</span>
-      <span class="nt">creates</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/etc/yum.repos.d/rpmfusion-free.repo</span>
-</pre></div><p>Tento příklad se připojuje pouze k aktuálnímu počítači. 
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up RPM fusion</span>
+<span class="w">    </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">    </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm</span>
+<span class="w">    </span><span class="nt">args</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">creates</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/yum.repos.d/rpmfusion-free.repo</span>
+</pre></div><p>Tento příklad se připojuje pouze k aktuálnímu počítači.
 Pokud bys to chtěla pouštět i na jiných počítačích,
 je třeba je zapsat do takzvaného <em>inventáře</em> (<em>inventory</em> file)
 a použít pomocí přepínače <code>ansible-playbook -i</code>.
 Návody a příklady opět najdeš v dokumentaci Ansible.</p>
-<h2>Ansible na laptopu</h2>
+<h2 id="ansible_na_laptopu">Ansible na laptopu
+<a href="#ansible_na_laptopu" class="header-link">#</a>
+</h2>
 <p>Automatizovaná konfigurace počítačů je nejužitečnější pro správu více
 počítačů. Ty ale k nějaké serverové farmě bohužel přístup hned tak nedostaneš.</p>
 <p>Můžeš si ale Ansible zkoušet i na vlastním laptopu.
