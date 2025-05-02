@@ -14,12 +14,12 @@ Otevři si příkazovou řádku s Bashem, jestli ji už nemáš před sebou.
 Nejdřív se podívej kde „jsi“, pomocí příkazu `pwd` (zkratka angl.
 *print working directory*, vypiš pracovní adresář).
 Adresáře jsou jako *místa* a vždycky, když používáš příkazovou řádku,
-jsi právně na jednom z těchto míst: v *pracovním* neboli *aktuálním* adresáři.
+jsi právě na jednom z těchto míst: v *pracovním* neboli *aktuálním* adresáři.
 Příkazy většinou pracují se soubory v aktuálním adresáři („tady“),
 takže se hodí vždy vědět, kde to „tady“ je.
 
 > [note]
-> Aktuální adresář bývá vypsaný ve výzvě, před znakem `$` kterým se Bash ptá na
+> Aktuální adresář bývá vypsaný ve výzvě, před znakem `$`, kterým se Bash ptá na
 > příkaz.
 > Ale ne všechny systémy jsou tak nastavené.
 > A taky tenhle výpis bývá často různě zkrácený.
@@ -66,12 +66,12 @@ označuje kořenový adresář; lomítko uprostřed odděluje jednotlivé adres�
 > [note]
 > Adresářů jménem `home` může být v počítači víc. Nela může mít třeba adresář
 > `/home/nela/Dokumenty/home`, který je v adresáři `/home/nela/Dokumenty`.
-> Když napíšu `/home` s lomítkem na začátku, dávám najevo že myslím ten
+> Když napíšu `/home` s lomítkem na začátku, dávám najevo, že myslím ten
 > `home`, který je přímo v kořenovém adresáři. Ten může být jen jeden.
 
 Pod `home` je několik adresářů – jeden pro každého uživatele, který má
 na tomto počítači účet.
-Nela zrovna používá sdílený univerzitní systém, takže je tu víc:
+Nela zrovna používá sdílený univerzitní systém, takže je jich tu víc:
 
 ```plain
 ─┬  /
@@ -89,9 +89,9 @@ Matyáš má `/home/matyas`.
 A protože v našem příkladu počítač používá Nela, je domovský adresář
 `/home/nela`.
 Když zapneš Bash, typicky začneš ve svém domovském adresáři.
-Proto je `/home/nela` teď i aktuální adresář – to, co vypíše `pwd`.
+Proto je teď `/home/nela` aktuální adresář – to, co vypíše `pwd`.
 
-Teď se pomocí příkazu `ls` podívej co v tomhle adresáři je:
+Teď se pomocí příkazu `ls` podívej, co v tomhle adresáři je:
 
 ```console
 $ ls
@@ -132,7 +132,7 @@ V našem příkladu je vidět, že Nelin domovský adresář obsahuje
 pouze další adresáře.
 
 > [note] Mazání terminálu
-> Kdybys měl{{a}} na terminálu moc textu, můžeš použít
+> Kdybys měla na terminálu moc textu, můžeš použít
 > <kbd>Ctrl</kbd>+<kbd>L</kbd> a obrazovku „vyčistit“.
 > Pořád se můžeš vracet k předchozím příkazům pomocí <kbd>↑</kbd> a
 > <kbd>↓</kbd>, nebo se i dostat k historii textu rolováním kolečkem myši.
@@ -168,9 +168,9 @@ Většině příkazů můžeš dát více přepínačů a více argumentů.
 > volání `open('soubor.txt', encoding='utf-8')` by se zapsalo zhruba jako
 > `$ open --encoding=utf-8 soubor.txt`.
 
-Jednotlivé části jsou oddělené mezerami: kdybys vynechal{{a}} mezeru mezi
+Jednotlivé části jsou oddělené mezerami: kdybys vynechala mezeru mezi
 `ls` a `-F`, Bash by hledal příkaz `ls-F`, který neexistuje.
-Kdybys vynechal{{a}} mezeru mezi `-F`  a `/`, dostal by program `ls` přepínač
+Kdybys vynechala mezeru mezi `-F`  a `/`, dostal by program `ls` přepínač
 `-F/`, což taky nebude fungovat.
 
 A záleží na velikosti písmen. Příkaz `LS` neexistuje.
@@ -222,9 +222,9 @@ celkem 271152
 Příkaz `ls` má spoustu dalších přepínačů.
 Prakticky nikdo si je nepamatuje všechny.
 
-Jsou dva časté způsoby, jak zjistit jak se ten který příkaz používá:
+Jsou dva časté způsoby, jak zjistit, jak se ten který příkaz používá:
 
-1. Většina příkazů vypíše nápovědu když dostane přepínač `--help`:
+1. Většina příkazů vypíše nápovědu, když dostane přepínač `--help`:
 
    ```console
    ls --help
@@ -235,6 +235,10 @@ Jsou dva časté způsoby, jak zjistit jak se ten který příkaz používá:
    ```console
    man ls
    ```
+
+Přepínač `--help` je primárně určen pro interní příkazy shellu, jako jsou např. příkazy Bashe. Jeho limitací je to, že nemá
+rozsáhlou dokumentaci o externích programech. Příkaz `man` naopak slouží právě k otevření manuálových stránek pro externí
+programy, systémové nástroje a knihovny, které nejsou součástí shellu, ale jsou nainstalované v systému.
 
 ### Přepínač `--help`
 
@@ -282,7 +286,7 @@ krátkých přepínačů.
 
 ### Příkaz `man`
 
-Druhá možnost jak se něco dozvědět o příkazu `ls` je:
+Druhá možnost, jak se něco dozvědět o příkazu `ls`, je:
 
 ```console
 $ man ls
@@ -306,7 +310,7 @@ Na **zavření** manuálové stránky použij klávesu <kbd>Q</kbd>.
 > a někdy o neaktuálnosti najdeš i varování.
 >
 > Základní funkčnost příkazů jako `ls` se nemění desítky let,
-> takže neaktuálnost často zas tolik nevadí. Kdybys ale chtěl{{a}} oficiální
+> takže neaktuálnost často zas tolik nevadí. Kdybys ale chtěla oficiální
 > nápovědu v angličtině, napiš na začátek příkazu `LANG=en_US ` (bez mezer kolem
 > rovnítka, s mezerou za `en_US`):
 >
@@ -335,7 +339,7 @@ i [ostatním GNU projektům][manuals-gnu].
 Co dělá přepínač `-l`?
 Co se stane, když `-l` zkombinuješ s `-h`?
 
-Už víš kde najít nápovědu, tak zkus zjistit odpověď.
+Už víš, kde najít nápovědu, tak zkus zjistit odpověď.
 
 {% filter solution %}
 Přepínač `-l` zapne „dlouhý“ formát, kde je vidět spousta dalších informací
@@ -352,7 +356,7 @@ Tipneš si, co dělá příkaz `ls -t -r`?
 
 {% filter solution %}
 `ls -t -r` seřadí soubory podle data poslední změny, od nejnovějšího.
-To se může hodit až budeš hledat kde jsi naposledy udělal{{a}} změnu,
+To se může hodit až budeš hledat, kde jsi naposledy udělala změnu,
 nebo jestli se objevil nový výstupní soubor.
 {% endfilter %}
 
@@ -373,7 +377,7 @@ U „dlouhých“ přepínačů jako `--help` to nefunguje.
 
 ## Obsah dalších adresářů
 
-Příkaz `ls` umí zobrazit obsah jakéhokoli adresáře, ne jen toho aktuálního.
+Příkaz `ls` umí zobrazit obsah jakéhokoli adresáře, nejen toho aktuálního.
 Podívej se teď do svého adresáře `Dokumenty`, a to s přepínačem `-F`, který
 označí druhy souborů.
 
@@ -382,8 +386,8 @@ $ ls -F Dokumenty
 data-shell.zip   data-shell/
 ```
 
-Měl{{a}} bys vidět všechny soubory ve svých Dokumentech: archiv, který jsi
-před chvílí stáhl{{a}} a adresář, kam se rozbalil.
+Měla bys vidět všechny soubory ve svých Dokumentech: archiv, který jsi
+před chvílí stáhla a adresář, kam se rozbalil.
 A možná i nějaké jiné.
 
 Na adresář `data-shell`, který je v Dokumentech, se můžeš podívat několika způsoby.
@@ -401,8 +405,8 @@ Příkaz `ls` se podíval do adresáře `Dokumenty` a v něm pak do adresáře
 
 > [note]
 > Cesta `Dokumenty/data-shell` nezačíná lomítkem, vychází tedy z aktuálního
-> adresáře. Můžeš použít „celou“ cestu, která lomítkem začíná,
-> ale v té musíš uvést i svůj domovsý adresář. Například:
+> adresáře (tzv. *relativní cesta*). Můžeš použít „celou“ cestu (tzv. *absolutní cesta*), která lomítkem začíná,
+> ale v té musíš uvést i svůj domovský adresář. Například:
 > 
 > ```console
 > $ ls -F /home/nela/Dokumenty/data-shell`
@@ -412,7 +416,7 @@ Další způsob je tou cestou projít pomocí příkazu `cd`, který změní akt
 adresář (z angl. **c**hange **d**irectory).
 (To jméno je trošku zavádějící: v adresáři se nic nezmění,
 jen příkazová řádka začne pracovat v jiném adresáři.
-Jako bys na ten adresář klikl{{a}} v grafickém prohlížeči souborů.)
+Jako bys na ten adresář klikla v grafickém prohlížeči souborů.)
 
 ```console
 $ cd Dokumenty
@@ -424,13 +428,13 @@ Každý příkaz `cd` změní tvůj aktuální adresář, takže celá tahle sé
 tě postupně provede přes `Dokumenty` a `Dokumenty/data-shell` až do
 `Dokumenty/data-shell/data`.
 
-Všimni si že samotný příkaz `cd ` nic nevypisuje.
+Všimni si, že samotný příkaz `cd ` nic nevypisuje.
 To je normální.
 Když se něco nepovede, dostaneš chybovou hlášku; když je všechno v pořádku,
 není potřeba tě otravovat.
 
 Aktuální adresář by se ti měl (ve zkrácené podobě) ukázat ve výzvě (před `$`),
-ale kdyby to nestačilo, můžeš se vždycky zeptat kde jsi:
+ale kdyby to nestačilo, můžeš se vždycky zeptat, kde jsi:
 
 ```console
 $ pwd
@@ -457,7 +461,7 @@ Na disku samozřejmě nějaký adresář `data-shell` máš, a dokonce docela �
 ale `cd` – a ostatní příkazy shellu – hledají pouze v aktuálním adresáři,
 a nikde jinde.
 
-Aby ses dostal{{a}} do „nadřazeného“ adresáře, použij dvě tečky, `..`:
+Aby ses dostala do „nadřazeného“ adresáře, použij dvě tečky, `..`:
 
 ```console
 $ cd ..
@@ -481,7 +485,7 @@ $ ls -aF
 ../  creatures/     molecules/  notes.txt            solar.pdf  writing/
 ```
 
-Vida! objevilo se několik položek, které předtím byly skryté:
+Vida! Objevilo se několik položek, které předtím byly skryté:
 
 * `..`, tedy nadřazený adresář (zde tedy `/home/nela/Dokumenty`)
 * `.`, což je jméno pro *aktuální* adresář (zde tedy `/home/nela/Dokumenty/data-shell`)
@@ -519,10 +523,10 @@ Co se stane, když napíšeš samotné `cd`?
 $ cd
 ```
 
-Jestli to není jasné z výzvy, zkontroluj kde jsi pomocí `pwd`.
+Jestli to není jasné z výzvy, zkontroluj, kde jsi, pomocí `pwd`.
 Dostaneš se do svého domovského adresáře!
 
-Příkazy shellu mají *výchozí chování*, které nastane když jim nepředáš
+Příkazy shellu mají *výchozí chování*, které nastane, když jim nepředáš
 argument.
 Příkaz `ls` vypíše aktuální adresář; chová se tedy stejně jako `ls .`.
 Kdyby se ale `cd` choval jako `cd .`, nic by se nestalo.

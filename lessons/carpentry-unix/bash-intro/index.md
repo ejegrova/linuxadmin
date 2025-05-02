@@ -11,7 +11,7 @@ Nejdřív si ale přibližme, co to vlastně je.
 
 Technicky vzato, [Linux](https://www.linuxfoundation.org/projects/linux/)
 je název *jádra* operačního systému.
-Jádro (angl. *kernel*) je ta část, která zařizuje aby ostatní programy mohly
+Jádro (angl. *kernel*) je ta část, která zařizuje, aby ostatní programy mohly
 běžet, a zajišťuje a „moderuje“ přístup ke sdíleným zařízením – procesoru,
 paměti, klávesnici, obrazovce, atd.
 
@@ -26,8 +26,8 @@ Ty – nebo aspoň jejich nejpoužívanější verze – jsou vyvíjeny jako sou
 projektu [GNU](https://www.gnu.org/).
 
 > [note]
-> Někteří dokonce korektnější celému systému říkat GNU/Linux, protože
-> Linux je jen jedniná část.
+> Někteří dokonce korektněji celému systému říkají GNU/Linux, protože
+> Linux je jen jediná část.
 > Autor tohoto textu považuje pojmenování systému podle *dvou* částí
 > jen o málo lepší než podle jediné, takže zůstaneme u krátkého „Linux“.
 
@@ -37,12 +37,12 @@ projektu [GNU](https://www.gnu.org/).
 Slovo *shell* znamená v angličtině *skořápka*, např. ořechu – tedy „obal“
 kolem jádra.
 Pro nás je to program, který na *základě přání uživatele spouští ostatní programy*.
-Tedy: zjistí, jaký program chce uživatel spustit, a řekne jádru aby ho spustil.
+Tedy: zjistí, jaký program chce uživatel spustit, a řekne jádru, aby ho spustil.
 
 U systémů jako MS Windows nebo macOS je shell „grafický“ a zakomponovaný do
 systému, takže ho jako uživatel nemůžeme „oddělit“ od jádra.
 
-I Linuxové systémy mají grafické shelly. Ten který používáme my je
+I Linuxové systémy mají grafické shelly. Ten který používáme my, je
 [GNOME Shell](https://wiki.gnome.org/Projects/GnomeShell).
 Hlavní úkol shellu je spouštět ostatní programy, ale má i jiné funkce:
  např. ukazuje čas nebo tě umí odhlásit.
@@ -56,7 +56,7 @@ Hlavní úkol shellu je spouštět ostatní programy, ale má i jiné funkce:
 
 Původní *shelly* ale byly textové: než počítače uměly vykreslovat okýnka,
 když ještě komunikovaly přes psací stroj a tiskárnu, byl *shell* program,
-který se zeptal jaký program spustit, spustil ho, a po skončení se zeptal
+který se zeptal, jaký program spustit, spustil ho, a po skončení se zeptal
 znovu.
 Takový textový shell – příkazová řádka – byl hlavní způsob komunikace
 s počítačem.
@@ -158,7 +158,7 @@ na další příkaz.
 
 ##  Nenalezený příkaz
 
-Když Bash nenajde program který by měl spustit, vypíše chybovou hlášku:
+Když Bash nenajde program, který by měl spustit, vypíše chybovou hlášku:
 ```console
 $ lss
 bash: lss: Příkaz nebyl nenalezen...
@@ -182,7 +182,7 @@ Zastavit hledání můžeš pomocí <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 ## Složitější programy
 
 Většina tohoto kurzu bude o spouštění malých prográmků, které umí jen jednu
-věc, a o tom jak je spojovat dohromady.
+věc, a o tom, jak je spojovat dohromady.
 Ale Bash umí pouštět jakýkoli program, který máš nainstalovaný.
 Zkus si:
 
@@ -195,7 +195,7 @@ $ nautilus
 Kdyby některý z těchto programů nepustil po zavření zpátky k příkazové řádce,
 zavři ho pomocí <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 (Některé programy zůstávají po zavření okna běžet; je to pro případ, že bys
-chtěl{{a}} za chvilku otevřít okno nové.)
+chtěla za chvilku otevřít okno nové.)
 
 A některé grafické programy sice pustí Bash zpátky „ke slovu“ rychle,
 ale běží dál a dokonce píšou do terminálu hlášky, které by tě mohly mást.
@@ -206,8 +206,8 @@ Doporučuji proto teď terminálové okno zavřít a otevřít nové.
 
 Jako příklad pro použití Bashe si projdeme kurz od *The Carpentries*
 – organizaci, která učí vědce.
-Jejich příklad je praktický; možná ne pro tebe, ale úkoly které by byly
-praktické pro všechny se hledají špatně a hry (jako v začátečnickém kurzu
+Jejich příklad je praktický; možná ne pro tebe, ale úkoly, které by byly
+praktické pro všechny, se hledají špatně a hry (jako v začátečnickém kurzu
 Pythonu) se k Bashi moc nehodí.
 
 Tady je příběh:
@@ -224,7 +224,7 @@ Do konce měsíce.
 
 Kdyby `goostats` pouštěla ručně, klikáním, musela by ho 1500× otevřít
 a vybrat soubor.
-To by jí zabralo as 12 hodin čistého času, kdyby přitom neudělala chybu
+To by jí zabralo as 12 hodin čistého času, kdyby při tom neudělala chybu
 – nemluvě o dopadech na její karpální tunel.
 A tak radši tuhle práci zautomatizuje pomocí Bashe a bude se soustředit
 na ten článek.
