@@ -44,7 +44,7 @@ A zatím v něm nic není:
 $ ls -F clanek
 ```
 
-Kdyby ses pokusil{{a}} vytvořit několik vnořených adresářů najednou,
+Kdyby ses pokusila vytvořit několik vnořených adresářů najednou,
 nebude to fungovat:
 
 ```console
@@ -65,11 +65,11 @@ $ mkdir -p clanek/kapitola-1/sekce-1/podsekce-1
 ```
 
 Příkaz `mkdir` nic nevypsal.
-Nevypsal ani chybovou hlášku, což u většiny příkazů znamená že všechno proběhlo
+Nevypsal ani chybovou hlášku, což u většiny příkazů znamená, že všechno proběhlo
 v pořádku.
 
 Jak si to ověřit?
-Příkaz `ls` má přepínač `-R`, který vypíše obsah *všech* adresářů na které
+Příkaz `ls` má přepínač `-R`, který vypíše obsah *všech* adresářů, na které
 narazí, a to **R**ekurzivně – když v podadresáři najde další podadresář,
 „zanoří“ se i do něj.
 
@@ -99,18 +99,32 @@ clanek
 3 directories, 0 files
 ```
 
+Pokud dostáváš hlášku „Command 'tree' not found“, je třeba si `tree` prvně nainstalovat.
+Na distribucích založených na Debianu (např. Ubuntu) to můžeš udělat následujícím způsobem:
+
+```console
+sudo apt update
+sudo apt install tree
+```
+
+Na distribucích založených na Red Hat (např. Fedora) použij:
+
+```console
+sudo dnf install tree
+```
+
 > [note]
-> Tyhle materiály píšu na podzim 2020. Všimnul jsem si že výstup příkazu
-> `tree` není přeložený – na rozdíl od hlášek z příkazů projektu GNU, jako
+> Tyhle materiály byly zrevidovány na jaře 2025. V tomto období výstup příkazu
+> `tree` nebyl přeložený – narozdíl od hlášek z příkazů projektu GNU, jako
 > jsou `ls` nebo `mkdir`.
-> Zřejmě se ještě nenašel dobrovolník který by `tree` přeložil do češtiny, nebo
+> Zřejmě se ještě nenašel dobrovolník, který by `tree` přeložil do češtiny, nebo
 > dokonce nikdo ani nepřidal podporu pro neanglické jazyky.
 > Čím méně používané příkazy budeš zkoušet, tím častěji na angličtinu narazíš.
 
 
 ## Pojmenovávání souborů a adresářů
 
-Teď, když víš jak vytvářet adresáře, se pojďme zaměřit na to,
+Teď, když víš, jak vytvářet adresáře, se pojďme zaměřit na to,
 jak je pojmenovávat.
 Konkrétně jak je pojmenovávat tak, aby práce s nimi byla „v řádce“
 co nejjednodušší.
@@ -124,11 +138,11 @@ co nejjednodušší.
 
 2. Nezačínej pomlčkou (`-`).
 
-   Většina příkazů považuje vše co začíná na pomlčku za přepínače.
-   Kdybys chtěl{{a}} pomocí `ls -FR` vypsat soubor se jménem `-FR`,
-   narazil{{a}} bys na problém.
+   Většina příkazů považuje vše, co začíná na pomlčku, za přepínače.
+   Kdybys chtěla pomocí `ls -FR` vypsat soubor se jménem `-FR`,
+   narazila bys na problém.
 
-   Kdybys ale soubor jménem `-FR` měl{{a}}, můžeš použít cestu která
+   Kdybys ale soubor jménem `-FR` měla, můžeš použít cestu, která
    pomlčkou nezačíná.
    Třeba `ls ./-FR`.
    Rozklíčuješ, proč to funguje?
@@ -174,9 +188,9 @@ co nejjednodušší.
    Ale ačkoliv počítač přípony ignoruje, pro lidi jsou důležité.
 
    Mimo oddělení přípony můžeš tečku použít na skrytí souboru
-   (např. `.gitignore`), kdybys to někdy potřeboval{{a}}.
+   (např. `.gitignore`), kdybys to někdy potřebovala.
 
-Kdybys musel{{a}} pracovat se jmény, které tyhle rady nedodržují,
+Kdybys musela pracovat se jmény, které tyhle rady nedodržují,
 máš dvě možnosti:
 
 * Celé jméno uzavři do jednoduchých uvozovek, `'`.
@@ -214,7 +228,7 @@ $ touch osnova.txt
 
 > [note] Různé způsoby práce se soubory
 > Vytvářet adresáře a soubory samozřejmě můžeš i z grafického „klikátka“.
-> Příkazy v terminálu a grafické programy jsou různé způsoby jak se soubory
+> Příkazy v terminálu a grafické programy jsou různé způsoby, jak se soubory
 > pracovat, ale samotné soubory jsou vždy stejné.
 >
 > Ze začátku je práce v příkazové řádce složitější, ale jakmile si zvykneš,
@@ -233,8 +247,8 @@ než osnova článku.
 Pojď soubor přejmenovat.
 
 *Přejmenování* souboru je to stejné co *přesunutí*: v obou případech se změní
-cesta k souboru. Počítači je celkem jedno jestli se změní adresář nebo
-jen poslední část cesty – jméno.
+cesta k souboru. Počítači je celkem jedno, jestli se změní adresář nebo
+jen poslední část cesty - jméno.
 Pro obě operace se používá příkaz `mv` (z angl. *move*, přesuň), který
 potřebuje dva argumenty, „odkud“ a „kam“:
 
@@ -307,14 +321,15 @@ $ ls plan.txt
 plan.txt
 ```
 
-To se hodí na zjištění, jestli takový soubor existuje.
+To se hodí na zjištění, jestli takový soubor existuje. Pokud ano, v terminálu se ti 
+vypíše jeho obsah. Pokud ne, terminál tě upozorní chybovou hláškou *Adresář nebo soubor neexistuje*.
 
 
 ### Přesouvání více souborů
 
 Příkaz `mv` umí přesunout i více souborů najednou.
 Když mu předáš víc než dva argumenty, všechny kromě posledního označují
-soubory k přesunutí („odkud”) a poslední adresář, kam se všechny přesunou
+soubory k přesunutí („odkud”) a poslední argument označuje cílový adresář, kam se všechny přesunou
 („kam“).
 
 Řekněme že soubor `plan.txt` patří přece jen ke článku.
@@ -327,9 +342,9 @@ $ ls clanek/
 notes.txt  plan.txt
 ```
 
-Abys zkontroloval{{a}} že na původním místě už soubory nejsou,
+Abys zkontrolovala, že na původním místě už soubory nejsou,
 můžeš dát příkazu `ls` více argumentů najednou.
-Vypíšou se všechny – funguje to podobně jako kdybys `ls` použil{{a}} pro
+Vypíšou se všechny – funguje to podobně jako kdybys `ls` použila pro
 každý z nich zvlášť:
 
 ```console
@@ -363,9 +378,8 @@ $ ls clanek/plan.txt plan.txt
 clanek/plan.txt  plan.txt
 ```
 
-Pomocí `cp` můžeš kopírovat i celé adresáře, i s celým jejich obsahem,
-včetně podadresářů, pod-podadresářů atd..
-Protože se takhle dá rychle zaplnit disk, potřebuješ k tomu přepínač
+Pomocí příkazu `cp` kopíruješ pouze jednotlivé soubory, ne celé adresáře. Pokud chceš 
+kopírovat i celé adresáře včetně jejich podadresářů apod., potřebuješ k tomu přepínač 
 `-r` (`--recursive`).
 
 ```console
@@ -379,13 +393,14 @@ kap1  notes.txt  plan.txt
 ```
 
 > [note]
-> Příkaz `mv` takový přepínač nemá: pouhým přesouváním si disk nezaplníš.
+> Příkaz `mv` takový přepínač nemá - funguje rekurzivně automaticky. Přesunou se ti tedy
+> nejen jednotlivé soubory, ale celé adresáře i s jejich zanořeným obsahem.
 
 
 ## Odstraňování souborů a adresářů
 
 Mít dvě kopie souboru `plan.txt` nakonec nebude to nejlepší rozhodnutí
-(když jednu změníš, která bude platit?)
+(když jednu změníš, která bude platit?).
 Jednu z nich smaž pomocí příkazu `rm` (z angl. *remove* – odeber).
 
 ```console
@@ -404,13 +419,13 @@ ls: nelze přistoupit k 'plan.txt': Adresář nebo soubor neexistuje
 > Existují nástroje, které s trochou štěstí umí smazané soubory obnovit,
 > ale není to zaručeno.
 >
-> Kdybys někdy smazal{{a}} důležitý soubor, co nejdřív vypni počítač,
+> Kdybys někdy smazala důležitý soubor, co nejdřív vypni počítač,
 > aby systém neměl čas nic přepsat, a vyhledej pomoc.
 > (V extrémním případě počítač „natvrdo“ vypoj ze zásuvky/odstraň baterii,
-> stejně jako kdybys ho polil{{a}} vodou.)
+> stejně jako kdybys ho polila vodou.)
 >
-> Používej zálohy, které můžeš obnovit kdyby se něco stalo.
-> Existují na to různé nástroje, ale dobře poslouží např. Gitový repozitář
+> Používej zálohy, které můžeš obnovit, kdyby se něco stalo.
+> Existují na to různé nástroje, ale dobře poslouží např. Gitový repozitář,
 > který pravidelně `push`-uješ na vzdálený server.
 
 
@@ -421,11 +436,11 @@ $ rm clanek
 rm: nelze odstranit 'clanek': je adresářem
 ```
 
-Kdybys opravdu chtěl{{a}} smazat celý adresář a všechen jeho obsah,
+Kdybys opravdu chtěla smazat celý adresář a všechen jeho obsah,
 použij přepínač `-r` (`--recursive`).
 Doporučuji ho vždy zkombinovat s `-i` (`--interactive`), kdy `rm` u každého
 souboru poprosí o potvrzení,
-případně s `-v` (`--verbose`), kdy `rm` vypíše co dělá.
+případně s `-v` (`--verbose`), kdy `rm` vypíše, co dělá.
 
 ```console
 $ rm -rv clanek
@@ -446,21 +461,21 @@ Ještě že máš zálohu! Zkus ji obnovit.
 > A `-f` (`--force`) potlačí nastavení systémů,
 > které mají `-i` jako výchozí chování.
 >
-> Tenhle příkaz je jeden z nejjednodušších způsobů jak zničit celý
+> Tenhle příkaz je jeden z nejjednodušších způsobů, jak zničit celý
 > nainstalovaný systém.
 > Má jen 8 písmen!
 > Byl tak oblíbený u lumpů, kteří ho na internetu doporučovali nováčkům,
 > že dnešní verze příkazu `rm` mazání `/` nepovolí bez zvláštního,
 > dlouhého přepínače.
 >
-> Nezadávej příkazy, které najdeš na internetu, aniž bys věděl{{a}} co dělají!
+> Nezadávej příkazy, které najdeš na internetu, aniž bys věděla, co dělají!
 > (Pokud tedy nepracuješ ve virtuálním počítači, kde nemáš důležitá data.)
 
 
 ## Práce s více soubory a adresáři
 
-Často budeš potřebovat kopírovat či přesunout víc souborů najednou.
-Pak můžeš všechny potřebné soubory pojmenovat, a nebo jich vybrat několik
+Často budeš potřebovat kopírovat či přesunovat víc souborů najednou.
+Pak můžeš všechny potřebné soubory pojmenovat a nebo jich vybrat několik
 pomocí *zástupných znaků* (angl. *wildcard*: divoká karta, žolík)
 
 
@@ -520,7 +535,7 @@ pentane.pdb  propane.pdb
 
 Další zástupný znak je otazník, `?`, který odpovídá jen jednomu znaku.
 Takže šablona  `?ethane.pdb` odpovídá jen jménu `methane.pdb` – na rozdíl od
-`*ethane.pdb`, cemuž odpovídá jak `methane.pdb`, tak i `ethane.pdb`.
+`*ethane.pdb`, čemuž odpovídá jak `methane.pdb`, tak i `ethane.pdb`.
 
 ```console
 $ ls ?ethane.pdb
@@ -545,4 +560,3 @@ Když ale nějaké názvy odpovídají, dostane příkaz tyto příkazy jako jed
 argumenty.
 Zpracovává je tedy Bash; samotný příkaz jako `ls` nebo `cp` nemá
 k původní šabloně přístup.
-
